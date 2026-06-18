@@ -13,6 +13,9 @@ import PropertyCatalog from '@/components/PropertyCatalog';
 const HERO_IMG =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/c2e2e8e1-8b4a-453f-b641-886131fa7479.jpg';
 
+const LOGO =
+  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/012cfda3-1518-4ab8-af56-e0b312ea0ad3.png';
+
 const SERVICES = [
   { icon: 'Home', title: 'Подбор квартир', text: 'Новостройки, вторичка и коммерция под ваш запрос. Полностью бесплатно.' },
   { icon: 'Percent', title: 'Ипотека и рассрочка', text: 'Подберём самые актуальные условия по каждому жилому комплексу.' },
@@ -40,8 +43,8 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
         <div className="container max-w-6xl flex items-center justify-between py-4">
-          <a href="#" className="flex items-center gap-2 font-display text-2xl font-bold">
-            <span className="text-3xl">🏡</span> Дом Мечты
+          <a href="#" className="flex items-center">
+            <img src={LOGO} alt="Дом Мечты" className="h-12 md:h-14 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#services" className="hover:text-terracotta transition-colors">Услуги</a>
@@ -201,7 +204,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-border">
         <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
-          <span className="font-display text-xl font-bold text-foreground flex items-center gap-2">🏡 Дом Мечты</span>
+          <img src={LOGO} alt="Дом Мечты" className="h-12 w-auto" />
           <span>© 2026 Дом Мечты. Бесплатный подбор недвижимости.</span>
         </div>
       </footer>
