@@ -7,6 +7,7 @@ export default {
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+			"./1781809131603633689.html"
 	],
 	prefix: "",
 	theme: {
@@ -18,7 +19,14 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				display: ['Cormorant', 'serif'],
+				sans: ['Golos Text', 'sans-serif'],
+			},
 			colors: {
+				sand: 'hsl(40 30% 92%)',
+				sage: 'hsl(95 18% 72%)',
+				terracotta: 'hsl(16 45% 48%)',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
