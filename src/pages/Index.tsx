@@ -44,7 +44,7 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
         <div className="container max-w-6xl flex items-center justify-between py-4">
           <a href="#" className="flex items-center">
-            <img src={LOGO} alt="Дом Мечты" className="h-12 md:h-14 w-auto" />
+            <img src={LOGO} alt="Дом Мечты" className="h-20 md:h-24 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#services" className="hover:text-terracotta transition-colors">Услуги</a>
@@ -204,7 +204,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-border">
         <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
-          <img src={LOGO} alt="Дом Мечты" className="h-12 w-auto" />
+          <img src={LOGO} alt="Дом Мечты" className="h-20 w-auto" />
           <span>© 2026 Дом Мечты. Бесплатный подбор недвижимости.</span>
         </div>
       </footer>
