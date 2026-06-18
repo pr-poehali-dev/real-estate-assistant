@@ -41,8 +41,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="container max-w-6xl flex items-center justify-between py-4">
+      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50 overflow-hidden">
+        <div className="container max-w-6xl flex items-center justify-between py-1">
           <a href="#" className="flex items-center">
             <img src={LOGO} alt="Дом Мечты" className="h-28 md:h-36 w-auto" />
           </a>
