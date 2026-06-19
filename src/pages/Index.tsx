@@ -43,8 +43,8 @@ const Index = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50 h-20 overflow-hidden">
         <div className="container max-w-6xl flex items-center justify-between h-full">
-          <a href="#" className="flex items-center h-full overflow-hidden">
-            <img src={LOGO} alt="Дом Мечты" className="h-28 md:h-36 w-auto -mt-4" />
+          <a href="#" className="flex items-center h-full">
+            <img src={LOGO} alt="Дом Мечты" className="h-full w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#services" className="hover:text-terracotta transition-colors">Услуги</a>
