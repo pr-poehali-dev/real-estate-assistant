@@ -14,7 +14,7 @@ const HERO_IMG =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/c2e2e8e1-8b4a-453f-b641-886131fa7479.jpg';
 
 const LOGO =
-  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/9ee2cd3b-0235-448b-a90c-e0c0ee91bd09.png';
+  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/86de0f04-c250-4a9c-8dc9-af7909de41a2.png';
 
 const SERVICES = [
   { icon: 'Home', title: 'Подбор квартир', text: 'Новостройки, вторичка и коммерция под ваш запрос. Полностью бесплатно.' },
@@ -44,7 +44,7 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
         <div className="container max-w-6xl flex items-center justify-between py-4">
           <a href="#" className="flex items-center">
-            <img src={LOGO} alt="Дом Мечты" className="h-20 w-auto" />
+            <img src={LOGO} alt="Дом Мечты" className="h-12 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
             <a href="#services" className="hover:text-terracotta transition-colors">Услуги</a>
@@ -59,7 +59,7 @@ const Index = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative pt-32 pb-24 px-4">
+      <section className="relative pt-24 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
         <div className="absolute bottom-0 -left-32 w-80 h-80 bg-terracotta/10 blob-shape-2 animate-float-slow -z-0" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
