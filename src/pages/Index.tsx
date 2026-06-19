@@ -41,7 +41,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50 h-20 overflow-hidden">
+      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50 h-36 overflow-hidden">
         <div className="container max-w-6xl flex items-center justify-between h-full">
           <a href="#" className="flex items-center h-full">
             <img src={LOGO} alt="Дом Мечты" className="h-full w-auto" />
@@ -59,7 +59,7 @@ const Index = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative pt-28 pb-24 px-4">
+      <section className="relative pt-40 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
         <div className="absolute bottom-0 -left-32 w-80 h-80 bg-terracotta/10 blob-shape-2 animate-float-slow -z-0" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
