@@ -14,7 +14,7 @@ const HERO_IMG =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/c2e2e8e1-8b4a-453f-b641-886131fa7479.jpg';
 
 const LOGO =
-  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/012cfda3-1518-4ab8-af56-e0b312ea0ad3.png';
+  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/e6f47b37-eb3e-4a64-a3d7-6d01a1e779a2.png';
 
 const SERVICES = [
   { icon: 'Home', title: 'Подбор квартир', text: 'Новостройки, вторичка и коммерция под ваш запрос. Полностью бесплатно.' },
