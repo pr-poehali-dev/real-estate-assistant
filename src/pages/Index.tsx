@@ -46,11 +46,11 @@ const Index = () => {
           <a href="#" className="flex items-center">
             <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
           </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#services" className="hover:text-terracotta transition-colors">Услуги</a>
-            <a href="#catalog" className="hover:text-terracotta transition-colors">Каталог</a>
-            <a href="#about" className="hover:text-terracotta transition-colors">О нас</a>
-            <a href="#contacts" className="hover:text-terracotta transition-colors">Контакты</a>
+          <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
+            <a href="#services" className="px-4 py-2 rounded-full bg-sage/20 hover:bg-sage/40 text-foreground transition-colors backdrop-blur-sm">Услуги</a>
+            <a href="#catalog" className="px-4 py-2 rounded-full bg-sage/20 hover:bg-sage/40 text-foreground transition-colors backdrop-blur-sm">Каталог</a>
+            <a href="#about" className="px-4 py-2 rounded-full bg-sage/20 hover:bg-sage/40 text-foreground transition-colors backdrop-blur-sm">О нас</a>
+            <a href="#contacts" className="px-4 py-2 rounded-full bg-sage/20 hover:bg-sage/40 text-foreground transition-colors backdrop-blur-sm">Контакты</a>
           </nav>
           <Button onClick={() => openRequest('social')} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white">
             Оставить запрос
