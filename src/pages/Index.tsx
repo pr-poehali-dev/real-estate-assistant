@@ -104,15 +104,7 @@ const Index = () => {
           </div>
           <div className="relative animate-fade-up" style={{ animationDelay: '150ms' }}>
             <img src={HERO_IMG} alt="Современный дом" className="w-full h-[480px] object-cover blob-shape shadow-2xl" />
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-3xl shadow-xl p-5 border border-border hidden sm:block">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-terracotta/15 flex items-center justify-center text-2xl">🤝</div>
-                <div>
-                  <div className="font-display text-2xl font-bold leading-none">12 лет</div>
-                  <div className="text-sm text-muted-foreground">опыта агентов</div>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
