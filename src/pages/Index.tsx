@@ -160,7 +160,7 @@ const Index = () => {
               .
             </h2>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 items-start bg-orange-400">
             <div className="space-y-4">
               <h3 className="font-display text-2xl font-semibold mb-6 text-muted-foreground">Вам больше не нужно:</h3>
               {[
@@ -181,9 +181,7 @@ const Index = () => {
               <div className="bg-accent rounded-2xl p-6 mb-4">
                 <p className="text-lg font-medium">Доверить всю эту работу нам — и использовать сэкономленное время для себя.</p>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
-                Мы сделаем всё именно так, как вы хотели. С полной уверенностью в качестве каждого шага — от первого звонка до получения ключей.
-              </p>
+              <p className="leading-relaxed text-base text-rose-200">Мы выполним всё именно так, как вы задумали. С полной уверенностью в качестве каждого этапа — от первого звонка до получения ключей.</p>
               {[
                 { icon: 'ShieldCheck', label: 'Надёжно', text: 'Прозрачные условия, тщательная проработка сделки и выявление всех возможных рисков' },
                 { icon: 'Zap', label: 'Быстро', text: 'Заявки клиентов рассматриваются в приоритетном порядке' },
