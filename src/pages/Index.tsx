@@ -160,7 +160,7 @@ const Index = () => {
               .
             </h2>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-start bg-orange-400">
+          <div className="grid lg:grid-cols-2 gap-12 items-start bg-transparent">
             <div className="space-y-4">
               <h3 className="font-display text-2xl font-semibold mb-6 text-muted-foreground">Вам больше не нужно:</h3>
               {[
