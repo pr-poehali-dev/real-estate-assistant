@@ -8,7 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
-import PropertyCatalog from '@/components/PropertyCatalog';
+
 
 const HERO_IMG =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/c2e2e8e1-8b4a-453f-b641-886131fa7479.jpg';
@@ -63,7 +63,7 @@ const Index = () => {
           </a>
           <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
             <a href="#services" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Услуги</a>
-            <a href="#catalog" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Каталог</a>
+
             <a href="#about" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">О нас</a>
             <a href="#contacts" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Контакты</a>
             <a href="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</a>
@@ -141,9 +141,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Catalog */}
-      <PropertyCatalog onRequest={() => openRequest('social')} />
 
       {/* Why Us */}
       <section className="py-24 px-4">
