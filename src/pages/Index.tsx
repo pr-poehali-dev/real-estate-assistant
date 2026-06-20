@@ -17,10 +17,25 @@ const LOGO =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/86de0f04-c250-4a9c-8dc9-af7909de41a2.png';
 
 const SERVICES = [
-  { icon: 'Home', title: 'Подбор квартир', text: 'Новостройки, вторичка и коммерция под ваш запрос. Полностью бесплатно.' },
-  { icon: 'Percent', title: 'Ипотека и рассрочка', text: 'Подберём самые актуальные условия по каждому жилому комплексу.' },
-  { icon: 'Hammer', title: 'Ремонт под ключ', text: 'Поможем выбрать надёжного подрядчика — серьёзный шаг с заботой о вас.' },
-  { icon: 'Handshake', title: 'Сопровождение сделки', text: 'Организуем показ с застройщиком и проведём вас на всех этапах.' },
+  { icon: 'MessageSquare', title: 'Бесплатная консультация', text: 'Отвечаем на все вопросы по покупке, продаже и юридическим нюансам — без скрытых условий.' },
+  { icon: 'Search', title: 'Подбор объектов', text: 'Жилая и коммерческая недвижимость по преимущественно низким ценам под ваши требования.' },
+  { icon: 'Handshake', title: 'Сопровождение сделки', text: 'Покупка, продажа, переговоры и безопасная передача средств — контролируем каждый этап.' },
+  { icon: 'FileCheck', title: 'Юридическая экспертиза', text: 'Проверим юридическую чистоту объекта, составим договор и соберём все необходимые документы.' },
+];
+
+const CAPABILITIES = [
+  { icon: 'MapPin', text: 'Помощь в поиске недвижимости, подходящей под требования покупателя' },
+  { icon: 'Users', text: 'Посредничество в переговорах между сторонами сделки' },
+  { icon: 'ShieldCheck', text: 'Проверка юридической чистоты помещений' },
+  { icon: 'FileText', text: 'Сбор и подготовка документов для заключения договора купли-продажи' },
+  { icon: 'Banknote', text: 'Помощь во взаимных расчётах — безопасная передача денег при сделке' },
+];
+
+const DIRECTIONS = [
+  { icon: 'Home', title: 'Жилая недвижимость', text: 'Квартиры в новостройках и на вторичном рынке — для себя или под инвестицию.' },
+  { icon: 'Building2', title: 'Коммерческая недвижимость', text: 'Офисные, торговые, индустриальные и социальные объекты для аренды или ведения бизнеса.' },
+  { icon: 'Scale', title: 'Правовые консультации', text: 'Консультирование по правовым и иным вопросам, связанным с приобретением недвижимости.' },
+  { icon: 'ClipboardList', title: 'Экспертная оценка', text: 'Профессиональная оценка объектов недвижимости перед принятием решения о покупке.' },
 ];
 
 const STEPS = [
@@ -129,23 +144,82 @@ const Index = () => {
       {/* Catalog */}
       <PropertyCatalog onRequest={() => openRequest('social')} />
 
+      {/* Why Us */}
+      <section className="py-24 px-4">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Зачем мы нужны</span>
+            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 text-balance">Рынок недвижимости — для клиента,<br />а не для продавца</h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div className="space-y-4">
+              <h3 className="font-display text-2xl font-semibold mb-6 text-muted-foreground">Вам больше не нужно:</h3>
+              {[
+                'Тратить время на самостоятельный поиск квартиры и сталкиваться с фейковыми объявлениями',
+                'Часами искать надёжного агента среди сотен предложений',
+                'Разбираться в бесконечном потоке рекламы и платных услуг на сторонних сайтах',
+              ].map((text, i) => (
+                <div key={i} className="flex gap-4 bg-muted/60 rounded-2xl p-5">
+                  <div className="w-8 h-8 rounded-full bg-terracotta/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Icon name="X" size={16} className="text-terracotta" />
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="space-y-4">
+              <h3 className="font-display text-2xl font-semibold mb-6">Вы можете:</h3>
+              <div className="bg-accent rounded-2xl p-6 mb-4">
+                <p className="text-lg font-medium">Доверить всю эту работу нам — и использовать сэкономленное время для себя.</p>
+              </div>
+              <p className="text-muted-foreground leading-relaxed">
+                Мы сделаем всё именно так, как вы хотели. С полной уверенностью в качестве каждого шага — от первого звонка до получения ключей.
+              </p>
+              {[
+                { icon: 'ShieldCheck', label: 'Надёжно', text: 'Прозрачные условия, тщательная проработка сделки и выявление всех возможных рисков' },
+                { icon: 'Zap', label: 'Быстро', text: 'Заявки клиентов рассматриваются в приоритетном порядке' },
+                { icon: 'Star', label: 'Профессионально', text: 'Составим договор и соберём полный пакет необходимых документов' },
+              ].map((item) => (
+                <div key={item.label} className="flex gap-4 bg-card rounded-2xl p-5 border border-border">
+                  <div className="w-10 h-10 rounded-2xl bg-terracotta/12 flex items-center justify-center shrink-0">
+                    <Icon name={item.icon} size={20} className="text-terracotta" />
+                  </div>
+                  <div>
+                    <div className="font-semibold mb-1">{item.label}</div>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{item.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About + Steps */}
       <section id="about" className="py-24 px-4 bg-muted/40">
         <div className="container max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="text-terracotta font-medium tracking-widest uppercase text-sm">О нас</span>
+              <span className="text-terracotta font-medium tracking-widest uppercase text-sm">О компании</span>
               <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 mb-6 text-balance">
-                Заботимся о каждом шаге к вашему дому
+                История и команда «Дом Мечты»
               </h2>
+              <p className="text-lg text-muted-foreground mb-4">
+                Мы — динамично развивающаяся команда, работающая с 2025 года на рынке услуг по покупке недвижимости. За это время реализовано множество проектов различного масштаба и сложности.
+              </p>
+              <p className="text-lg text-muted-foreground mb-4">
+                Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, ставших основой нашей команды.
+              </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Мы не просто подбираем лучшие объекты недвижимости — мы сопровождаем вас на всех этапах сделки: от первого запроса до получения ключей.
+                «Дом Мечты» — команда, поставившая целью решать все вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать наилучшие условия именно для вас.
               </p>
-              <p className="text-lg text-muted-foreground">
-                Всё интуитивно прозрачно и понятно. Никаких скрытых условий — и, главное, вы ничего не платите.
-              </p>
+              <div className="bg-card rounded-2xl p-6 border border-border">
+                <p className="font-display text-xl font-semibold mb-2">Результат гарантирован</p>
+                <p className="text-muted-foreground">Наша команда — опытные профессионалы, которые полностью контролируют сделку на всех этапах. Мы всегда работаем на результат.</p>
+              </div>
             </div>
             <div className="space-y-5">
+              <h3 className="font-display text-3xl font-semibold mb-2">Как это работает</h3>
               {STEPS.map((step, i) => (
                 <div
                   key={step.num}
@@ -159,6 +233,51 @@ const Index = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Directions */}
+      <section className="py-24 px-4">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-14">
+            <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Направления</span>
+            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3">Основные направления</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {DIRECTIONS.map((d, i) => (
+              <div key={d.title} className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
+                  <Icon name={d.icon} size={26} className="text-terracotta" />
+                </div>
+                <h3 className="font-display text-xl font-semibold mb-2">{d.title}</h3>
+                <p className="text-muted-foreground text-[15px] leading-relaxed">{d.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-muted/60 rounded-[2rem] p-10 md:p-14">
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
+              <div>
+                <h3 className="font-display text-3xl font-semibold mb-4">Наши возможности</h3>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Некоторые из наших постоянных клиентов зарабатывают на объектах недвижимости, которые мы находим для них — за счёт покупки и дальнейшей перепродажи. Мы предоставляем возможность приобретать объекты по выгодной цене как для себя, так и для последующей реализации.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем объекты — мы находим их по преимущественно низким ценам.
+                </p>
+              </div>
+              <div className="space-y-3">
+                {CAPABILITIES.map((c, i) => (
+                  <div key={i} className="flex gap-4 items-start bg-card rounded-2xl p-4 border border-border">
+                    <div className="w-9 h-9 rounded-xl bg-terracotta/12 flex items-center justify-center shrink-0">
+                      <Icon name={c.icon} size={18} className="text-terracotta" />
+                    </div>
+                    <p className="text-muted-foreground text-sm leading-relaxed pt-1">{c.text}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
