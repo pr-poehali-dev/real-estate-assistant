@@ -147,7 +147,18 @@ const Index = () => {
         <div className="container max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Зачем мы нужны</span>
-            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 text-balance">Рынок недвижимости должен ориентироваться на потребности покупателя, а не на интересы тех, кто продает.</h2>
+            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 text-balance">
+              Рынок недвижимости должен служить{' '}
+              <span className="text-terracotta italic">покупателю</span>
+              {' —'}
+              <br className="hidden md:block" />
+              {' '}а не тем, кто{' '}
+              <span className="relative inline-block">
+                продаёт
+                <span className="absolute bottom-1 left-0 w-full h-[3px] bg-terracotta/30 rounded-full" />
+              </span>
+              .
+            </h2>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-4">
