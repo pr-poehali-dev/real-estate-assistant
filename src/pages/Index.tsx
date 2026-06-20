@@ -59,7 +59,7 @@ const Index = () => {
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
         <div className="container max-w-6xl flex items-center justify-between py-3">
           <a href="#" className="flex items-center">
-            <img src={LOGO} alt="Дом Мечты" className="h-10 w-auto" />
+            <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
             <a href="#services" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Услуги</a>
