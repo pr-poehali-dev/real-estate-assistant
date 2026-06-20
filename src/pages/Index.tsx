@@ -246,7 +246,7 @@ const Index = () => {
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Направления</span>
             <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3">Основные направления</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
             {DIRECTIONS.map((d, i) => (
               <div key={d.title} className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
