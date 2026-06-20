@@ -66,6 +66,7 @@ const Index = () => {
             <a href="#catalog" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Каталог</a>
             <a href="#about" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">О нас</a>
             <a href="#contacts" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Контакты</a>
+            <a href="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</a>
           </nav>
           <Button onClick={() => openRequest('social')} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white">
             Оставить запрос
