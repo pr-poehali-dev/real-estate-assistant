@@ -186,7 +186,6 @@ const Commercial = () => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-border">
         <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
-          <img src={LOGO} alt="Дом Мечты" className="h-20 w-auto" />
           <span>© 2026 Дом Мечты. Коммерческая недвижимость.</span>
 
         </div>
