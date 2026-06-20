@@ -80,9 +80,17 @@ const Index = () => {
         <div className="absolute bottom-0 -left-32 w-80 h-80 bg-terracotta/10 blob-shape-2 animate-float-slow -z-0" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-6">
-              <Icon name="Sparkles" size={16} /> Подбор недвижимости — бесплатно
-            </span>
+            <div className="flex flex-col items-start gap-2 mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/12 text-terracotta text-sm font-medium">
+                <Icon name="Shield" size={16} /> Спокойствие сделки
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium">
+                <Icon name="Sparkles" size={16} /> Подбор недвижимости — бесплатно
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-medium">
+                <Icon name="Key" size={16} /> Вы принимаете ключевое решение
+              </span>
+            </div>
             <h1 className="font-display text-6xl md:text-7xl font-bold leading-[0.95] mb-6 text-balance">
               Найдём дом,<br />где вам будет <span className="text-terracotta italic">тепло</span>
             </h1>
