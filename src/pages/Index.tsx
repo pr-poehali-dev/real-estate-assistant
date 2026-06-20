@@ -262,12 +262,8 @@ const Index = () => {
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
                 <h3 className="font-display text-3xl font-semibold mb-4">Наши возможности</h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Некоторые из наших постоянных клиентов зарабатывают на квартирах и домах, которые мы находим для них — за счёт покупки и дальнейшей перепродажи. Мы предоставляем возможность приобретать варианты по выгодной цене как для себя, так и для последующей реализации.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты — мы находим их по преимущественно низким ценам.
-                </p>
+                <p className="text-muted-foreground mb-6 leading-relaxed">Некоторые из наших постоянных клиентов зарабатывают на объектах недвижимости, которые мы находим для них, за счёт покупки и дальнейшей перепродажи по выгодной цене как для себя, так и для последующей реализации.</p>
+                <p className="text-muted-foreground leading-relaxed">Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты, мы находим их по преимущественно низким ценам.</p>
               </div>
               <div className="space-y-3">
                 {CAPABILITIES.map((c, i) => (
@@ -291,12 +287,8 @@ const Index = () => {
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10">
-              <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 text-balance">
-                Готовы найти свой дом?
-              </h2>
-              <p className="text-white/90 text-lg max-w-xl mx-auto mb-10">
-                Выберите удобный формат: напишите запрос в соцсетях или запишитесь на бесплатную онлайн-встречу с агентом.
-              </p>
+              <h2 className="font-display md:text-6xl mb-4 text-center text-6xl text-[#38261c] font-bold">Поиск недвижимости начинается здесь</h2>
+              <p className="text-white/90 text-lg max-w-xl mx-auto mb-10">Выберите удобный формат: напишите нам в социальных сетях или запланируйте бесплатную онлайн-встречу с нашим агентом.</p>
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base">
                   <Icon name="MessageCircle" size={20} /> Написать в соцсетях
