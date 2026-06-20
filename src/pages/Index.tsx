@@ -67,9 +67,9 @@ const Index = () => {
             <a href="#contacts" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Контакты</a>
             <a href="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</a>
           </nav>
-          <Button onClick={() => openRequest('social')} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white">
-            Оставить запрос
-          </Button>
+          <a href="/for-client" className="w-11 h-11 rounded-full bg-terracotta hover:bg-terracotta/90 flex items-center justify-center transition-colors">
+            <Icon name="Heart" size={20} className="text-white fill-white" />
+          </a>
         </div>
       </header>
 
