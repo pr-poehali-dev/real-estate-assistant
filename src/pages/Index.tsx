@@ -57,9 +57,9 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="container max-w-6xl flex items-center justify-between py-6">
+        <div className="container max-w-6xl flex items-center justify-between py-3">
           <a href="#" className="flex items-center">
-            <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
+            <img src={LOGO} alt="Дом Мечты" className="h-10 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
             <a href="#services" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Услуги</a>
@@ -75,7 +75,7 @@ const Index = () => {
       </header>
 
       {/* Hero */}
-      <section className="relative pt-28 pb-24 px-4">
+      <section className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
         <div className="absolute bottom-0 -left-32 w-80 h-80 bg-terracotta/10 blob-shape-2 animate-float-slow -z-0" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
