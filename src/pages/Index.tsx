@@ -313,7 +313,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-10 px-4 border-t border-border">
         <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
-          <img src={LOGO} alt="Дом Мечты" className="h-28 w-auto" />
+          <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
           <span>© 2026 Дом Мечты. Бесплатный подбор недвижимости.</span>
         </div>
       </footer>
