@@ -67,7 +67,7 @@ const Index = () => {
             <a href="#contacts" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Контакты</a>
             <a href="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</a>
           </nav>
-          <a href="/for-client" className="px-4 py-2 rounded-full bg-muted text-foreground hover:bg-muted/70 transition-colors">Клиентам</a>
+          <a href="/for-client" className="px-4 py-2 rounded-full bg-muted text-foreground hover:bg-muted/70 transition-colors text-sm font-medium">Клиентам</a>
         </div>
       </header>
 
