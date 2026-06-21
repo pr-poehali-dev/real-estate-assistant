@@ -58,7 +58,9 @@ const Commercial = () => {
 
       {/* Hero */}
       <section className="relative pt-36 pb-24 px-4">
-        <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/20 blob-shape animate-float-slow -z-0" />
+        <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/25 blob-shape animate-float-slow -z-0" />
+        <div className="absolute top-48 -left-20 w-72 h-72 blob-shape-2 animate-float-slow -z-0 bg-[#c4855a22]" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute bottom-0 right-1/3 w-56 h-56 blob-shape animate-float-slow -z-0 bg-[#a8c4a220]" style={{ animationDelay: '3s' }} />
         <div className="container max-w-6xl relative z-10">
           <div className="max-w-3xl animate-fade-up">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-6">

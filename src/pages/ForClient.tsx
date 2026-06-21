@@ -20,7 +20,13 @@ const ForClient = () => {
         </div>
       </header>
 
-      <main className="flex-1 container max-w-3xl px-4 pt-36 pb-24">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden -z-0">
+        <div className="absolute top-20 -right-16 w-80 h-80 blob-shape animate-float-slow bg-[#a8c4a228]" />
+        <div className="absolute top-1/2 -left-24 w-72 h-72 blob-shape-2 animate-float-slow bg-[#b0604318]" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-20 right-1/4 w-60 h-60 blob-shape animate-float-slow bg-[#8faf8f1a]" style={{ animationDelay: '4s' }} />
+      </div>
+
+      <main className="flex-1 container max-w-3xl px-4 pt-36 pb-24 relative z-10">
         <h1 className="font-display text-4xl md:text-5xl font-semibold mb-10 leading-tight">
           Клиент — в центре внимания
         </h1>
