@@ -14,7 +14,7 @@ const HERO_IMG =
   'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/c2e2e8e1-8b4a-453f-b641-886131fa7479.jpg';
 
 const LOGO =
-  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/1de3b31c-bac2-4631-b1e1-47bcb3e4b445.png';
+  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/cc8e3160-0678-4355-aa0f-d5623566165f.png';
 
 const SERVICES = [
   { icon: 'MessageSquare', title: 'Бесплатная консультация', text: 'Отвечаем на все вопросы по покупке, продаже и юридическим нюансам — без скрытых условий.' },
