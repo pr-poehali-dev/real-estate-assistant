@@ -31,16 +31,17 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <Button
               variant="ghost"
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/')}
               className="rounded-full gap-2 text-muted-foreground hover:text-foreground"
             >
               <Icon name="ArrowLeft" size={18} />
               Назад
             </Button>
-            <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
-              <Link to="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</Link>
-              <Link to="/for-client" className="px-4 py-2 rounded-full bg-muted hover:bg-muted/70 transition-colors text-[#565166]">Клиентам</Link>
-            </nav>
+            {location.pathname !== '/commercial' && (
+              <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
+                <Link to="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</Link>
+              </nav>
+            )}
           </div>
         )}
       </div>
