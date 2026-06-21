@@ -81,7 +81,7 @@ const Index = () => {
               <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base">
                 <Icon name="MessageCircle" size={20} /> Написать запрос
               </Button>
-              <Button onClick={() => openRequest('meeting')} size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/8 hover:text-terracotta">
+              <Button onClick={() => openRequest('meeting')} size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta">
                 <Icon name="Video" size={20} /> Онлайн-встреча
               </Button>
             </div>
