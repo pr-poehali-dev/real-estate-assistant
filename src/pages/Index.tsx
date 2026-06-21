@@ -285,7 +285,7 @@ const Index = () => {
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10">
-              <h2 className="font-display md:text-6xl mb-2 text-center text-6xl text-[#33291f] font-semibold">Поиск недвижимости 
+              <h2 className="font-display md:text-6xl text-center text-6xl text-[#33291f] font-semibold mx-[5px] my-0 py-0 px-[3px]">Поиск недвижимости 
 начинается здесь
 </h2>
               <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-[14px]">Выберите комфортный способ связи: напишите нам в социальных сетях или запланируйте бесплатную онлайн-встречу с нашим агентом.</p>
@@ -305,7 +305,7 @@ const Index = () => {
                   { icon: 'MessageSquare', label: 'Макс' },
                   { icon: 'Mail', label: 'Mail.ru' },
                 ].map((c) => (
-                  <button key={c.label} onClick={() => openRequest('social')} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                  <button className="flex items-center gap-2 text-white/90 hover:text-white transition-colors mx-[5px] my-[11px]" key={c.label} onClick={() => openRequest('social')} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                     <Icon name={c.icon} size={20} /> {c.label}
                   </button>
                 ))}
