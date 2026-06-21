@@ -13,7 +13,11 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
       <div className="container max-w-6xl flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center">
+        <Link
+          to="/"
+          className="flex items-center"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
           <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
         </Link>
 
