@@ -287,9 +287,9 @@ const Index = () => {
                   { icon: 'Phone', label: 'WhatsApp' },
                   { icon: 'Mail', label: 'Макс' },
                 ].map((c) => (
-                  <button className="flex items-center gap-2 text-white/90 hover:text-white transition-colors mx-[5px] my-[11px]" key={c.label} onClick={() => openRequest('social')} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+                  <span key={c.label} className="flex items-center gap-2 text-white/90 mx-[5px] my-[11px]">
                     <Icon name={c.icon} size={20} /> {c.label}
-                  </button>
+                  </span>
                 ))}
               </div>
             </div>
