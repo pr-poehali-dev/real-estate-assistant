@@ -281,7 +281,7 @@ const Index = () => {
       {/* Contacts / CTA */}
       <section id="contacts" className="py-24 px-4">
         <div className="container max-w-5xl">
-          <div className="relative bg-terracotta text-center overflow-hidden mx-[75px] py-10 my-0 px-[50px] rounded-3xl">
+          <div className="relative bg-terracotta text-center overflow-hidden py-10 px-[50px] rounded-3xl mx-[75px] my-[55px]">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10">
