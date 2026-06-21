@@ -298,13 +298,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-10 px-4 border-t border-border">
-        <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-center gap-4 text-muted-foreground text-sm">
-          <span>© 2026 Дом Мечты. Бесплатный подбор недвижимости.</span>
-        </div>
-      </footer>
-
       {/* Request dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="rounded-[2rem] max-w-md">
