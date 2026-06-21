@@ -74,7 +74,7 @@ const Index = () => {
       {/* Hero */}
       <section className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
-        <div className="absolute bottom-0 -left-32 w-80 h-80 bg-terracotta/10 blob-shape-2 animate-float-slow -z-0" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-0 -left-32 w-80 h-80 blob-shape-2 animate-float-slow -z-0 bg-[#b060432b]" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-up">
             <div className="flex flex-col items-start gap-2 mb-6">
