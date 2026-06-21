@@ -288,7 +288,7 @@ const Index = () => {
               <h2 className="font-display md:text-6xl text-center text-6xl text-[#33291f] font-semibold mx-[5px] my-0 py-0 px-[3px]">Поиск недвижимости 
 начинается здесь
 </h2>
-              <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-[14px]">Выберите комфортный способ связи: напишите нам в социальных сетях или запланируйте бесплатную онлайн-встречу с нашим агентом.</p>
+              <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-6">Выберите комфортный способ связи: напишите нам в социальных сетях или запланируйте бесплатную онлайн-встречу с нашим агентом.</p>
               <div className="flex flex-wrap justify-center gap-4 mb-6">
                 <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base">
                   <Icon name="MessageCircle" size={20} /> Написать в соцсетях
