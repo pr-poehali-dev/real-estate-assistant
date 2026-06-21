@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Commercial from "./pages/Commercial";
 import ForClient from "./pages/ForClient";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => {
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/commercial" element={<Commercial />} />

@@ -54,23 +54,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="container max-w-6xl flex items-center justify-between py-4">
-          <a href="#" className="flex items-center">
-            <img src={LOGO} alt="Дом Мечты" className="h-16 w-auto" />
-          </a>
-          <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
-            <a href="#services" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Услуги</a>
-
-            <a href="#about" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">О нас</a>
-            <a href="#contacts" className="px-4 py-2 rounded-full bg-accent text-accent-foreground hover:bg-accent/70 transition-colors">Контакты</a>
-            <a href="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</a>
-          </nav>
-          <a href="/for-client" className="px-4 py-2 rounded-full bg-muted hover:bg-muted/70 transition-colors text-sm font-medium text-[#565166]">Клиентам</a>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />

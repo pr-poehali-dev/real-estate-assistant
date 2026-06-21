@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -38,24 +37,9 @@ const CAPABILITIES = [
 
 const Commercial = () => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="container max-w-6xl flex items-center py-4">
-          <Button
-            variant="ghost"
-            onClick={() => navigate(-1)}
-            className="rounded-full gap-2 text-muted-foreground hover:text-foreground"
-          >
-            <Icon name="ArrowLeft" size={18} />
-            Назад
-          </Button>
-        </div>
-      </header>
-
       {/* Hero */}
       <section className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/25 blob-shape animate-float-slow -z-0" />

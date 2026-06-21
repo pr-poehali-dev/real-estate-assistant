@@ -1,25 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import Icon from '@/components/ui/icon';
-
 const ForClient = () => {
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      <header className="fixed top-0 left-0 right-0 z-40 backdrop-blur-md bg-background/80 border-b border-border/50">
-        <div className="container max-w-6xl flex items-center py-4">
-          <Button
-            variant="ghost"
-            onClick={() => navigate(-1)}
-            className="rounded-full gap-2 text-muted-foreground hover:text-foreground"
-          >
-            <Icon name="ArrowLeft" size={18} />
-            Назад
-          </Button>
-        </div>
-      </header>
-
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-0">
         <div className="absolute top-20 -right-16 w-80 h-80 blob-shape animate-float-slow bg-[#a8c4a228]" />
         <div className="absolute top-1/2 -left-24 w-72 h-72 blob-shape-2 animate-float-slow bg-[#b0604318]" style={{ animationDelay: '2s' }} />
