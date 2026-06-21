@@ -281,10 +281,10 @@ const Index = () => {
       {/* Contacts / CTA */}
       <section id="contacts" className="py-24 px-4">
         <div className="container max-w-5xl">
-          <div className="relative bg-terracotta p-6 md:p-8 text-center overflow-hidden px-16 mx-[75px] my-0 py-[10px] rounded-3xl">
+          <div className="relative bg-terracotta text-center overflow-hidden px-16 mx-[75px] py-8 rounded-3xl">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
-            <div className="relative z-10 mx-0 py-[12px]">
+            <div className="relative z-10">
               <h2 className="font-display md:text-6xl mb-2 text-center text-6xl text-[#33291f] font-semibold">Поиск недвижимости 
 начинается здесь
 </h2>
