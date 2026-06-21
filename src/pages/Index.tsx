@@ -284,7 +284,6 @@ const Index = () => {
                 {[
                   { icon: 'Send', label: 'Telegram' },
                   { icon: 'Phone', label: 'WhatsApp' },
-                  { icon: 'AtSign', label: 'VK' },
                   { icon: 'MessageSquare', label: 'Макс' },
                   { icon: 'Mail', label: 'Mail.ru' },
                 ].map((c) => (
