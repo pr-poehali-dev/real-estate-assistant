@@ -37,11 +37,14 @@ const Header = () => {
               <Icon name="ArrowLeft" size={18} />
               Назад
             </Button>
-            {location.pathname !== '/commercial' && (
-              <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
+            <nav className="hidden md:flex items-center gap-2 text-sm font-medium">
+              {location.pathname !== '/commercial' && (
                 <Link to="/commercial" className="px-4 py-2 rounded-full bg-terracotta/15 text-terracotta hover:bg-terracotta/25 transition-colors font-semibold">Коммерция</Link>
-              </nav>
-            )}
+              )}
+              {location.pathname !== '/for-client' && (
+                <Link to="/for-client" className="px-4 py-2 rounded-full bg-muted hover:bg-muted/70 transition-colors text-[#565166]">Клиентам</Link>
+              )}
+            </nav>
           </div>
         )}
       </div>
