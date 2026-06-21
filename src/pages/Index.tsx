@@ -281,7 +281,7 @@ const Index = () => {
       {/* Contacts / CTA */}
       <section id="contacts" className="py-24 px-4">
         <div className="container max-w-5xl">
-          <div className="relative bg-terracotta p-10 md:p-16 text-center overflow-hidden px-16 mx-[75px] my-0 py-[27px] rounded-3xl">
+          <div className="relative bg-terracotta p-10 md:p-16 text-center overflow-hidden px-16 mx-[180px] my-0 py-[27px] rounded-3xl">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10 mx-0 py-[30px]">
@@ -302,6 +302,8 @@ const Index = () => {
                   { icon: 'Send', label: 'Telegram' },
                   { icon: 'Phone', label: 'WhatsApp' },
                   { icon: 'AtSign', label: 'VK' },
+                  { icon: 'MessageSquare', label: 'Макс' },
+                  { icon: 'Mail', label: 'Mail.ru' },
                 ].map((c) => (
                   <button key={c.label} onClick={() => openRequest('social')} className="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
                     <Icon name={c.icon} size={20} /> {c.label}
