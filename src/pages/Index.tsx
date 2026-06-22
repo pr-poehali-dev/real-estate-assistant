@@ -315,7 +315,7 @@ const Index = () => {
                   { icon: 'AtSign', label: 'Mail.ru' },
                   { icon: 'Send', label: 'Telegram' },
                   { icon: 'Phone', label: 'WhatsApp' },
-                  { icon: 'Mail', label: 'Макс' },
+                  { icon: 'Mail', label: 'MAX' },
                 ].map((c) => (
                   <span key={c.label} className="flex items-center gap-2 text-white/90 mx-[5px] my-[11px]">
                     <Icon name={c.icon} size={20} /> {c.label}
