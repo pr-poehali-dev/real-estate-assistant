@@ -37,6 +37,7 @@ const DIRECTIONS = [
   { icon: 'Home', title: 'Жилая недвижимость', text: 'Квартиры в новостройках и на вторичном рынке — для себя или под инвестицию.' },
   { icon: 'Building2', title: 'Коммерческая недвижимость', text: 'Офисные, торговые, индустриальные и социальные объекты для аренды или ведения бизнеса.' },
   { icon: 'ClipboardList', title: 'Экспертная оценка', text: 'Профессиональная оценка объектов недвижимости перед принятием решения о покупке.' },
+  { icon: 'Hammer', title: 'Ремонт под ключ', text: 'Подберём проверенного подрядчика из числа наших партнёров, который реализует лучший дизайн вашей новой квартиры — персонально для вас.' },
 ];
 
 const STEPS = [
@@ -257,7 +258,7 @@ const Index = () => {
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Направления</span>
             <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3">Основные направления</h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {DIRECTIONS.map((d, i) => (
               <div key={d.title} className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
@@ -275,6 +276,7 @@ const Index = () => {
                 <h3 className="font-display text-3xl font-semibold mb-4">Наши возможности</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">Некоторые из наших постоянных клиентов зарабатывают на объектах недвижимости, которые мы находим для них, за счёт покупки и дальнейшей перепродажи по выгодной цене.</p>
                 <p className="text-muted-foreground leading-relaxed">Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты, мы находим их по преимущественно низким ценам.</p>
+                <p className="text-muted-foreground leading-relaxed mt-4">После покупки мы готовы помочь с ремонтом: подберём проверенного партнёра-подрядчика, который воплотит лучший дизайн вашей квартиры — под ваш вкус и бюджет.</p>
               </div>
               <div className="space-y-3">
                 {CAPABILITIES.map((c, i) => (
