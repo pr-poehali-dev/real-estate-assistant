@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ScrollToTop from '@/components/ScrollToTop';
+import PhoneInput from '@/components/PhoneInput';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -357,11 +358,9 @@ const Index = () => {
                 required
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
-              <input
-                type="tel"
-                placeholder="Телефон или ник в соцсети"
+              <PhoneInput
                 value={contact}
-                onChange={e => setContact(e.target.value)}
+                onChange={setContact}
                 required
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
