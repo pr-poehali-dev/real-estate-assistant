@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ScrollToTop from '@/components/ScrollToTop';
 import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import {
@@ -208,6 +209,7 @@ const Commercial = () => {
           </form>
         </DialogContent>
       </Dialog>
+      <ScrollToTop />
     </div>
   );
 };
