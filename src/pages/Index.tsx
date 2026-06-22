@@ -47,38 +47,38 @@ const STEPS = [
 
 const SEND_LEAD_URL = 'https://functions.poehali.dev/0951d9ac-cb20-4a66-865c-901b256f6154';
 
+type FormState = { name: string; contact: string; request: string; sending: boolean; sent: boolean };
+const emptyForm = (): FormState => ({ name: '', contact: '', request: '', sending: false, sent: false });
+
 const Index = () => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<'social' | 'meeting'>('social');
-  const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
-  const [request, setRequest] = useState('');
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [forms, setForms] = useState<Record<string, FormState>>({ social: emptyForm(), meeting: emptyForm() });
+
+  const f = forms[mode];
+  const setF = (patch: Partial<FormState>) => setForms(prev => ({ ...prev, [mode]: { ...prev[mode], ...patch } }));
 
   const openRequest = (m: 'social' | 'meeting' = 'social') => {
     setMode(m);
     setOpen(true);
-    setSent(false);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !contact.trim()) return;
-    setSending(true);
+    if (!f.name.trim() || !f.contact.trim()) return;
+    setF({ sending: true });
     try {
       await fetch(SEND_LEAD_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name, contact, request,
+          name: f.name, contact: f.contact, request: f.request,
           source: mode === 'social' ? 'Написать в соцсетях' : 'Онлайн-встреча'
         })
       });
-      setSent(true);
-      setName(''); setContact(''); setRequest('');
+      setF({ sent: true, name: '', contact: '', request: '' });
     } finally {
-      setSending(false);
+      setF({ sending: false });
     }
   };
 
@@ -328,9 +328,9 @@ const Index = () => {
       </section>
 
       {/* Request dialog */}
-      <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setContact(''); setRequest(''); setSent(false); } setOpen(v); }}>
+      <Dialog open={open} onOpenChange={(v) => { if (!v) setForms(prev => ({ ...prev, [mode]: emptyForm() })); setOpen(v); }}>
         <DialogContent className="rounded-[2rem] max-w-md">
-          {!sent && (
+          {!f.sent && (
             <DialogHeader>
               <DialogTitle className="font-display text-3xl font-semibold">
                 {mode === 'social' ? 'Запрос на подбор' : 'Онлайн-встреча'}
@@ -342,7 +342,7 @@ const Index = () => {
               </DialogDescription>
             </DialogHeader>
           )}
-          {sent ? (
+          {f.sent ? (
             <div className="py-8 text-center space-y-2">
               <div className="text-4xl">✓</div>
               <div className="font-display text-xl font-semibold">Заявка отправлена!</div>
@@ -353,26 +353,26 @@ const Index = () => {
               <input
                 type="text"
                 placeholder="Ваше имя"
-                value={name}
-                onChange={e => setName(e.target.value)}
+                value={f.name}
+                onChange={e => setF({ name: e.target.value })}
                 required
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <PhoneInput
-                value={contact}
-                onChange={setContact}
+                value={f.contact}
+                onChange={v => setF({ contact: v })}
                 required
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <textarea
                 placeholder="Что вы ищете? Бюджет, район, количество комнат…"
                 rows={3}
-                value={request}
-                onChange={e => setRequest(e.target.value)}
+                value={f.request}
+                onChange={e => setF({ request: e.target.value })}
                 className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
               />
-              <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
-                {sending ? 'Отправляем…' : 'Отправить запрос'}
+              <Button type="submit" disabled={f.sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
+                {f.sending ? 'Отправляем…' : 'Отправить запрос'}
               </Button>
             </form>
           )}
