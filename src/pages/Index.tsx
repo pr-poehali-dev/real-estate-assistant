@@ -328,7 +328,7 @@ const Index = () => {
       </section>
 
       {/* Request dialog */}
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setContact(''); setRequest(''); setSent(false); } setOpen(v); }}>
         <DialogContent className="rounded-[2rem] max-w-md">
           {!sent && (
             <DialogHeader>
