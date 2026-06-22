@@ -320,7 +320,7 @@ const Index = () => {
                   { icon: 'Phone', label: 'WhatsApp' },
                   { icon: 'Mail', label: 'MAX' },
                 ].map((c) => (
-                  <span key={c.label} className="flex items-center gap-2 text-white/90 mx-[5px] my-[11px]">
+                  <span key={c.label} className="flex items-center gap-2 text-white/90 mx-[5px] my-[11px]" translate="no">
                     <Icon name={c.icon} size={20} /> {c.label}
                   </span>
                 ))}
