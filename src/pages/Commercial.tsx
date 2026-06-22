@@ -260,7 +260,7 @@ const Commercial = () => {
                 />
                 <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
               </label>
-              <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
+              <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-14 text-base">
                 {sending ? 'Отправляем…' : 'Отправить запрос'}
               </Button>
             </form>

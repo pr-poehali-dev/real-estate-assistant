@@ -377,16 +377,18 @@ const Index = () => {
                 onChange={e => setF({ request: e.target.value })}
                 className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
               />
-              <label className="flex items-center gap-3 px-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={f.callback}
-                  onChange={e => setF({ callback: e.target.checked })}
-                  className="w-5 h-5 rounded accent-terracotta cursor-pointer"
-                />
-                <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
-              </label>
-              <Button type="submit" disabled={f.sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
+              {mode === 'social' && (
+                <label className="flex items-center gap-3 px-2 cursor-pointer select-none">
+                  <input
+                    type="checkbox"
+                    checked={f.callback}
+                    onChange={e => setF({ callback: e.target.checked })}
+                    className="w-5 h-5 rounded accent-terracotta cursor-pointer"
+                  />
+                  <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
+                </label>
+              )}
+              <Button type="submit" disabled={f.sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-14 text-base">
                 {f.sending ? 'Отправляем…' : 'Отправить запрос'}
               </Button>
             </form>
