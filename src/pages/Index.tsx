@@ -44,13 +44,41 @@ const STEPS = [
   { num: '03', title: 'Получаете результат', text: 'Никуда не ехать. Готовая подборка и сопровождение — бесплатно.' },
 ];
 
+const SEND_LEAD_URL = 'https://functions.poehali.dev/0951d9ac-cb20-4a66-865c-901b256f6154';
+
 const Index = () => {
   const [open, setOpen] = useState(false);
   const [mode, setMode] = useState<'social' | 'meeting'>('social');
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [request, setRequest] = useState('');
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const openRequest = (m: 'social' | 'meeting' = 'social') => {
     setMode(m);
     setOpen(true);
+    setSent(false);
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !contact.trim()) return;
+    setSending(true);
+    try {
+      await fetch(SEND_LEAD_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, contact, request,
+          source: mode === 'social' ? 'Написать в соцсетях' : 'Онлайн-встреча'
+        })
+      });
+      setSent(true);
+      setName(''); setContact(''); setRequest('');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -311,26 +339,42 @@ const Index = () => {
                 : 'Оставьте контакты — агент свяжется и проконсультирует бесплатно.'}
             </DialogDescription>
           </DialogHeader>
-          <form className="space-y-4 mt-2" onSubmit={(e) => e.preventDefault()}>
-            <input
-              type="text"
-              placeholder="Ваше имя"
-              className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
-            />
-            <input
-              type="tel"
-              placeholder="Телефон или ник в соцсети"
-              className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
-            />
-            <textarea
-              placeholder="Что вы ищете? Бюджет, район, количество комнат…"
-              rows={3}
-              className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
-            />
-            <Button type="submit" className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
-              Отправить запрос
-            </Button>
-          </form>
+          {sent ? (
+            <div className="py-8 text-center space-y-2">
+              <div className="text-4xl">✓</div>
+              <div className="font-display text-xl font-semibold">Заявка отправлена!</div>
+              <div className="text-muted-foreground text-sm">Мы свяжемся с вами в ближайшее время.</div>
+            </div>
+          ) : (
+            <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Ваше имя"
+                value={name}
+                onChange={e => setName(e.target.value)}
+                required
+                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+              />
+              <input
+                type="tel"
+                placeholder="Телефон или ник в соцсети"
+                value={contact}
+                onChange={e => setContact(e.target.value)}
+                required
+                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+              />
+              <textarea
+                placeholder="Что вы ищете? Бюджет, район, количество комнат…"
+                rows={3}
+                value={request}
+                onChange={e => setRequest(e.target.value)}
+                className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
+              />
+              <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
+                {sending ? 'Отправляем…' : 'Отправить запрос'}
+              </Button>
+            </form>
+          )}
         </DialogContent>
       </Dialog>
       <ScrollToTop />
