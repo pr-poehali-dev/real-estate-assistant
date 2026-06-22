@@ -42,23 +42,25 @@ const SEND_LEAD_URL = 'https://functions.poehali.dev/0951d9ac-cb20-4a66-865c-901
 const Commercial = () => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
-  const [contact, setContact] = useState('');
+  const [phone, setPhone] = useState('');
+  const [social, setSocial] = useState('');
   const [request, setRequest] = useState('');
+  const [callback, setCallback] = useState(false);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !contact.trim()) return;
+    if (!name.trim()) return;
     setSending(true);
     try {
       await fetch(SEND_LEAD_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, contact, request, source: 'Коммерческая недвижимость' })
+        body: JSON.stringify({ name, phone, social, request, callback, source: 'Коммерческая недвижимость' })
       });
       setSent(true);
-      setName(''); setContact(''); setRequest('');
+      setName(''); setPhone(''); setSocial(''); setRequest(''); setCallback(false);
     } finally {
       setSending(false);
     }
@@ -204,7 +206,7 @@ const Commercial = () => {
       </footer>
 
       {/* Dialog */}
-      <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setContact(''); setRequest(''); setSent(false); } setOpen(v); }}>
+      <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setPhone(''); setSocial(''); setRequest(''); setCallback(false); setSent(false); } setOpen(v); }}>
         <DialogContent className="rounded-[2rem] max-w-md">
           {!sent && (
             <DialogHeader>
@@ -221,7 +223,7 @@ const Commercial = () => {
               <div className="text-muted-foreground text-sm">Мы свяжемся с вами в ближайшее время.</div>
             </div>
           ) : (
-            <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
+            <form className="space-y-3 mt-2" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Ваше имя"
@@ -231,9 +233,15 @@ const Commercial = () => {
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <PhoneInput
-                value={contact}
-                onChange={setContact}
-                required
+                value={phone}
+                onChange={setPhone}
+                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+              />
+              <input
+                type="text"
+                placeholder="Соцсеть для связи (VK, Telegram, WhatsApp…)"
+                value={social}
+                onChange={e => setSocial(e.target.value)}
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <textarea
@@ -243,6 +251,15 @@ const Commercial = () => {
                 onChange={e => setRequest(e.target.value)}
                 className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
               />
+              <label className="flex items-center gap-3 px-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={callback}
+                  onChange={e => setCallback(e.target.checked)}
+                  className="w-5 h-5 rounded accent-terracotta cursor-pointer"
+                />
+                <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
+              </label>
               <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
                 {sending ? 'Отправляем…' : 'Отправить запрос'}
               </Button>

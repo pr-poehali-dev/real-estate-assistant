@@ -47,8 +47,8 @@ const STEPS = [
 
 const SEND_LEAD_URL = 'https://functions.poehali.dev/0951d9ac-cb20-4a66-865c-901b256f6154';
 
-type FormState = { name: string; contact: string; request: string; sending: boolean; sent: boolean };
-const emptyForm = (): FormState => ({ name: '', contact: '', request: '', sending: false, sent: false });
+type FormState = { name: string; phone: string; social: string; request: string; callback: boolean; sending: boolean; sent: boolean };
+const emptyForm = (): FormState => ({ name: '', phone: '', social: '', request: '', callback: false, sending: false, sent: false });
 
 const Index = () => {
   const [open, setOpen] = useState(false);
@@ -65,18 +65,18 @@ const Index = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!f.name.trim() || !f.contact.trim()) return;
+    if (!f.name.trim()) return;
     setF({ sending: true });
     try {
       await fetch(SEND_LEAD_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: f.name, contact: f.contact, request: f.request,
+          name: f.name, phone: f.phone, social: f.social, request: f.request, callback: f.callback,
           source: mode === 'social' ? 'Написать в соцсетях' : 'Онлайн-встреча'
         })
       });
-      setF({ sent: true, name: '', contact: '', request: '' });
+      setF({ sent: true, name: '', phone: '', social: '', request: '', callback: false });
     } finally {
       setF({ sending: false });
     }
@@ -349,7 +349,7 @@ const Index = () => {
               <div className="text-muted-foreground text-sm">Мы свяжемся с вами в ближайшее время.</div>
             </div>
           ) : (
-            <form className="space-y-4 mt-2" onSubmit={handleSubmit}>
+            <form className="space-y-3 mt-2" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Ваше имя"
@@ -359,9 +359,15 @@ const Index = () => {
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <PhoneInput
-                value={f.contact}
-                onChange={v => setF({ contact: v })}
-                required
+                value={f.phone}
+                onChange={v => setF({ phone: v })}
+                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+              />
+              <input
+                type="text"
+                placeholder="Соцсеть для связи (VK, Telegram, WhatsApp…)"
+                value={f.social}
+                onChange={e => setF({ social: e.target.value })}
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
               <textarea
@@ -371,6 +377,15 @@ const Index = () => {
                 onChange={e => setF({ request: e.target.value })}
                 className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
               />
+              <label className="flex items-center gap-3 px-2 cursor-pointer select-none">
+                <input
+                  type="checkbox"
+                  checked={f.callback}
+                  onChange={e => setF({ callback: e.target.checked })}
+                  className="w-5 h-5 rounded accent-terracotta cursor-pointer"
+                />
+                <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
+              </label>
               <Button type="submit" disabled={f.sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-12 text-base">
                 {f.sending ? 'Отправляем…' : 'Отправить запрос'}
               </Button>
