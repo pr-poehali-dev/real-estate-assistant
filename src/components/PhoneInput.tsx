@@ -28,37 +28,43 @@ function extractDigits(masked: string): string {
   return masked.replace(/\D/g, '').replace(/^(7|8)/, '');
 }
 
+function getCursorPos(displayed: string): number {
+  const pos = displayed.indexOf('_');
+  return pos === -1 ? displayed.length : pos;
+}
+
 export default function PhoneInput({ value, onChange, className, required }: PhoneInputProps) {
   const ref = useRef<HTMLInputElement>(null);
 
   const displayed = value ? applyMask(value) : MASK;
   const digits = extractDigits(value || '');
 
-  const setCursorToNextEmpty = () => {
-    setTimeout(() => {
-      if (ref.current) {
-        const pos = displayed.indexOf('_');
-        const cur = pos === -1 ? displayed.length : pos;
-        ref.current.setSelectionRange(cur, cur);
-      }
-    }, 0);
+  const placeCursor = (disp: string) => {
+    const cur = getCursorPos(disp);
+    requestAnimationFrame(() => {
+      ref.current?.setSelectionRange(cur, cur);
+    });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value;
-    const newDigits = extractDigits(raw);
+    const newDigits = extractDigits(e.target.value);
     onChange(newDigits);
+    const newDisplayed = newDigits ? applyMask(newDigits) : MASK;
+    placeCursor(newDisplayed);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Backspace') {
       e.preventDefault();
-      onChange(digits.slice(0, -1));
+      const newDigits = digits.slice(0, -1);
+      onChange(newDigits);
+      const newDisplayed = newDigits ? applyMask(newDigits) : MASK;
+      placeCursor(newDisplayed);
     }
   };
 
-  const handleFocus = () => { setCursorToNextEmpty(); };
-  const handleClick = () => { setCursorToNextEmpty(); };
+  const handleFocus = () => { placeCursor(displayed); };
+  const handleClick = () => { placeCursor(displayed); };
 
   return (
     <input
@@ -70,7 +76,7 @@ export default function PhoneInput({ value, onChange, className, required }: Pho
       onFocus={handleFocus}
       onClick={handleClick}
       required={required}
-      className={`${className} caret-transparent`}
+      className={className}
     />
   );
 }
