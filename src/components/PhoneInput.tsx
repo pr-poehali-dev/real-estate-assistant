@@ -70,7 +70,7 @@ export default function PhoneInput({ value, onChange, className, required }: Pho
       onFocus={handleFocus}
       onClick={handleClick}
       required={required}
-      className={className}
+      className={`${className} caret-transparent`}
     />
   );
 }
