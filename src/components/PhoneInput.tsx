@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface PhoneInputProps {
   value: string;
@@ -34,6 +34,22 @@ export default function PhoneInput({ value, onChange, className, required }: Pho
   const displayed = value ? applyMask(value) : MASK;
   const digits = extractDigits(value || '');
 
+  const setCursorToNextEmpty = () => {
+    setTimeout(() => {
+      if (ref.current) {
+        const pos = displayed.indexOf('_');
+        const cur = pos === -1 ? displayed.length : pos;
+        ref.current.setSelectionRange(cur, cur);
+      }
+    }, 0);
+  };
+
+  useEffect(() => {
+    if (document.activeElement === ref.current) {
+      setCursorToNextEmpty();
+    }
+  }, [displayed]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value;
     const newDigits = extractDigits(raw);
@@ -47,25 +63,8 @@ export default function PhoneInput({ value, onChange, className, required }: Pho
     }
   };
 
-  const handleFocus = () => {
-    setTimeout(() => {
-      if (ref.current) {
-        const pos = displayed.indexOf('_');
-        const cur = pos === -1 ? displayed.length : pos;
-        ref.current.setSelectionRange(cur, cur);
-      }
-    }, 0);
-  };
-
-  const handleClick = () => {
-    setTimeout(() => {
-      if (ref.current) {
-        const pos = displayed.indexOf('_');
-        const cur = pos === -1 ? displayed.length : pos;
-        ref.current.setSelectionRange(cur, cur);
-      }
-    }, 0);
-  };
+  const handleFocus = () => { setCursorToNextEmpty(); };
+  const handleClick = () => { setCursorToNextEmpty(); };
 
   return (
     <input
