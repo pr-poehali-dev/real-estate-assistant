@@ -349,7 +349,7 @@ const Index = () => {
               <div className="text-muted-foreground text-sm">Мы свяжемся с вами в ближайшее время.</div>
             </div>
           ) : (
-            <form className="space-y-3 mt-2" onSubmit={handleSubmit}>
+            <form className="space-y-3 mt-2" onSubmit={handleSubmit} onKeyDown={e => { if (e.key === 'Enter' && (e.target as HTMLElement).tagName !== 'TEXTAREA') { e.preventDefault(); const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea')); const idx = fields.indexOf(e.target as HTMLElement); if (idx >= 0 && idx < fields.length - 1) fields[idx + 1].focus(); } }}>
               <input
                 type="text"
                 placeholder="Ваше имя"
