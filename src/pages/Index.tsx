@@ -40,7 +40,7 @@ const DIRECTIONS = [
 ];
 
 const STEPS = [
-  { num: '01', title: 'Оставляете запрос', text: 'В соцсетях или на онлайн-встрече — как удобно вам.' },
+  { num: '01', title: 'Оставляете запрос', text: 'Напишите нам или закажите обратный звонок — как удобно вам.' },
   { num: '02', title: 'Подбираем объекты', text: 'Агент с многолетним опытом готовит варианты под вас.' },
   { num: '03', title: 'Получаете результат', text: 'Никуда не ехать. Готовая подборка и сопровождение — бесплатно.' },
 ];
@@ -73,7 +73,7 @@ const Index = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: f.name, phone: f.phone, social: f.social, request: f.request, callback: f.callback,
-          source: mode === 'social' ? 'Написать в соцсетях' : 'Онлайн-встреча'
+          source: mode === 'social' ? 'Написать в соцсетях' : 'Обратный звонок'
         })
       });
       setF({ sent: true, name: '', phone: '', social: '', request: '', callback: false });
@@ -112,7 +112,7 @@ const Index = () => {
                 <Icon name="MessageCircle" size={20} /> Написать запрос
               </Button>
               <Button onClick={() => openRequest('meeting')} size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta">
-                <Icon name="Video" size={20} /> Онлайн-встреча
+                <Icon name="Phone" size={20} /> Обратный звонок
               </Button>
             </div>
             <div className="flex items-center gap-6 mt-10 text-sm text-muted-foreground">
@@ -301,13 +301,13 @@ const Index = () => {
               <h2 className="font-display md:text-6xl mx-[5px] my-0 py-0 px-[3px] text-center font-bold text-6xl text-[#402f28]">
                 Поиск недвижимости<br />начинается <span className="italic text-white">здесь</span>
               </h2>
-              <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-6">Выберите комфортный способ связи: напишите нам в социальных сетях или запланируйте бесплатную онлайн-встречу с нашим агентом.</p>
+              <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-6">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
               <div className="flex flex-wrap justify-center gap-4 mb-6">
                 <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base">
                   <Icon name="MessageCircle" size={20} /> Написать в соцсетях
                 </Button>
                 <Button onClick={() => openRequest('meeting')} size="lg" className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-14 text-base">
-                  <Icon name="Video" size={20} /> Записаться на встречу
+                  <Icon name="Phone" size={20} /> Обратный звонок
                 </Button>
               </div>
               <div className="flex flex-wrap justify-center gap-6">
@@ -333,12 +333,12 @@ const Index = () => {
           {!f.sent && (
             <DialogHeader>
               <DialogTitle className="font-display text-3xl font-semibold">
-                {mode === 'social' ? 'Запрос на подбор' : 'Онлайн-встреча'}
+                {mode === 'social' ? 'Запрос на подбор' : 'Обратный звонок'}
               </DialogTitle>
               <DialogDescription>
                 {mode === 'social'
                   ? 'Опишите, что вы ищете — мы подберём объекты бесплатно.'
-                  : 'Оставьте контакты — агент свяжется и проконсультирует бесплатно.'}
+                  : 'Оставьте номер — агент перезвонит и проконсультирует бесплатно.'}
               </DialogDescription>
             </DialogHeader>
           )}
