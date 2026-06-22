@@ -119,6 +119,7 @@ const Index = () => {
             <div className="flex items-center gap-6 mt-10 text-sm text-muted-foreground">
               <span className="flex items-center gap-2"><Icon name="Check" size={18} className="text-terracotta" /> Без условий</span>
               <span className="flex items-center gap-2"><Icon name="Check" size={18} className="text-terracotta" /> Вы ничего не платите</span>
+              <span className="flex items-center gap-2"><Icon name="MapPin" size={18} className="text-terracotta" /> Москва и МО</span>
             </div>
           </div>
           <div className="relative animate-fade-up" style={{ animationDelay: '150ms' }}>
