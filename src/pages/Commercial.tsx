@@ -42,7 +42,7 @@ const Commercial = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero */}
-      <section className="relative pt-36 pb-24 px-4">
+      <section id="hero" className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/25 blob-shape animate-float-slow -z-0" />
         <div className="absolute top-48 -left-20 w-72 h-72 blob-shape-2 animate-float-slow -z-0 bg-[#c4855a22]" style={{ animationDelay: '1.5s' }} />
         <div className="absolute bottom-0 right-1/3 w-56 h-56 blob-shape animate-float-slow -z-0 bg-[#a8c4a220]" style={{ animationDelay: '3s' }} />
@@ -66,7 +66,7 @@ const Commercial = () => {
       </section>
 
       {/* Types */}
-      <section className="py-20 px-4 bg-muted/40">
+      <section id="types" className="py-20 px-4 bg-muted/40">
         <div className="container max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Что мы находим</span>
@@ -91,7 +91,7 @@ const Commercial = () => {
       </section>
 
       {/* Advantages */}
-      <section className="py-20 px-4">
+      <section id="advantages" className="py-20 px-4">
         <div className="container max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Наши преимущества</span>
@@ -114,7 +114,7 @@ const Commercial = () => {
       </section>
 
       {/* Capabilities + Investment */}
-      <section className="py-20 px-4 bg-muted/40">
+      <section id="capabilities" className="py-20 px-4 bg-muted/40">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
@@ -150,7 +150,7 @@ const Commercial = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4">
+      <section id="cta" className="py-20 px-4">
         <div className="container max-w-5xl">
           <div className="relative bg-terracotta rounded-[3rem] p-10 md:p-16 text-center overflow-hidden">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />

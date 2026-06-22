@@ -56,7 +56,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero */}
-      <section className="relative pt-36 pb-24 px-4">
+      <section id="hero" className="relative pt-36 pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
         <div className="absolute bottom-0 -left-32 w-80 h-80 blob-shape-2 animate-float-slow -z-0 bg-[#b060432b]" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
@@ -124,7 +124,7 @@ const Index = () => {
       </section>
 
       {/* Why Us */}
-      <section className="py-24 px-4">
+      <section id="why" className="py-24 px-4">
         <div className="container max-w-6xl">
           <div className="text-center mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Зачем мы нужны</span>
