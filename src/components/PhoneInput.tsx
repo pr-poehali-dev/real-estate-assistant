@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 interface PhoneInputProps {
   value: string;
@@ -43,12 +43,6 @@ export default function PhoneInput({ value, onChange, className, required }: Pho
       }
     }, 0);
   };
-
-  useEffect(() => {
-    if (document.activeElement === ref.current) {
-      setCursorToNextEmpty();
-    }
-  }, [displayed]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const raw = e.target.value;
