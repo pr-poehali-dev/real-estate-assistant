@@ -303,10 +303,10 @@ const Index = () => {
               </h2>
               <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-6">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
               <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base">
-                  <Icon name="MessageCircle" size={20} /> Написать в соцсетях
+                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base font-medium">
+                  <Icon name="MessageCircle" size={20} /> Написать
                 </Button>
-                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-14 text-base">
+                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-14 text-base font-medium">
                   <Icon name="Phone" size={20} /> Обратный звонок
                 </Button>
               </div>
