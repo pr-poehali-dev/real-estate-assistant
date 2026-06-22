@@ -329,16 +329,18 @@ const Index = () => {
       {/* Request dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="rounded-[2rem] max-w-md">
-          <DialogHeader>
-            <DialogTitle className="font-display text-3xl font-semibold">
-              {mode === 'social' ? 'Запрос на подбор' : 'Онлайн-встреча'}
-            </DialogTitle>
-            <DialogDescription>
-              {mode === 'social'
-                ? 'Опишите, что вы ищете — мы подберём объекты бесплатно.'
-                : 'Оставьте контакты — агент свяжется и проконсультирует бесплатно.'}
-            </DialogDescription>
-          </DialogHeader>
+          {!sent && (
+            <DialogHeader>
+              <DialogTitle className="font-display text-3xl font-semibold">
+                {mode === 'social' ? 'Запрос на подбор' : 'Онлайн-встреча'}
+              </DialogTitle>
+              <DialogDescription>
+                {mode === 'social'
+                  ? 'Опишите, что вы ищете — мы подберём объекты бесплатно.'
+                  : 'Оставьте контакты — агент свяжется и проконсультирует бесплатно.'}
+              </DialogDescription>
+            </DialogHeader>
+          )}
           {sent ? (
             <div className="py-8 text-center space-y-2">
               <div className="text-4xl">✓</div>

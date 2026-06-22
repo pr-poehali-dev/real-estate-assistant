@@ -205,12 +205,14 @@ const Commercial = () => {
       {/* Dialog */}
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="rounded-[2rem] max-w-md">
-          <DialogHeader>
-            <DialogTitle className="font-display text-3xl font-semibold">Запрос на коммерцию</DialogTitle>
-            <DialogDescription>
-              Опишите объект — мы подберём варианты и свяжемся с вами бесплатно.
-            </DialogDescription>
-          </DialogHeader>
+          {!sent && (
+            <DialogHeader>
+              <DialogTitle className="font-display text-3xl font-semibold">Запрос на коммерцию</DialogTitle>
+              <DialogDescription>
+                Опишите объект — мы подберём варианты и свяжемся с вами бесплатно.
+              </DialogDescription>
+            </DialogHeader>
+          )}
           {sent ? (
             <div className="py-8 text-center space-y-2">
               <div className="text-4xl">✓</div>
