@@ -69,23 +69,23 @@ const Commercial = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero */}
-      <section id="hero" className="relative pt-36 pb-24 px-4">
+      <section id="hero" className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/25 blob-shape animate-float-slow -z-0" />
         <div className="absolute top-48 -left-20 w-72 h-72 blob-shape-2 animate-float-slow -z-0 bg-[#c4855a22]" style={{ animationDelay: '1.5s' }} />
         <div className="absolute bottom-0 right-1/3 w-56 h-56 blob-shape animate-float-slow -z-0 bg-[#a8c4a220]" style={{ animationDelay: '3s' }} />
         <div className="container max-w-6xl relative z-10">
           <div className="max-w-3xl animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-5">
               <Icon name="Building2" size={16} /> Дополнительная услуга
             </span>
-            <h1 className="font-display text-6xl md:text-7xl font-bold leading-[0.95] mb-6 text-balance">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-5 text-balance">
               Коммерческая<br />
               <span className="text-terracotta italic">недвижимость</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl">
+            <p className="text-base md:text-lg text-muted-foreground mb-7 max-w-2xl">
               Находим офисные, торговые, индустриальные и социальные объекты по преимущественно низким ценам — для аренды, ведения бизнеса или выгодной перепродажи. Полное сопровождение сделки включено.
             </p>
-            <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base">
+            <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base w-full sm:w-auto">
               <Icon name="MessageCircle" size={20} /> Получить консультацию
             </Button>
           </div>
@@ -177,19 +177,19 @@ const Commercial = () => {
       </section>
 
       {/* CTA */}
-      <section id="cta" className="py-20 px-4">
+      <section id="cta" className="py-16 md:py-20 px-4">
         <div className="container max-w-5xl">
-          <div className="relative bg-terracotta rounded-[3rem] p-10 md:p-16 text-center overflow-hidden">
+          <div className="relative bg-terracotta rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-center overflow-hidden">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10">
-              <h2 className="font-display text-5xl md:text-6xl font-bold text-white mb-4 text-balance">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 text-balance">
                 Нужен коммерческий объект?
               </h2>
-              <p className="text-white/90 text-lg max-w-xl mx-auto mb-10">
+              <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto mb-8">
                 Оставьте запрос — подберём подходящие варианты по выгодной цене и проведём сделку под ключ.
               </p>
-              <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base">
+              <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base w-full sm:w-auto">
                 <Icon name="MessageCircle" size={20} /> Оставить запрос
               </Button>
             </div>
@@ -207,7 +207,7 @@ const Commercial = () => {
 
       {/* Dialog */}
       <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setPhone(''); setSocial(''); setRequest(''); setCallback(false); setSent(false); } setOpen(v); }}>
-        <DialogContent className="rounded-[2rem] max-w-md">
+        <DialogContent className="rounded-[2rem] max-w-md w-[calc(100%-2rem)] max-h-[90dvh] overflow-y-auto">
           {!sent && (
             <DialogHeader>
               <DialogTitle className="font-display text-3xl font-semibold">Запрос на коммерцию</DialogTitle>

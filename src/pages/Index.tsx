@@ -86,12 +86,12 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero */}
-      <section id="hero" className="relative pt-36 pb-24 px-4">
+      <section id="hero" className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-4">
         <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/30 blob-shape animate-float-slow -z-0" />
         <div className="absolute bottom-0 -left-32 w-80 h-80 blob-shape-2 animate-float-slow -z-0 bg-[#b060432b]" style={{ animationDelay: '2s' }} />
-        <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="animate-fade-up">
-            <div className="flex flex-col items-start gap-2 mb-6">
+            <div className="flex flex-col items-start gap-2 mb-5">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/12 text-terracotta text-sm font-medium">
                 <Icon name="Shield" size={16} /> Спокойствие сделки
               </span>
@@ -102,29 +102,28 @@ const Index = () => {
                 <Icon name="Key" size={16} /> Вы принимаете ключевое решение
               </span>
             </div>
-            <h1 className="font-display text-6xl md:text-7xl font-bold leading-[0.95] mb-6 text-balance">
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-5 text-balance">
               Найдём дом,<br />где вам будет <span className="text-terracotta italic">тепло</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-md">
+            <p className="text-base md:text-lg text-muted-foreground mb-7 max-w-md">
               Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Button onClick={() => openRequest('social')} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base w-full sm:w-auto">
                 <Icon name="MessageCircle" size={20} /> Написать запрос
               </Button>
-              <Button onClick={() => openRequest('meeting')} size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta">
+              <Button onClick={() => openRequest('meeting')} size="lg" variant="outline" className="rounded-full px-8 h-14 text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta w-full sm:w-auto">
                 <Icon name="Phone" size={20} /> Обратный звонок
               </Button>
             </div>
-            <div className="flex items-center gap-6 mt-10 text-sm text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-4 mt-8 text-sm text-muted-foreground">
               <span className="flex items-center gap-2"><Icon name="Check" size={18} className="text-terracotta" /> Без условий</span>
               <span className="flex items-center gap-2"><Icon name="Check" size={18} className="text-terracotta" /> Вы ничего не платите</span>
               <span className="flex items-center gap-2"><Icon name="MapPin" size={18} className="text-terracotta" /> Москва и МО</span>
             </div>
           </div>
-          <div className="relative animate-fade-up" style={{ animationDelay: '150ms' }}>
+          <div className="relative animate-fade-up hidden lg:block" style={{ animationDelay: '150ms' }}>
             <img src={HERO_IMG} alt="Современный дом" className="w-full h-[480px] object-cover blob-shape shadow-2xl" />
-
           </div>
         </div>
       </section>
@@ -295,21 +294,21 @@ const Index = () => {
       </section>
 
       {/* Contacts / CTA */}
-      <section id="contacts" className="py-24 px-4">
+      <section id="contacts" className="py-16 md:py-24 px-4">
         <div className="container max-w-5xl">
-          <div className="relative text-center overflow-hidden py-10 px-[50px] rounded-3xl mx-[75px] my-[55px] bg-[#b06043eb]">
+          <div className="relative text-center overflow-hidden py-10 px-5 md:px-14 rounded-3xl bg-[#b06043eb]">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 blob-shape-2 bg-[#ffffff1a]" />
             <div className="relative z-10">
-              <h2 className="font-display md:text-6xl mx-[5px] my-0 py-0 px-[3px] text-center font-bold text-6xl text-[#402f28]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-center text-[#402f28] mb-4">
                 Поиск недвижимости<br />начинается <span className="italic text-white">здесь</span>
               </h2>
-              <p className="text-white/90 text-lg max-w-xl px-0 mx-32 my-6">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base font-medium">
+              <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto my-5">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3 mb-6">
+                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base font-medium w-full sm:w-auto">
                   <Icon name="MessageCircle" size={20} /> Написать
                 </Button>
-                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-14 text-base font-medium">
+                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-8 h-14 text-base font-medium w-full sm:w-auto">
                   <Icon name="Phone" size={20} /> Обратный звонок
                 </Button>
               </div>
@@ -332,7 +331,7 @@ const Index = () => {
 
       {/* Request dialog */}
       <Dialog open={open} onOpenChange={(v) => { if (!v) setForms(prev => ({ ...prev, [mode]: emptyForm() })); setOpen(v); }}>
-        <DialogContent className="rounded-[2rem] max-w-md">
+        <DialogContent className="rounded-[2rem] max-w-md w-[calc(100%-2rem)] max-h-[90dvh] overflow-y-auto">
           {!f.sent && (
             <DialogHeader>
               <DialogTitle className="font-display text-3xl font-semibold">

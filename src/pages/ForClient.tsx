@@ -8,8 +8,8 @@ const ForClient = () => {
         <div className="absolute bottom-20 right-1/4 w-60 h-60 blob-shape animate-float-slow bg-[#8faf8f1a]" style={{ animationDelay: '4s' }} />
       </div>
 
-      <main className="flex-1 container max-w-3xl px-4 pt-36 pb-24 relative z-10">
-        <h1 className="font-display text-4xl md:text-5xl font-semibold mb-10 leading-tight">
+      <main className="flex-1 container max-w-3xl px-4 pt-28 md:pt-36 pb-16 md:pb-24 relative z-10">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-8 leading-tight">
           Клиент — в центре внимания
         </h1>
 
