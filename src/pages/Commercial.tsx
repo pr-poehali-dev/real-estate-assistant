@@ -85,7 +85,7 @@ const Commercial = () => {
             <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-2xl">
               Находим офисные, торговые, индустриальные и социальные объекты по преимущественно низким ценам — для аренды, ведения бизнеса или выгодной перепродажи. Полное сопровождение сделки включено.
             </p>
-            <Button onClick={() => setOpen(true)} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-6 h-11 text-sm w-full sm:w-auto">
+            <Button onClick={() => setOpen(true)} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-6 md:px-8 h-11 md:h-14 text-sm md:text-base w-full sm:w-auto">
               <Icon name="MessageCircle" size={16} /> Получить консультацию
             </Button>
           </div>
@@ -95,21 +95,22 @@ const Commercial = () => {
       {/* Types */}
       <section id="types" className="py-10 md:py-16 px-4 bg-muted/40">
         <div className="container max-w-6xl">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 md:mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Что мы находим</span>
-            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Типы объектов</h2>
+            <h2 className="font-display text-2xl md:text-5xl font-semibold mt-3">Типы объектов</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TYPES.map((t, i) => (
               <div
                 key={t.title}
-                className="bg-card rounded-2xl p-5 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
+                className="bg-card rounded-2xl md:rounded-[2rem] p-5 md:p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center mb-5">
-                  <Icon name={t.icon} size={20} className="text-terracotta" />
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
+                  <Icon name={t.icon} size={20} className="text-terracotta md:hidden" />
+                  <Icon name={t.icon} size={26} className="text-terracotta hidden md:block" />
                 </div>
-                <h3 className="font-display text-base font-semibold mb-2">{t.title}</h3>
+                <h3 className="font-display text-base md:text-xl font-semibold mb-2">{t.title}</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">{t.text}</p>
               </div>
             ))}
@@ -120,18 +121,19 @@ const Commercial = () => {
       {/* Advantages */}
       <section id="advantages" className="py-10 md:py-16 px-4">
         <div className="container max-w-6xl">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 md:mb-14">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Наши преимущества</span>
-            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Почему выбирают нас</h2>
+            <h2 className="font-display text-2xl md:text-5xl font-semibold mt-3">Почему выбирают нас</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             {ADVANTAGES.map((a, i) => (
-              <div key={a.title} className="flex gap-5 bg-card rounded-2xl p-5 border border-border animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center shrink-0">
-                  <Icon name={a.icon} size={20} className="text-terracotta" />
+              <div key={a.title} className="flex gap-5 bg-card rounded-2xl md:rounded-[2rem] p-5 md:p-8 border border-border animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-terracotta/12 flex items-center justify-center shrink-0">
+                  <Icon name={a.icon} size={20} className="text-terracotta md:hidden" />
+                  <Icon name={a.icon} size={26} className="text-terracotta hidden md:block" />
                 </div>
                 <div>
-                  <h3 className="font-display text-base font-semibold mb-2">{a.title}</h3>
+                  <h3 className="font-display text-base md:text-xl font-semibold mb-2">{a.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{a.text}</p>
                 </div>
               </div>
@@ -146,7 +148,7 @@ const Commercial = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Возможности</span>
-              <h2 className="font-display text-xl md:text-2xl font-semibold mt-3 mb-8">Что мы делаем для вас</h2>
+              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-8">Что мы делаем для вас</h2>
               <div className="space-y-3">
                 {CAPABILITIES.map((c, i) => (
                   <div key={i} className="flex gap-4 items-start bg-card rounded-2xl p-4 border border-border">
@@ -160,7 +162,7 @@ const Commercial = () => {
             </div>
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Инвестиции</span>
-              <h2 className="font-display text-xl md:text-2xl font-semibold mt-3 mb-6">Зарабатывайте на недвижимости</h2>
+              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-6">Зарабатывайте на недвижимости</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Часть наших постоянных клиентов приобретают коммерческие объекты для последующей перепродажи или сдачи в аренду. Мы находим объекты по ценам ниже рынка — это открывает возможность получить доход уже на старте.
               </p>
@@ -189,7 +191,7 @@ const Commercial = () => {
               <p className="text-white/90 text-sm md:text-base max-w-xl mx-auto mb-6">
                 Оставьте запрос — подберём подходящие варианты по выгодной цене и проведём сделку под ключ.
               </p>
-              <Button onClick={() => setOpen(true)} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-6 h-11 text-sm w-full sm:w-auto">
+              <Button onClick={() => setOpen(true)} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-6 md:px-8 h-11 md:h-14 text-sm md:text-base w-full sm:w-auto">
                 <Icon name="MessageCircle" size={16} /> Оставить запрос
               </Button>
             </div>
