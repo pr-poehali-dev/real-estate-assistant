@@ -9,11 +9,11 @@ const ForClient = () => {
       </div>
 
       <main className="flex-1 container max-w-3xl px-4 pt-28 md:pt-36 pb-16 md:pb-24 relative z-10">
-        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold mb-8 leading-tight">
+        <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mb-5 leading-tight">
           Клиент — в центре внимания
         </h1>
 
-        <div className="space-y-6 text-[17px] leading-relaxed text-foreground/80">
+        <div className="space-y-4 text-sm sm:text-base leading-relaxed text-foreground/80">
           <p>
             Важно понять, что рынок жилья существует в первую очередь для удовлетворения потребностей покупателей, а не для выгоды тех, кто участвует в процессе продажи. Это означает, что все решения, принимаемые в сфере недвижимости, должны быть ориентированы на конечного потребителя, на того, кто ищет дом или инвестирует в недвижимость.
           </p>

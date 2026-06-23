@@ -75,18 +75,18 @@ const Commercial = () => {
         <div className="absolute bottom-0 right-1/3 w-56 h-56 blob-shape animate-float-slow -z-0 bg-[#a8c4a220]" style={{ animationDelay: '3s' }} />
         <div className="container max-w-6xl relative z-10">
           <div className="max-w-3xl animate-fade-up">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium mb-5">
-              <Icon name="Building2" size={16} /> Дополнительная услуга
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-medium mb-4">
+              <Icon name="Building2" size={13} /> Дополнительная услуга
             </span>
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-5 text-balance">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-4 text-balance">
               Коммерческая<br />
               <span className="text-terracotta italic">недвижимость</span>
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground mb-7 max-w-2xl">
+            <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-2xl">
               Находим офисные, торговые, индустриальные и социальные объекты по преимущественно низким ценам — для аренды, ведения бизнеса или выгодной перепродажи. Полное сопровождение сделки включено.
             </p>
-            <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-8 h-14 text-base w-full sm:w-auto">
-              <Icon name="MessageCircle" size={20} /> Получить консультацию
+            <Button onClick={() => setOpen(true)} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-6 h-11 text-sm w-full sm:w-auto">
+              <Icon name="MessageCircle" size={16} /> Получить консультацию
             </Button>
           </div>
         </div>
@@ -183,14 +183,14 @@ const Commercial = () => {
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
             <div className="relative z-10">
-              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-4 text-balance">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 text-balance">
                 Нужен коммерческий объект?
               </h2>
-              <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto mb-8">
+              <p className="text-white/90 text-sm md:text-base max-w-xl mx-auto mb-6">
                 Оставьте запрос — подберём подходящие варианты по выгодной цене и проведём сделку под ключ.
               </p>
-              <Button onClick={() => setOpen(true)} size="lg" className="rounded-full bg-white text-terracotta hover:bg-white/90 px-8 h-14 text-base w-full sm:w-auto">
-                <Icon name="MessageCircle" size={20} /> Оставить запрос
+              <Button onClick={() => setOpen(true)} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-6 h-11 text-sm w-full sm:w-auto">
+                <Icon name="MessageCircle" size={16} /> Оставить запрос
               </Button>
             </div>
           </div>
