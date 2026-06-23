@@ -93,23 +93,23 @@ const Commercial = () => {
       </section>
 
       {/* Types */}
-      <section id="types" className="py-20 px-4 bg-muted/40">
+      <section id="types" className="py-10 md:py-16 px-4 bg-muted/40">
         <div className="container max-w-6xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Что мы находим</span>
-            <h2 className="font-display text-5xl font-semibold mt-3">Типы объектов</h2>
+            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Типы объектов</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {TYPES.map((t, i) => (
               <div
                 key={t.title}
-                className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
+                className="bg-card rounded-2xl p-5 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
-                  <Icon name={t.icon} size={26} className="text-terracotta" />
+                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center mb-5">
+                  <Icon name={t.icon} size={20} className="text-terracotta" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{t.title}</h3>
+                <h3 className="font-display text-base font-semibold mb-2">{t.title}</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">{t.text}</p>
               </div>
             ))}
@@ -118,20 +118,20 @@ const Commercial = () => {
       </section>
 
       {/* Advantages */}
-      <section id="advantages" className="py-20 px-4">
+      <section id="advantages" className="py-10 md:py-16 px-4">
         <div className="container max-w-6xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Наши преимущества</span>
-            <h2 className="font-display text-5xl font-semibold mt-3">Почему выбирают нас</h2>
+            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Почему выбирают нас</h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             {ADVANTAGES.map((a, i) => (
-              <div key={a.title} className="flex gap-5 bg-card rounded-[2rem] p-8 border border-border animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center shrink-0">
-                  <Icon name={a.icon} size={26} className="text-terracotta" />
+              <div key={a.title} className="flex gap-5 bg-card rounded-2xl p-5 border border-border animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center shrink-0">
+                  <Icon name={a.icon} size={20} className="text-terracotta" />
                 </div>
                 <div>
-                  <h3 className="font-display text-xl font-semibold mb-2">{a.title}</h3>
+                  <h3 className="font-display text-base font-semibold mb-2">{a.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{a.text}</p>
                 </div>
               </div>
@@ -141,12 +141,12 @@ const Commercial = () => {
       </section>
 
       {/* Capabilities + Investment */}
-      <section id="capabilities" className="py-20 px-4 bg-muted/40">
+      <section id="capabilities" className="py-10 md:py-16 px-4 bg-muted/40">
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Возможности</span>
-              <h2 className="font-display text-4xl font-semibold mt-3 mb-8">Что мы делаем для вас</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold mt-3 mb-8">Что мы делаем для вас</h2>
               <div className="space-y-3">
                 {CAPABILITIES.map((c, i) => (
                   <div key={i} className="flex gap-4 items-start bg-card rounded-2xl p-4 border border-border">
@@ -160,7 +160,7 @@ const Commercial = () => {
             </div>
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Инвестиции</span>
-              <h2 className="font-display text-4xl font-semibold mt-3 mb-6">Зарабатывайте на недвижимости</h2>
+              <h2 className="font-display text-xl md:text-2xl font-semibold mt-3 mb-6">Зарабатывайте на недвижимости</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Часть наших постоянных клиентов приобретают коммерческие объекты для последующей перепродажи или сдачи в аренду. Мы находим объекты по ценам ниже рынка — это открывает возможность получить доход уже на старте.
               </p>

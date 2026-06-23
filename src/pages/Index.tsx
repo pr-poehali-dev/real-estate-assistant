@@ -129,23 +129,23 @@ const Index = () => {
       </section>
 
       {/* Services */}
-      <section id="services" className="py-24 px-4 bg-muted/40">
+      <section id="services" className="py-12 md:py-20 px-4 bg-muted/40">
         <div className="container max-w-6xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Что мы делаем</span>
-            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3">Услуги под ключ</h2>
+            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Услуги под ключ</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((s, i) => (
               <div
                 key={s.title}
-                className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
+                className="bg-card rounded-2xl p-5 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${i * 80}ms` }}
               >
-                <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
-                  <Icon name={s.icon} size={26} className="text-terracotta" />
+                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center mb-5">
+                  <Icon name={s.icon} size={20} className="text-terracotta" />
                 </div>
-                <h3 className="font-display text-2xl font-semibold mb-2">{s.title}</h3>
+                <h3 className="font-display text-base font-semibold mb-2">{s.title}</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">{s.text}</p>
               </div>
             ))}
@@ -154,11 +154,11 @@ const Index = () => {
       </section>
 
       {/* Why Us */}
-      <section id="why" className="py-24 px-4">
+      <section id="why" className="py-12 md:py-20 px-4">
         <div className="container max-w-6xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Зачем мы нужны</span>
-            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 text-balance">
+            <h2 className="font-display text-xl md:text-3xl font-semibold mt-3 text-balance">
               Рынок недвижимости должен служить{' '}
               <span className="text-terracotta italic">покупателю</span>
               {' —'}
@@ -173,13 +173,13 @@ const Index = () => {
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-start bg-transparent">
             <div className="space-y-4">
-              <h3 className="font-display text-2xl font-semibold mb-6 text-muted-foreground">Вам больше не нужно:</h3>
+              <h3 className="font-display text-base font-semibold mb-6 text-muted-foreground">Вам больше не нужно:</h3>
               {[
                 'Тратить время на самостоятельный поиск квартиры и сталкиваться с фейковыми объявлениями',
                 'Часами искать надёжного агента среди сотен предложений',
                 'Разбираться в бесконечном потоке рекламы и платных услуг на сторонних сайтах',
               ].map((text, i) => (
-                <div key={i} className="flex gap-4 bg-muted/60 rounded-2xl p-5">
+                <div key={i} className="flex gap-4 bg-muted/60 rounded-2xl p-3">
                   <div className="w-8 h-8 rounded-full bg-terracotta/15 flex items-center justify-center shrink-0 mt-0.5">
                     <Icon name="X" size={16} className="text-terracotta" />
                   </div>
@@ -188,9 +188,9 @@ const Index = () => {
               ))}
             </div>
             <div className="space-y-4">
-              <h3 className="font-display text-2xl font-semibold mb-6">Вы можете:</h3>
-              <div className="bg-accent rounded-2xl p-6 mb-4">
-                <p className="text-lg font-medium">Доверить всю эту работу нам — и использовать сэкономленное время для себя.</p>
+              <h3 className="font-display text-base font-semibold mb-6">Вы можете:</h3>
+              <div className="bg-accent rounded-2xl p-4 mb-3">
+                <p className="text-sm font-medium">Доверить всю эту работу нам — и использовать сэкономленное время для себя.</p>
               </div>
               <p className="leading-relaxed text-base text-muted-foreground">Мы выполним всё именно так, как вы задумали. С полной уверенностью в качестве каждого этапа — от первого звонка до получения ключей.</p>
               {[
@@ -198,7 +198,7 @@ const Index = () => {
                 { icon: 'Zap', label: 'Быстро', text: 'Заявки клиентов рассматриваются в приоритетном порядке' },
                 { icon: 'Star', label: 'Профессионально', text: 'Составим договор и соберём полный пакет необходимых документов' },
               ].map((item) => (
-                <div key={item.label} className="flex gap-4 bg-card rounded-2xl p-5 border border-border">
+                <div key={item.label} className="flex gap-4 bg-card rounded-2xl p-3 border border-border">
                   <div className="w-10 h-10 rounded-2xl bg-terracotta/12 flex items-center justify-center shrink-0">
                     <Icon name={item.icon} size={20} className="text-terracotta" />
                   </div>
@@ -214,17 +214,17 @@ const Index = () => {
       </section>
 
       {/* About + Steps */}
-      <section id="about" className="py-24 px-4 bg-muted/40">
+      <section id="about" className="py-12 md:py-20 px-4 bg-muted/40">
         <div className="container max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">О компании</span>
-              <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3 mb-6 text-balance">
+              <h2 className="font-display text-2xl md:text-3xl font-semibold mt-3 mb-6 text-balance">
                 История и команда «Дом Мечты»
               </h2>
-              <p className="text-lg text-muted-foreground mb-4">Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2025 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.</p>
-              <p className="text-lg text-muted-foreground mb-4">Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.</p>
-              <p className="text-lg text-muted-foreground mb-6">«Дом Мечты» — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать наилучшие условия именно для вас.
+              <p className="text-sm text-muted-foreground mb-4">Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2025 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.</p>
+              <p className="text-sm text-muted-foreground mb-4">Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.</p>
+              <p className="text-sm text-muted-foreground mb-6">«Дом Мечты» — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать наилучшие условия именно для вас.
 </p>
               <div className="bg-card rounded-2xl p-6 border border-border">
                 <p className="font-display text-xl font-semibold mb-2">Результат гарантирован</p>
@@ -236,12 +236,12 @@ const Index = () => {
               {STEPS.map((step, i) => (
                 <div
                   key={step.num}
-                  className="flex gap-5 bg-card rounded-[2rem] p-6 border border-border animate-fade-up"
+                  className="flex gap-5 bg-card rounded-2xl p-4 border border-border animate-fade-up"
                   style={{ animationDelay: `${i * 100}ms` }}
                 >
-                  <div className="font-display text-4xl font-bold text-terracotta/40">{step.num}</div>
+                  <div className="font-display text-2xl font-bold text-terracotta/40">{step.num}</div>
                   <div>
-                    <h3 className="font-display text-2xl font-semibold mb-1">{step.title}</h3>
+                    <h3 className="font-display text-base font-semibold mb-1">{step.title}</h3>
                     <p className="text-muted-foreground">{step.text}</p>
                   </div>
                 </div>
@@ -252,28 +252,28 @@ const Index = () => {
       </section>
 
       {/* Directions */}
-      <section className="py-24 px-4">
+      <section className="py-12 md:py-20 px-4">
         <div className="container max-w-6xl">
-          <div className="text-center mb-14">
+          <div className="text-center mb-8">
             <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Направления</span>
-            <h2 className="font-display text-5xl md:text-6xl font-semibold mt-3">Основные направления</h2>
+            <h2 className="font-display text-2xl md:text-4xl font-semibold mt-3">Основные направления</h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {DIRECTIONS.map((d, i) => (
-              <div key={d.title} className="bg-card rounded-[2rem] p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="w-14 h-14 rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
-                  <Icon name={d.icon} size={26} className="text-terracotta" />
+              <div key={d.title} className="bg-card rounded-2xl p-5 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
+                <div className="w-10 h-10 rounded-xl bg-terracotta/12 flex items-center justify-center mb-5">
+                  <Icon name={d.icon} size={20} className="text-terracotta" />
                 </div>
-                <h3 className="font-display text-xl font-semibold mb-2">{d.title}</h3>
+                <h3 className="font-display text-base font-semibold mb-2">{d.title}</h3>
                 <p className="text-muted-foreground text-[15px] leading-relaxed">{d.text}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-muted/60 rounded-[2rem] p-10 md:p-14">
+          <div className="bg-muted/60 rounded-[2rem] p-6 md:p-10">
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
-                <h3 className="font-display text-3xl font-semibold mb-4">Наши возможности</h3>
+                <h3 className="font-display text-xl font-semibold mb-4">Наши возможности</h3>
                 <p className="text-muted-foreground mb-6 leading-relaxed">Некоторые из наших постоянных клиентов зарабатывают на объектах недвижимости, которые мы находим для них, за счёт покупки и дальнейшей перепродажи по выгодной цене.</p>
                 <p className="text-muted-foreground leading-relaxed">Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты, мы находим их по преимущественно низким ценам.</p>
                 <p className="text-muted-foreground leading-relaxed mt-4">После покупки мы готовы помочь с ремонтом: подберём проверенного партнёра-подрядчика, который воплотит лучший дизайн вашей квартиры — под ваш вкус и бюджет.</p>
@@ -294,7 +294,7 @@ const Index = () => {
       </section>
 
       {/* Contacts / CTA */}
-      <section id="contacts" className="py-16 md:py-24 px-4">
+      <section id="contacts" className="py-10 md:py-20 px-4">
         <div className="container max-w-5xl">
           <div className="relative text-center overflow-hidden py-8 px-5 md:px-12 rounded-3xl bg-[#b06043eb]">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
