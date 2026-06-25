@@ -102,7 +102,7 @@ const Index = () => {
                 <Icon name="Key" size={13} className="md:hidden" /><Icon name="Key" size={16} className="hidden md:block" /> Вы принимаете ключевое решение
               </span>
             </div>
-            <h1 className="font-display text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5 text-balance">
+            <h1 className="font-display text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5">
               Найдём дом,<br />где вам будет <span className="text-terracotta italic">тепло</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-7 max-w-md">
