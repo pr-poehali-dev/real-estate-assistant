@@ -91,29 +91,29 @@ const Index = () => {
         <div className="absolute bottom-0 -left-32 w-80 h-80 blob-shape-2 animate-float-slow -z-0 bg-[#b060432b]" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="animate-fade-up">
-            <div className="flex flex-col items-start gap-2 mb-5">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/12 text-terracotta text-sm font-medium">
-                <Icon name="Shield" size={16} /> Спокойствие сделки
+            <div className="flex flex-col items-start gap-1.5 md:gap-2 mb-4 md:mb-5">
+              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-terracotta/12 text-terracotta text-xs md:text-sm font-medium">
+                <Icon name="Shield" size={13} className="md:hidden" /><Icon name="Shield" size={16} className="hidden md:block" /> Спокойствие сделки
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium">
-                <Icon name="Sparkles" size={16} /> Подбор недвижимости — бесплатно
+              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-accent text-accent-foreground text-xs md:text-sm font-medium">
+                <Icon name="Sparkles" size={13} className="md:hidden" /><Icon name="Sparkles" size={16} className="hidden md:block" /> Подбор недвижимости — бесплатно
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-medium">
-                <Icon name="Key" size={16} /> Вы принимаете ключевое решение
+              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1 md:py-2 rounded-full bg-muted text-muted-foreground text-xs md:text-sm font-medium">
+                <Icon name="Key" size={13} className="md:hidden" /><Icon name="Key" size={16} className="hidden md:block" /> Вы принимаете ключевое решение
               </span>
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5 text-balance">
+            <h1 className="font-display text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5 text-balance">
               Найдём дом,<br />где вам будет <span className="text-terracotta italic">тепло</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-7 max-w-md">
               Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
             </p>
-            <div className="flex flex-col sm:flex-row gap-2.5">
-              <Button onClick={() => openRequest('social')} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-6 md:px-8 h-11 md:h-14 text-sm md:text-base w-full sm:w-auto">
-                <Icon name="MessageCircle" size={16} /> Написать запрос
+            <div className="flex flex-col sm:flex-row gap-2">
+              <Button onClick={() => openRequest('social')} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-5 md:px-8 h-9 md:h-14 text-xs md:text-base w-full sm:w-auto">
+                <Icon name="MessageCircle" size={14} className="md:hidden" /><Icon name="MessageCircle" size={16} className="hidden md:block" /> Написать запрос
               </Button>
-              <Button onClick={() => openRequest('meeting')} variant="outline" className="rounded-full px-6 md:px-8 h-11 md:h-14 text-sm md:text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta w-full sm:w-auto">
-                <Icon name="Phone" size={16} /> Обратный звонок
+              <Button onClick={() => openRequest('meeting')} variant="outline" className="rounded-full px-5 md:px-8 h-9 md:h-14 text-xs md:text-base border-2 border-terracotta text-terracotta hover:bg-terracotta/10 hover:text-terracotta w-full sm:w-auto">
+                <Icon name="Phone" size={14} className="md:hidden" /><Icon name="Phone" size={16} className="hidden md:block" /> Обратный звонок
               </Button>
             </div>
             <div className="flex flex-wrap items-center gap-3 mt-5 text-xs text-muted-foreground">
@@ -298,7 +298,7 @@ const Index = () => {
       {/* Contacts / CTA */}
       <section id="contacts" className="py-10 md:py-20 px-4">
         <div className="container max-w-5xl">
-          <div className="relative text-center overflow-hidden py-8 md:px-12 rounded-3xl bg-[#b06043eb] px-[25px] mx-20">
+          <div className="relative text-center overflow-hidden py-8 px-5 md:px-12 rounded-3xl bg-[#b06043eb]">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 blob-shape-2 bg-[#ffffff1a]" />
             <div className="relative z-10">
