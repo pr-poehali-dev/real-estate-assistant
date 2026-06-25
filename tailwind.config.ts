@@ -20,13 +20,13 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				display: ['Cormorant', 'serif'],
-				sans: ['Golos Text', 'sans-serif'],
+				display: ['Playfair Display', 'serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
 			colors: {
-				sand: 'hsl(40 30% 92%)',
-				sage: 'hsl(95 18% 72%)',
-				terracotta: 'hsl(16 45% 48%)',
+				sand: 'hsl(222 18% 16%)',
+				sage: 'hsl(222 20% 22%)',
+				terracotta: 'hsl(43 58% 55%)',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -73,8 +73,8 @@ export default {
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				md: 'var(--radius)',
+				sm: 'var(--radius)'
 			},
 			keyframes: {
 				'accordion-down': {
