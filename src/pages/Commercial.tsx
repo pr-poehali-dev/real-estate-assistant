@@ -239,7 +239,13 @@ const Commercial = () => {
                 onChange={setPhone}
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
-
+              <input
+                type="text"
+                placeholder="Соцсеть для связи"
+                value={social}
+                onChange={e => setSocial(e.target.value)}
+                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+              />
               <textarea
                 placeholder="Тип объекта, площадь, бюджет, цель покупки…"
                 rows={3}

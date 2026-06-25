@@ -367,7 +367,15 @@ const Index = () => {
                 onChange={v => setF({ phone: v })}
                 className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
               />
-
+              {mode === 'social' && (
+                <input
+                  type="text"
+                  placeholder="Соцсеть для связи"
+                  value={f.social}
+                  onChange={e => setF({ social: e.target.value })}
+                  className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
+                />
+              )}
               <textarea
                 placeholder="Что вы ищете? Бюджет, район, количество комнат…"
                 rows={3}
