@@ -22,7 +22,7 @@ export default {
 			fontFamily: {
 				display: ['Playfair Display', 'serif'],
 				sans: ['Inter', 'sans-serif'],
-			},
+        },
 			colors: {
 				sand: 'hsl(40 10% 88%)',
 				sage: 'hsl(162 35% 13%)',
