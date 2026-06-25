@@ -302,7 +302,7 @@ const Index = () => {
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 blob-shape-2 bg-[#ffffff1a]" />
             <div className="relative z-10">
-              <h2 className="font-display text-xl sm:text-3xl md:text-5xl font-bold text-center text-[#402f28] mb-2 md:mb-3">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center text-[#402f28] mb-2 md:mb-3">
                 Поиск недвижимости<br />начинается <span className="italic text-white">здесь</span>
               </h2>
               <p className="text-white/90 text-xs md:text-base max-w-xl mx-auto mt-4 mb-4 md:mt-6 md:mb-6">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
