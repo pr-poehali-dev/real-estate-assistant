@@ -298,31 +298,31 @@ const Index = () => {
       {/* Contacts / CTA */}
       <section id="contacts" className="py-10 md:py-20 px-4">
         <div className="container max-w-5xl">
-          <div className="relative text-center overflow-hidden py-8 px-5 md:px-12 rounded-3xl bg-[#b06043eb]">
+          <div className="relative text-center overflow-hidden py-5 md:py-8 px-4 md:px-12 rounded-2xl md:rounded-3xl bg-[#b06043eb]">
             <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
             <div className="absolute -bottom-20 -left-10 w-72 h-72 blob-shape-2 bg-[#ffffff1a]" />
             <div className="relative z-10">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-center text-[#402f28] mb-3">
+              <h2 className="font-display text-xl sm:text-3xl md:text-5xl font-bold text-center text-[#402f28] mb-2 md:mb-3">
                 Поиск недвижимости<br />начинается <span className="italic text-white">здесь</span>
               </h2>
-              <p className="text-white/90 text-sm md:text-base max-w-xl mx-auto my-4">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
-              <div className="flex flex-col sm:flex-row justify-center gap-2.5 mb-5">
-                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-6 md:px-8 h-11 md:h-14 text-sm md:text-base font-medium w-full sm:w-auto">
-                  <Icon name="MessageCircle" size={16} /> Написать
+              <p className="text-white/90 text-xs md:text-base max-w-xl mx-auto my-2 md:my-4">Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-2 md:gap-2.5 mb-3 md:mb-5">
+                <Button onClick={() => openRequest('social')} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-5 md:px-8 h-9 md:h-14 text-xs md:text-base font-medium w-full sm:w-auto">
+                  <Icon name="MessageCircle" size={14} className="md:hidden" /><Icon name="MessageCircle" size={16} className="hidden md:block" /> Написать
                 </Button>
-                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-6 md:px-8 h-11 md:h-14 text-sm md:text-base font-medium w-full sm:w-auto">
-                  <Icon name="Phone" size={16} /> Обратный звонок
+                <Button onClick={() => openRequest('meeting')} className="rounded-full bg-foreground text-background hover:bg-foreground/90 px-5 md:px-8 h-9 md:h-14 text-xs md:text-base font-medium w-full sm:w-auto">
+                  <Icon name="Phone" size={14} className="md:hidden" /><Icon name="Phone" size={16} className="hidden md:block" /> Обратный звонок
                 </Button>
               </div>
-              <div className="flex flex-wrap justify-center gap-6">
+              <div className="flex flex-wrap justify-center gap-3 md:gap-6">
                 {[
                   { icon: 'AtSign', label: 'Mail.ru' },
                   { icon: 'Send', label: 'Telegram' },
                   { icon: 'Phone', label: 'WhatsApp' },
                   { icon: 'Mail', label: 'MAX' },
                 ].map((c) => (
-                  <span key={c.label} className="flex items-center gap-2 text-white/90 mx-[5px] my-[11px]" translate="no">
-                    <Icon name={c.icon} size={20} /> {c.label}
+                  <span key={c.label} className="flex items-center gap-1 md:gap-2 text-white/90 text-xs md:text-sm my-1 md:my-[11px]" translate="no">
+                    <Icon name={c.icon} size={14} className="md:hidden" /><Icon name={c.icon} size={20} className="hidden md:block" /> {c.label}
                   </span>
                 ))}
               </div>
