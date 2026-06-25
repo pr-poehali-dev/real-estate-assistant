@@ -14,7 +14,7 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   const navLink: React.CSSProperties = {
-    fontFamily: 'Montserrat, sans-serif',
+    fontFamily: 'Jost, sans-serif',
     fontSize: 9,
     fontWeight: 500,
     letterSpacing: '0.3em',
@@ -42,10 +42,10 @@ const Header = () => {
         >
           <div style={{ display:'flex', flexDirection:'column', lineHeight:1 }}>
             <span style={{ fontFamily:'Cormorant Garamond, serif', fontSize:22, fontWeight:600, letterSpacing:'0.18em', color:'#E5DDD0', textTransform:'uppercase' }}>APEX</span>
-            <span style={{ fontFamily:'Montserrat, sans-serif', fontSize:7, fontWeight:500, letterSpacing:'0.45em', textTransform:'uppercase', color:GOLD, marginTop:2 }}>SOLUTIONS</span>
+            <span style={{ fontFamily:'Jost, sans-serif', fontSize:7, fontWeight:500, letterSpacing:'0.45em', textTransform:'uppercase', color:GOLD, marginTop:2 }}>SOLUTIONS</span>
           </div>
           <div style={{ width:1, height:32, background:`linear-gradient(to bottom, transparent, ${GOLD40}, transparent)`, margin:'0 4px' }} className="hidden md:block" />
-          <span style={{ fontFamily:'Montserrat, sans-serif', fontSize:8, letterSpacing:'0.2em', color:'rgba(229,221,208,0.35)', textTransform:'uppercase', lineHeight:1.5, display:'none' }} className="hidden md:block">
+          <span style={{ fontFamily:'Jost, sans-serif', fontSize:8, letterSpacing:'0.2em', color:'rgba(229,221,208,0.35)', textTransform:'uppercase', lineHeight:1.5, display:'none' }} className="hidden md:block">
             Недвижимость<br/>Москва и МО
           </span>
         </Link>
@@ -72,7 +72,7 @@ const Header = () => {
             <Link
               to="/for-client"
               style={{
-                fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500,
+                fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500,
                 letterSpacing:'0.3em', textTransform:'uppercase',
                 color:GOLD, textDecoration:'none',
                 padding:'9px 20px', border:`1px solid ${GOLD40}`,
@@ -119,29 +119,29 @@ const Header = () => {
                 { href:'#contacts', label:'Контакты' },
               ].map(l => (
                 <a key={l.href} href={l.href} onClick={closeMenu}
-                  style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:'rgba(229,221,208,0.6)', textDecoration:'none' }}
+                  style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:'rgba(229,221,208,0.6)', textDecoration:'none' }}
                 >{l.label}</a>
               ))}
               <Link to="/commercial" onClick={closeMenu}
-                style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
+                style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
               >Коммерция</Link>
               <Link to="/for-client" onClick={closeMenu}
-                style={{ display:'block', marginTop:16, padding:'12px 0', textAlign:'center', border:`1px solid ${GOLD40}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
+                style={{ display:'block', marginTop:16, padding:'12px 0', textAlign:'center', border:`1px solid ${GOLD40}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
               >Клиентам</Link>
             </>
           ) : (
             <>
               <button onClick={() => { navigate('/'); closeMenu(); }}
-                style={{ display:'flex', alignItems:'center', gap:8, padding:'14px 0', width:'100%', background:'none', border:'none', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:'rgba(229,221,208,0.6)', cursor:'pointer' }}
+                style={{ display:'flex', alignItems:'center', gap:8, padding:'14px 0', width:'100%', background:'none', border:'none', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:'rgba(229,221,208,0.6)', cursor:'pointer' }}
               ><Icon name="ArrowLeft" size={13} /> На главную</button>
               {location.pathname !== '/commercial' && (
                 <Link to="/commercial" onClick={closeMenu}
-                  style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
+                  style={{ display:'block', padding:'14px 0', borderBottom:`1px solid ${GOLD20}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
                 >Коммерция</Link>
               )}
               {location.pathname !== '/for-client' && (
                 <Link to="/for-client" onClick={closeMenu}
-                  style={{ display:'block', marginTop:16, padding:'12px 0', textAlign:'center', border:`1px solid ${GOLD40}`, fontFamily:'Montserrat, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
+                  style={{ display:'block', marginTop:16, padding:'12px 0', textAlign:'center', border:`1px solid ${GOLD40}`, fontFamily:'Jost, sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD, textDecoration:'none' }}
                 >Клиентам</Link>
               )}
             </>
