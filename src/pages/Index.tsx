@@ -91,15 +91,15 @@ const Index = () => {
         <div className="absolute bottom-0 -left-32 w-80 h-80 blob-shape-2 animate-float-slow -z-0 bg-[#b060432b]" style={{ animationDelay: '2s' }} />
         <div className="container max-w-6xl relative z-10 grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="animate-fade-up">
-            <div className="flex flex-wrap gap-1.5 mb-4 md:mb-5">
-              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-terracotta/12 text-terracotta text-xs md:text-sm font-medium">
-                <Icon name="Shield" size={13} className="md:hidden" /><Icon name="Shield" size={16} className="hidden md:block" /> Спокойствие сделки
+            <div className="flex flex-col items-start gap-2 mb-5">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-terracotta/12 text-terracotta text-sm font-medium">
+                <Icon name="Shield" size={16} /> Спокойствие сделки
               </span>
-              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-accent text-accent-foreground text-xs md:text-sm font-medium">
-                <Icon name="Sparkles" size={13} className="md:hidden" /><Icon name="Sparkles" size={16} className="hidden md:block" /> Подбор — бесплатно
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-accent-foreground text-sm font-medium">
+                <Icon name="Sparkles" size={16} /> Подбор недвижимости — бесплатно
               </span>
-              <span className="inline-flex items-center gap-1.5 md:gap-2 px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-muted text-muted-foreground text-xs md:text-sm font-medium">
-                <Icon name="Key" size={13} className="md:hidden" /><Icon name="Key" size={16} className="hidden md:block" /> Вы принимаете решение
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted text-muted-foreground text-sm font-medium">
+                <Icon name="Key" size={16} /> Вы принимаете ключевое решение
               </span>
             </div>
             <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5 text-balance">
