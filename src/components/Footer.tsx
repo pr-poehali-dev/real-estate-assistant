@@ -1,18 +1,20 @@
-const GOLD   = 'hsl(42 52% 55%)';
-const GOLD20 = 'hsl(42 52% 55% / 0.2)';
+const GOLD   = '#C9A84C';
+const GOLD20 = 'rgba(201,168,76,0.20)';
 
 const Footer = () => (
-  <footer className="py-10 px-4" style={{ borderTop: `1px solid ${GOLD20}` }}>
-    <div className="container max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-3">
-      <div className="flex items-center gap-3">
-        <div className="flex flex-col leading-none">
-          <span className="font-display text-sm font-bold tracking-[0.14em] text-foreground uppercase">APEX</span>
-          <span className="text-[7px] font-medium tracking-[0.32em] uppercase" style={{ color: GOLD }}>Solutions</span>
+  <footer style={{ borderTop:`1px solid ${GOLD20}`, background:'#0D0D0D', padding:'clamp(28px,4vw,48px) clamp(20px,5vw,60px)' }}>
+    <div style={{ maxWidth:1200, margin:'0 auto', display:'flex', flexWrap:'wrap', alignItems:'center', justifyContent:'space-between', gap:20 }}>
+      <div style={{ display:'flex', alignItems:'center', gap:14 }}>
+        <div style={{ display:'flex', flexDirection:'column', lineHeight:1 }}>
+          <span style={{ fontFamily:'Cormorant Garamond, serif', fontSize:18, fontWeight:600, letterSpacing:'0.18em', color:'#E5DDD0', textTransform:'uppercase' }}>APEX</span>
+          <span style={{ fontFamily:'Montserrat, sans-serif', fontSize:7, fontWeight:500, letterSpacing:'0.45em', textTransform:'uppercase', color:GOLD, marginTop:2 }}>SOLUTIONS</span>
         </div>
-        <div className="w-px h-6 bg-border/50" />
-        <span className="text-[10px] tracking-widest uppercase text-muted-foreground">Недвижимость · Москва и МО</span>
+        <div style={{ width:1, height:28, background:`linear-gradient(to bottom, transparent, ${GOLD20}, transparent)` }} />
+        <span style={{ fontFamily:'Montserrat, sans-serif', fontSize:9, letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(229,221,208,0.35)' }}>Недвижимость · Москва и МО</span>
       </div>
-      <span className="text-muted-foreground text-[11px] tracking-wider">© 2026 Apex Solutions. Бесплатный подбор недвижимости.</span>
+      <span style={{ fontFamily:'Montserrat, sans-serif', fontSize:10, letterSpacing:'0.15em', color:'rgba(229,221,208,0.3)' }}>
+        © 2026 Apex Solutions. Бесплатный подбор недвижимости.
+      </span>
     </div>
   </footer>
 );
