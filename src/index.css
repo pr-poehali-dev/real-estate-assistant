@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -10,44 +10,46 @@ html {
 
 @layer base {
   :root {
-    --background: 222 25% 8%;
-    --foreground: 45 20% 94%;
+    /* Палитра: Cherry #390517 · Emerald #16302B · Gold #C9A84C · Charcoal #0E0E0E · Cream #E0E0E0 */
 
-    --card: 222 22% 11%;
-    --card-foreground: 45 20% 94%;
+    --background: 0 0% 6%;
+    --foreground: 40 10% 90%;
 
-    --popover: 222 22% 11%;
-    --popover-foreground: 45 20% 94%;
+    --card: 340 15% 9%;
+    --card-foreground: 40 10% 88%;
 
-    --primary: 43 58% 55%;
-    --primary-foreground: 222 25% 8%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 40 10% 88%;
 
-    --secondary: 222 18% 18%;
-    --secondary-foreground: 45 20% 88%;
+    --primary: 42 52% 55%;
+    --primary-foreground: 0 0% 5%;
 
-    --muted: 222 20% 14%;
-    --muted-foreground: 220 10% 58%;
+    --secondary: 340 60% 14%;
+    --secondary-foreground: 40 10% 88%;
 
-    --accent: 222 18% 16%;
-    --accent-foreground: 43 58% 65%;
+    --muted: 0 0% 11%;
+    --muted-foreground: 40 8% 52%;
+
+    --accent: 162 30% 14%;
+    --accent-foreground: 40 10% 88%;
 
     --destructive: 0 72% 51%;
-    --destructive-foreground: 45 20% 94%;
+    --destructive-foreground: 40 10% 90%;
 
-    --border: 222 18% 20%;
-    --input: 222 18% 20%;
-    --ring: 43 58% 55%;
+    --border: 40 12% 16%;
+    --input: 0 0% 13%;
+    --ring: 42 52% 55%;
 
-    --radius: 0.25rem;
+    --radius: 0rem;
 
-    --sidebar-background: 222 25% 8%;
-    --sidebar-foreground: 45 20% 94%;
-    --sidebar-primary: 43 58% 55%;
-    --sidebar-primary-foreground: 222 25% 8%;
-    --sidebar-accent: 222 18% 16%;
-    --sidebar-accent-foreground: 43 58% 65%;
-    --sidebar-border: 222 18% 20%;
-    --sidebar-ring: 43 58% 55%;
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 40 10% 88%;
+    --sidebar-primary: 42 52% 55%;
+    --sidebar-primary-foreground: 0 0% 5%;
+    --sidebar-accent: 162 30% 14%;
+    --sidebar-accent-foreground: 40 10% 88%;
+    --sidebar-border: 40 12% 16%;
+    --sidebar-ring: 42 52% 55%;
   }
 }
 
@@ -74,63 +76,104 @@ html {
 }
 
 @layer utilities {
-  .gold-line {
-    display: block;
-    width: 40px;
-    height: 2px;
-    background: hsl(43 58% 55%);
-  }
-
-  .apex-card {
-    background: hsl(222 22% 11%);
-    border: 1px solid hsl(222 18% 20%);
-  }
-
-  .apex-card-hover {
-    transition:
-      border-color 0.3s ease,
-      box-shadow 0.3s ease;
-  }
-
-  .apex-card-hover:hover {
-    border-color: hsl(43 58% 55% / 0.5);
-    box-shadow: 0 0 32px hsl(43 58% 55% / 0.08);
-  }
-
+  /* Именованные цвета палитры */
   .text-gold {
-    color: hsl(43 58% 55%);
+    color: hsl(42 52% 55%);
+  }
+  .text-gold-light {
+    color: hsl(42 65% 70%);
+  }
+  .text-cherry {
+    color: hsl(340 60% 42%);
+  }
+  .text-emerald-lux {
+    color: hsl(162 38% 40%);
+  }
+  .text-cream {
+    color: hsl(40 10% 88%);
   }
 
+  .bg-cherry-deep {
+    background-color: hsl(340 78% 11%);
+  }
+  .bg-emerald-deep {
+    background-color: hsl(162 35% 13%);
+  }
   .bg-gold {
-    background-color: hsl(43 58% 55%);
+    background-color: hsl(42 52% 55%);
   }
 
-  .border-gold {
-    border-color: hsl(43 58% 55%);
+  /* Золотой разделитель */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(42 52% 55% / 0.5),
+      transparent
+    );
+  }
+
+  /* Угловые декоры (нужен relative на родителе) */
+  .corners {
+    position: relative;
+  }
+  .corners::before,
+  .corners::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    pointer-events: none;
+  }
+  .corners::before {
+    top: 0;
+    left: 0;
+    border-top: 1px solid hsl(42 52% 55% / 0.45);
+    border-left: 1px solid hsl(42 52% 55% / 0.45);
+  }
+  .corners::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 1px solid hsl(42 52% 55% / 0.45);
+    border-right: 1px solid hsl(42 52% 55% / 0.45);
+  }
+
+  /* Мерцание золота на тексте */
+  .gold-shimmer {
+    background: linear-gradient(
+      105deg,
+      hsl(42 45% 45%) 0%,
+      hsl(42 68% 68%) 40%,
+      hsl(35 55% 60%) 55%,
+      hsl(42 68% 68%) 70%,
+      hsl(42 45% 45%) 100%
+    );
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 6s linear infinite;
   }
 
   .text-balance {
     text-wrap: balance;
   }
+}
 
-  .diagonal-line {
-    position: relative;
+@keyframes goldShimmer {
+  0% {
+    background-position: 0% center;
   }
-  .diagonal-line::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, hsl(43 58% 55%), transparent);
+  100% {
+    background-position: 300% center;
   }
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(22px);
   }
   to {
     opacity: 1;
@@ -138,27 +181,18 @@ html {
   }
 }
 .animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fade-up 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
+@keyframes float-slow {
+  0%,
   100% {
-    background-position: 200% center;
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
-.gold-shimmer {
-  background: linear-gradient(
-    90deg,
-    hsl(43 58% 55%),
-    hsl(43 70% 70%),
-    hsl(43 58% 55%)
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 4s linear infinite;
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
 }
