@@ -103,7 +103,7 @@ const Index = () => {
               </span>
             </div>
             <h1 className="font-display text-4xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-4 md:mb-5">
-              Найдём дом,<br />где вам будет <span className="text-terracotta italic">тепло</span>
+              Найдём дом, <br />где вам будет <span className="text-terracotta italic">тепло</span>
             </h1>
             <p className="text-sm md:text-lg text-muted-foreground mb-5 md:mb-7 max-w-md">
               Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
