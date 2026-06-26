@@ -366,9 +366,9 @@ const Index = () => {
             background:'hsl(222 22% 6%)',
           }}>
             {/* Уголок — левый верхний */}
-            <span style={{ position:'absolute', top:-1, left:-1, width:94, height:94, borderTop:`0.5px solid ${GOLD}`, borderLeft:`0.5px solid ${GOLD}`, borderRadius:'4px 0 0 0', display:'block' }} />
+            <span style={{ position:'absolute', top:-1, left:-1, width:94, height:94, borderTop:`0.5px solid ${GOLD}`, borderLeft:`0.5px solid ${GOLD}`, display:'block' }} />
             {/* Уголок — правый нижний */}
-            <span style={{ position:'absolute', bottom:-1, right:-1, width:94, height:94, borderBottom:`0.5px solid ${GOLD}`, borderRight:`0.5px solid ${GOLD}`, borderRadius:'0 0 4px 0', display:'block' }} />
+            <span style={{ position:'absolute', bottom:-1, right:-1, width:94, height:94, borderBottom:`0.5px solid ${GOLD}`, borderRight:`0.5px solid ${GOLD}`, display:'block' }} />
             {/* Надзаголовок */}
             <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD, display:'block', marginBottom:20 }}>
               Начать сейчас
