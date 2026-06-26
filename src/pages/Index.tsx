@@ -354,39 +354,53 @@ const Index = () => {
       {/* ══════════════════════════════════
           CTA
       ══════════════════════════════════ */}
-      <section id="contacts" style={{ position:'relative', overflow:'hidden' }}>
-        <div style={{ background:`linear-gradient(135deg, hsl(222 35% 7%) 0%, hsl(222 28% 12%) 50%, hsl(222 35% 8%) 100%)`, padding:'clamp(72px,10vw,150px) clamp(24px,5vw,60px)', position:'relative' }}>
-          <div style={{ position:'absolute', top:0, left:0, right:0, height:1, background:`linear-gradient(90deg, transparent, ${GOLD40}, transparent)` }} />
-          <div style={{ position:'absolute', top:'35%', left:'50%', transform:'translateX(-50%)', width:'60%', height:'55%', background:`radial-gradient(ellipse, ${GOLD20} 0%, transparent 70%)`, pointerEvents:'none' }} />
+      <section id="contacts" style={{ padding:'clamp(48px,7vw,96px) clamp(20px,5vw,60px)', background:'hsl(222 25% 8%)' }}>
+        <div style={{ maxWidth:760, margin:'0 auto' }}>
+          {/* Рамка — точно как на фото */}
+          <div style={{
+            border:`1px solid ${GOLD40}`,
+            borderRadius:4,
+            padding:'clamp(48px,6vw,80px) clamp(28px,5vw,64px)',
+            textAlign:'center',
+            position:'relative',
+            background:'hsl(222 22% 6%)',
+          }}>
+            {/* Надзаголовок */}
+            <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD, display:'block', marginBottom:20 }}>
+              Начать сейчас
+            </span>
 
-          <div style={{ maxWidth:720, margin:'0 auto', textAlign:'center', position:'relative' }}>
-            <div style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:16, marginBottom:24 }}>
-              <div style={{ width:36, height:1, background:GOLD }} />
-              <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD }}>Начать сейчас</span>
-              <div style={{ width:36, height:1, background:GOLD }} />
-            </div>
-            <h2 className="font-display" style={{ fontSize:'clamp(36px,6vw,82px)', fontWeight:300, lineHeight:1.02, letterSpacing:'-0.025em', marginBottom:20, color:FG }}>
-              Поиск недвижимости<br />начинается <em className="gold-shimmer">здесь</em>
+            {/* Заголовок */}
+            <h2 className="font-display" style={{ fontSize:'clamp(32px,5vw,68px)', fontWeight:700, lineHeight:1.08, letterSpacing:'-0.02em', marginBottom:20, color:FG }}>
+              Поиск недвижимости<br />начинается <em className="gold-shimmer" style={{ fontStyle:'italic' }}>здесь</em>
             </h2>
-            <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, marginBottom:40 }}>
+
+            {/* Подпись */}
+            <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.85, color:MUTED, maxWidth:480, margin:'0 auto 36px' }}>
               Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.
             </p>
-            <div style={{ display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap', marginBottom:40 }}>
-              <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')} style={{ minWidth:190 }}>
-                <Icon name="MessageCircle" size={14} /> Написать в соцсетях
+
+            {/* Кнопки — широкие, одинаковой высоты */}
+            <div style={{ display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap', marginBottom:32 }}>
+              <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')}
+                style={{ minWidth:200, height:56, fontSize:11, letterSpacing:'0.28em' }}>
+                <Icon name="MessageCircle" size={15} /> Написать
               </button>
-              <button className="btn-apex btn-apex-outline" onClick={() => openRequest('meeting')} style={{ minWidth:190 }}>
-                <Icon name="Phone" size={14} /> Обратный звонок
+              <button className="btn-apex btn-apex-outline" onClick={() => openRequest('meeting')}
+                style={{ minWidth:200, height:56, fontSize:11, letterSpacing:'0.28em' }}>
+                <Icon name="Phone" size={15} /> Обратный звонок
               </button>
             </div>
-            <div style={{ display:'flex', justifyContent:'center', gap:'clamp(14px,3vw,36px)', flexWrap:'wrap' }}>
+
+            {/* Соцсети */}
+            <div style={{ display:'flex', justifyContent:'center', gap:'clamp(16px,3vw,36px)', flexWrap:'wrap' }}>
               {[
                 { icon:'AtSign', label:'Mail.ru' },
                 { icon:'Send',   label:'Telegram' },
                 { icon:'Phone',  label:'WhatsApp' },
                 { icon:'Mail',   label:'MAX' },
               ].map(c => (
-                <span key={c.label} style={{ display:'flex', alignItems:'center', gap:8, fontFamily:'Inter,sans-serif', fontSize:10, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED }} translate="no">
+                <span key={c.label} style={{ display:'flex', alignItems:'center', gap:8, fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED }} translate="no">
                   <Icon name={c.icon} size={13} style={{ color:GOLD }} /> {c.label}
                 </span>
               ))}
