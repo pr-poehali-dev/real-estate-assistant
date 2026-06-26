@@ -110,7 +110,7 @@ const Index = () => {
           <div className="animate-fade-up" style={{ display:'flex', alignItems:'center', gap:14, marginBottom:40, animationDelay:'80ms' }}>
             <div style={{ width:36, height:1, background:GOLD }} />
             <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD }}>
-              Apex Solutions · Москва и МО
+              Real Estate · Club
             </span>
           </div>
 
