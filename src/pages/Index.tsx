@@ -271,42 +271,53 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="О компании"
-            title={<>О компании <em style={{ color:GOLD, fontStyle:'italic' }}>APEX SOLUTIONS</em></>}
+            title={<>О компании{' '}
+              <span style={{ display:'inline-flex', flexDirection:'column', lineHeight:1, verticalAlign:'middle', margin:'0 6px' }}>
+                <span style={{ fontFamily:'Playfair Display, serif', fontSize:'0.85em', fontWeight:700, letterSpacing:'0.16em', color:FG, textTransform:'uppercase', fontStyle:'normal' }}>APEX</span>
+                <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.28em', fontWeight:500, letterSpacing:'0.44em', textTransform:'uppercase', color:GOLD, marginTop:2, fontStyle:'normal' }}>SOLUTIONS</span>
+              </span>
+            </>}
           />
 
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, alignItems:'start' }} className="about-grid">
-            {/* Текст о компании */}
-            <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
-              {[
-                'Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2025 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.',
-                'Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.',
-                'APEX SOLUTIONS — это команда, поставившая своей целью решать все возникающие вопросы, связанные с приобретением недвижимости. Мы готовы вам помочь принять верное решение и подобрать наилучшие условия именно для вас.',
-              ].map((t, i) => (
-                <p key={i} style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>{t}</p>
-              ))}
-              <div style={{ marginTop:8, background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.06))`, borderRadius:20, padding:'24px 28px', border:`1px solid ${GOLD40}` }}>
-                <p className="font-display" style={{ fontSize:'clamp(16px,1.7vw,22px)', fontStyle:'italic', fontWeight:300, lineHeight:1.6, color:FG }}>
-                  «Результат гарантирован. Мы работаем на него, а не на видимость работы.»
+          <div style={{ display:'flex', flexDirection:'column', gap:20 }}>
+
+            {/* Первые два абзаца */}
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="about-grid">
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2015 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
+              </p>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.
+              </p>
+            </div>
+
+            {/* Ключевое заявление — врезка */}
+            <div style={{ background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.06))`, borderRadius:20, padding:'clamp(20px,3vw,36px) clamp(24px,4vw,48px)', border:`1px solid ${GOLD40}` }}>
+              <p className="font-display" style={{ fontSize:'clamp(16px,1.7vw,22px)', fontStyle:'italic', fontWeight:300, lineHeight:1.7, color:FG, margin:0 }}>
+                «Apex Solutions — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать для Вас наилучшие условия.»
+              </p>
+            </div>
+
+            {/* Дополнительный текст — 4 абзаца */}
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="about-grid">
+              <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                  Наша команда состоит из опытных профессионалов, увлеченных своим делом. Мы глубоко разбираемся в рынке недвижимости и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию. Наша цель — не просто продать вам квартиру, а помочь сделать осознанный выбор, который будет радовать вас долгие годы. Мы гордимся тем, что можем предложить индивидуальный подход к каждому клиенту, учитывая все ваши пожелания и возможности.
+                </p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                  Мы понимаем, что покупка или продажа недвижимости — это важное и ответственное решение. Именно поэтому мы стремимся сделать этот процесс максимально прозрачным и понятным. Мы верим, что информированность — ключ к успеху, и всегда готовы поделиться своими знаниями, чтобы вы чувствовали себя уверенно на каждом шагу.
+                </p>
+              </div>
+              <div style={{ display:'flex', flexDirection:'column', gap:14 }}>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                  Финансовые решения, которые мы предлагаем, охватывают широкий спектр потребностей. Будь то ипотека на первичное или вторичное жилье, рефинансирование, потребительский кредит или финансовая поддержка для вашего бизнеса — наши эксперты помогут подобрать оптимальные условия. Мы сотрудничаем с ведущими банками и финансовыми учреждениями, чтобы предложить вам самые выгодные ставки и удобные схемы оплаты.
+                </p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
+                  Наш сервис — это комплексный инструмент, созданный для вашего удобства. Мы стремимся к тому, чтобы вы могли найти все необходимое в одном месте, экономя свое время и силы чтобы предоставить вам лучший опыт взаимодействия с миром недвижимости.
                 </p>
               </div>
             </div>
 
-            {/* Шаги */}
-            <div style={{ background:NAVYC, borderRadius:24, padding:'clamp(24px,3.5vw,44px)', border:`1px solid ${GOLD20}` }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD, marginBottom:24, textAlign:'center' }}>Как это работает</p>
-              {STEPS.map((step, i) => (
-                <div key={step.num} style={{ display:'flex', gap:20, padding:'20px 0', borderTop:`1px solid ${GOLD20}`, borderBottom: i === STEPS.length-1 ? `1px solid ${GOLD20}` : 'none' }}>
-                  <div className="font-display" style={{ fontSize:'clamp(32px,4vw,52px)', fontWeight:300, color:GOLD20, lineHeight:1, width:'1.8ch', flexShrink:0 }}>{step.num}</div>
-                  <div style={{ paddingTop:4 }}>
-                    <h3 className="font-display" style={{ fontSize:'clamp(16px,1.7vw,22px)', fontWeight:400, marginBottom:5, color:FG }}>{step.title}</h3>
-                    <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.75, color:MUTED }}>{step.text}</p>
-                  </div>
-                </div>
-              ))}
-              <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')} style={{ width:'100%', marginTop:24 }}>
-                Начать прямо сейчас
-              </button>
-            </div>
           </div>
         </div>
       </section>
