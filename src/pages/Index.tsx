@@ -139,9 +139,7 @@ const Index = () => {
                 <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вам</em>
               </h1>
 
-              <p className="animate-fade-up" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36 }}>
-                Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
-              </p>
+              <p className="animate-fade-up text-right" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36 }}>Профессионально подберем недвижимость. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.</p>
 
               <div className="animate-fade-up" style={{ animationDelay:'540ms', display:'flex', gap:12, flexWrap:'wrap' }}>
                 <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')}>
