@@ -205,7 +205,8 @@ html {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 1px;
   background: hsl(43 58% 55%);
