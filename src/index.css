@@ -299,7 +299,8 @@ html {
   .why-grid,
   .about-grid,
   .cap-grid,
-  .dir-grid {
+  .dir-grid,
+  .hero-grid {
     grid-template-columns: 1fr !important;
   }
 }

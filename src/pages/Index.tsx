@@ -96,69 +96,61 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
 
       {/* ══════════════════════════════════
-          HERO — центрированный, как в первой версии
+          HERO — стиль "Дом Мечты": бейджи слева, заголовок справа
       ══════════════════════════════════ */}
-      <section style={{ position:'relative', minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', textAlign:'center', overflow:'hidden', background:'hsl(222 28% 8%)' }}>
+      <section style={{ position:'relative', minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center', overflow:'hidden', background:'hsl(222 28% 8%)' }}>
 
-        {/* Вертикальная подпись слева */}
-        <div className="hidden md:flex" style={{ position:'absolute', top:0, bottom:0, left:'clamp(16px,3vw,44px)', zIndex:2, alignItems:'center' }}>
-          <span className="vertical-text" style={{ fontFamily:'Inter,sans-serif', fontSize:9, letterSpacing:'0.5em', textTransform:'uppercase', color:GOLD40 }}>
-            Private Real Estate Club · Est. 2025
-          </span>
-        </div>
+        {/* Тонкая золотая линия снизу блока */}
+        <div style={{ position:'absolute', bottom:0, left:0, right:0, height:1, background:`linear-gradient(90deg, transparent, ${GOLD40}, transparent)` }} />
 
-        {/* Надпись в углу заголовка справа вверху */}
-        <div className="hidden md:block" style={{ position:'absolute', top:'clamp(90px,12vh,140px)', right:'clamp(20px,4vw,60px)', zIndex:2 }}>
-          <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40, display:'flex', alignItems:'center', gap:10 }}>
-            <span style={{ width:24, height:1, background:GOLD40, display:'inline-block' }} />
-            Москва и МО
-          </span>
-        </div>
+        {/* Основной контент */}
+        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:1200, margin:'0 auto', padding:'clamp(100px,14vh,140px) clamp(24px,6vw,80px) clamp(60px,8vh,100px)' }}>
 
-        {/* Основной центрированный контент */}
-        <div style={{ position:'relative', zIndex:2, width:'100%', maxWidth:900, margin:'0 auto', padding:'clamp(100px,14vh,160px) clamp(24px,5vw,60px) 0' }}>
           {/* Надзаголовок */}
-          <div className="animate-fade-up" style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:14, marginBottom:28, animationDelay:'100ms' }}>
-            <div style={{ width:32, height:1, background:GOLD }} />
+          <div className="animate-fade-up" style={{ display:'flex', alignItems:'center', gap:14, marginBottom:40, animationDelay:'80ms' }}>
+            <div style={{ width:36, height:1, background:GOLD }} />
             <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD }}>
-              Apex Solutions
+              Apex Solutions · Москва и МО
             </span>
-            <div style={{ width:32, height:1, background:GOLD }} />
           </div>
 
-          {/* H1 */}
-          <h1 className="animate-fade-up font-display" style={{ animationDelay:'250ms', fontSize:'clamp(40px,7.5vw,104px)', fontWeight:300, lineHeight:1.02, letterSpacing:'-0.025em', margin:'0 0 28px', color:FG }}>
-            Найдём дом,<br />
-            где вам будет{' '}
-            <em className="gold-shimmer" style={{ fontStyle:'italic', fontWeight:600 }}>тепло</em>
-          </h1>
+          {/* Двухколоночная раскладка: бейджи | заголовок */}
+          <div style={{ display:'grid', gridTemplateColumns:'auto 1fr', gap:'clamp(32px,5vw,72px)', alignItems:'start' }} className="hero-grid">
 
-          {/* Подзаголовок */}
-          <p className="animate-fade-up" style={{ animationDelay:'380ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.3vw,16px)', lineHeight:1.85, color:MUTED, maxWidth:540, margin:'0 auto 36px' }}>
-            Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
-          </p>
+            {/* Левая колонка — бейджи столбиком */}
+            <div className="animate-fade-up" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
+              {[
+                { icon:'Shield', label:'Спокойствие сделки' },
+                { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
+                { icon:'Star',   label:'Вы принимаете ключевое решение' },
+              ].map(b => (
+                <span key={b.label} style={{ display:'flex', alignItems:'center', gap:10, fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, letterSpacing:'0.12em', textTransform:'uppercase', color:MUTED, padding:'10px 18px', border:`1px solid ${GOLD20}`, borderRadius:100, whiteSpace:'nowrap', background:'hsl(222 30% 10%)' }}>
+                  <Icon name={b.icon} size={13} style={{ color:GOLD, flexShrink:0 }} /> {b.label}
+                </span>
+              ))}
+            </div>
 
-          {/* Кнопки */}
-          <div className="animate-fade-up" style={{ animationDelay:'500ms', display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap', marginBottom:40 }}>
-            <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')}>
-              <Icon name="MessageCircle" size={14} /> Написать запрос
-            </button>
-            <button className="btn-apex btn-apex-outline" onClick={() => openRequest('meeting')}>
-              <Icon name="Phone" size={14} /> Обратный звонок
-            </button>
-          </div>
+            {/* Правая колонка — заголовок, подпись, кнопки */}
+            <div>
+              <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.06, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
+                Найдём дом,<br />
+                где вам будет{' '}
+                <em className="gold-shimmer" style={{ fontStyle:'italic', fontWeight:600 }}>тепло</em>
+              </h1>
 
-          {/* Бейджи */}
-          <div className="animate-fade-up" style={{ animationDelay:'620ms', display:'flex', justifyContent:'center', flexWrap:'wrap', gap:16 }}>
-            {[
-              { icon:'Shield',  label:'Спокойствие сделки' },
-              { icon:'Home',    label:'Подбор недвижимости — бесплатно' },
-              { icon:'Star',    label:'Вы принимаете ключевое решение' },
-            ].map(b => (
-              <span key={b.label} style={{ display:'flex', alignItems:'center', gap:8, fontFamily:'Inter,sans-serif', fontSize:11, letterSpacing:'0.15em', textTransform:'uppercase', color:MUTED, padding:'8px 16px', border:`1px solid ${GOLD20}`, borderRadius:100 }}>
-                <Icon name={b.icon} size={12} style={{ color:GOLD }} /> {b.label}
-              </span>
-            ))}
+              <p className="animate-fade-up" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36 }}>
+                Бесплатно подберём квартиру, ипотеку и рассрочку. Вам не нужно никуда ехать — просто оставьте запрос и получите готовый результат.
+              </p>
+
+              <div className="animate-fade-up" style={{ animationDelay:'540ms', display:'flex', gap:12, flexWrap:'wrap' }}>
+                <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')}>
+                  <Icon name="MessageCircle" size={14} /> Написать запрос
+                </button>
+                <button className="btn-apex btn-apex-outline" onClick={() => openRequest('meeting')}>
+                  <Icon name="Phone" size={14} /> Обратный звонок
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
