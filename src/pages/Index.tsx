@@ -212,7 +212,7 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Зачем мы нужны"
-            title={<>Рынок недвижимости должен служить <em style={{ color:GOLD, fontStyle:'italic' }}>покупателю</em>, а не тем, кто продаёт</>}
+            title={<>Мы строим <em style={{ fontStyle:'italic', background:'linear-gradient(90deg, hsl(43 58% 45%), hsl(43 80% 70%), hsl(36 60% 50%))', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>справедливый рынок</em> недвижимости, ориентированный на клиента — как покупателя, так и продавца</>}
           />
 
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
