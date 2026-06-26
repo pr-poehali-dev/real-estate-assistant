@@ -282,35 +282,72 @@ const Index = () => {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:0, alignItems:'stretch', borderRadius:24, overflow:'hidden' }} className="about-grid">
 
             {/* Левая колонка — на фоне */}
-            <div style={{ background:NAVYC, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:20 }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2015 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
+            <div style={{ background:NAVYC, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, textAlign:'justify' }}>
+                Мы — <strong style={{ color:FG, fontWeight:500 }}>динамично развивающаяся организация</strong>, работающая на рынке услуг по подбору недвижимости с <strong style={{ color:GOLD, fontWeight:500 }}>2015 года</strong>. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
               </p>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.
+              <div style={{ width:40, height:1, background:`linear-gradient(to right, ${GOLD}, transparent)` }} />
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, textAlign:'justify' }}>
+                Образование компании стало логическим продолжением успешного завершения <strong style={{ color:FG, fontWeight:500 }}>финансовых сделок группой специалистов</strong>, составивших основу нашей профессиональной деятельности.
               </p>
               {/* Ключевое заявление */}
-              <div style={{ marginTop:'auto', background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.05))`, borderRadius:16, padding:'20px 24px', borderLeft:`3px solid ${GOLD}` }}>
-                <p className="font-display" style={{ fontSize:'clamp(14px,1.5vw,19px)', fontStyle:'italic', fontWeight:300, lineHeight:1.7, color:FG, margin:0 }}>
+              <div style={{ marginTop:'auto', background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.05))`, borderRadius:16, padding:'22px 26px', borderLeft:`3px solid ${GOLD}` }}>
+                <p className="font-display" style={{ fontSize:'clamp(14px,1.4vw,18px)', fontStyle:'italic', fontWeight:300, lineHeight:1.75, color:FG, margin:0 }}>
                   «Apex Solutions — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать для Вас наилучшие условия.»
                 </p>
               </div>
             </div>
 
             {/* Правая колонка — в рамке */}
-            <div style={{ border:`1px solid ${GOLD20}`, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:16 }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Наша команда состоит из опытных профессионалов, увлеченных своим делом. Мы глубоко разбираемся в рынке недвижимости и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию. Наша цель — не просто продать вам квартиру, а помочь сделать осознанный выбор, который будет радовать вас долгие годы. Мы гордимся тем, что можем предложить индивидуальный подход к каждому клиенту, учитывая все ваши пожелания и возможности.
-              </p>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Мы понимаем, что покупка или продажа недвижимости — это важное и ответственное решение. Именно поэтому мы стремимся сделать этот процесс максимально прозрачным и понятным. Мы верим, что информированность — ключ к успеху, и всегда готовы поделиться своими знаниями, чтобы вы чувствовали себя уверенно на каждом шагу.
-              </p>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Финансовые решения, которые мы предлагаем, охватывают широкий спектр потребностей. Будь то ипотека на первичное или вторичное жилье, рефинансирование, потребительский кредит или финансовая поддержка для вашего бизнеса — наши эксперты помогут подобрать оптимальные условия. Мы сотрудничаем с ведущими банками и финансовыми учреждениями, чтобы предложить вам самые выгодные ставки и удобные схемы оплаты.
-              </p>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Наш сервис — это комплексный инструмент, созданный для вашего удобства. Мы стремимся к тому, чтобы вы могли найти все необходимое в одном месте, экономя свое время и силы чтобы предоставить вам лучший опыт взаимодействия с миром недвижимости.
-              </p>
+            <div style={{ border:`1px solid ${GOLD20}`, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
+
+              {/* Блок: Команда */}
+              <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+                <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:4 }}>
+                  <Icon name="Users" size={14} style={{ color:GOLD }} />
+                  <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Наша команда</span>
+                </div>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                  Опытные профессионалы, глубоко погружённые в рынок. Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту.
+                </p>
+                <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
+                  {['Индивидуальный подход', 'Актуальная аналитика', 'Прозрачность'].map(b => (
+                    <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ width:'100%', height:1, background:`linear-gradient(to right, transparent, ${GOLD20}, transparent)` }} />
+
+              {/* Блок: Финансовые решения */}
+              <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+                <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:4 }}>
+                  <Icon name="Landmark" size={14} style={{ color:GOLD }} />
+                  <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Финансовые решения</span>
+                </div>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                  Ипотека, рефинансирование, потребительский кредит и поддержка бизнеса. Сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> для выгодных ставок и удобных условий.
+                </p>
+                <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
+                  {['Ипотека', 'Рефинансирование', 'Бизнес-кредит', 'Партнёрские ставки'].map(b => (
+                    <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div style={{ width:'100%', height:1, background:`linear-gradient(to right, transparent, ${GOLD20}, transparent)` }} />
+
+              {/* Блок: Сервис */}
+              <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
+                <div style={{ display:'flex', alignItems:'center', gap:10, marginBottom:4 }}>
+                  <Icon name="LayoutDashboard" size={14} style={{ color:GOLD }} />
+                  <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Комплексный сервис</span>
+                </div>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                  Всё необходимое в одном месте. Экономим ваше время и обеспечиваем <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с рынком недвижимости.
+                </p>
+              </div>
+
             </div>
 
           </div>
