@@ -147,9 +147,11 @@ const Index = () => {
                 </span>
               </h1>
 
-              <p className="animate-fade-up text-[0.81rem] font-light text-right mx-0 my-[35px] px-[5px] py-0.5" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36 }}>Профессионально подберем недвижимость. 
-Вам не нужно никуда ехать — просто оставьте запрос 
-и получите готовый результат.</p>
+              <p className="animate-fade-up font-light mx-0 my-[35px] px-[5px] py-0.5" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36, textAlign:'center' }}>
+                <span style={{ display:'block' }}>Профессионально подберем недвижимость.</span>
+                <span style={{ display:'block' }}>Вам не нужно никуда ехать — просто оставьте запрос</span>
+                <span style={{ display:'block' }}>и получите готовый результат.</span>
+              </p>
 
               <div className="animate-fade-up" style={{ animationDelay:'540ms', display:'flex', gap:12, flexWrap:'wrap' }}>
                 <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')}>
