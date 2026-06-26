@@ -238,15 +238,15 @@ const Index = () => {
               <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(20px,2.5vw,32px)', border:`1px solid ${GOLD20}`, flex:1 }}>
                 <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:14 }}>Вы можете:</p>
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.3vw,15px)', lineHeight:1.8, color:FG, marginBottom:20, borderLeft:`2px solid ${GOLD}`, paddingLeft:14 }}>
-                  Доверить всю эту работу нам — и использовать сэкономленное время для себя.
+                  Передать нам полный контроль над процессом и довериться нашим экспертам, пока вы располагаете свободным от этих обязательств временем, проводя его с пользой для себя.
                 </p>
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, marginBottom:20 }}>
-                  Мы выполним всё именно так, как вы задумали. С полной уверенностью в качестве каждого этапа — от первого звонка до получения ключей.
+                  Мы сделаем всё строго так, как вы изначально задумали. Ваш опыт на рынке недвижимости — без стресса и компромиссов.
                 </p>
                 {[
-                  { icon:'ShieldCheck', label:'Надёжно',        text:'Прозрачные условия, тщательная проработка сделки и выявление всех возможных рисков' },
-                  { icon:'Zap',         label:'Оперативно',      text:'Заявки клиентов рассматриваются в приоритетном порядке' },
-                  { icon:'Award',       label:'Профессионально', text:'Составим договор и соберём полный пакет необходимых документов' },
+                  { icon:'ShieldCheck', label:'Надёжно',        text:'Прозрачные условия, тщательная проработка сделки и выявление всех потенциальных рисков.' },
+                  { icon:'Zap',         label:'Оперативно',      text:'Заявки клиентов рассматриваются в приоритетном порядке.' },
+                  { icon:'Award',       label:'Профессионально', text:'Подготовим договор и соберём полный комплект необходимых документов.' },
                 ].map((item, i) => (
                   <div key={item.label} style={{ display:'flex', gap:14, padding:'14px 0', borderBottom: i < 2 ? `1px solid ${GOLD20}` : 'none' }}>
                     <div style={{ width:36, height:36, border:`1px solid ${GOLD40}`, borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
