@@ -153,24 +153,22 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ══════════════════════════════════
-          БЕГУЩАЯ СТРОКА
-      ══════════════════════════════════ */}
-      <div style={{ background:NAVYD, borderTop:`1px solid ${GOLD20}`, borderBottom:`1px solid ${GOLD20}`, padding:'13px 0', overflow:'hidden' }}>
-        <div className="animate-marquee" style={{ display:'flex', whiteSpace:'nowrap', width:'max-content' }}>
-          {[...Array(2)].map((_, k) => (
-            <div key={k} style={{ display:'flex' }}>
-              {['Жилая недвижимость','Коммерция','Бесплатный подбор','Юридическое сопровождение','Москва и МО','Инвестиции в недвижимость'].map(t => (
-                <span key={t+k} style={{ display:'inline-flex', alignItems:'center', gap:22, padding:'0 22px', fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>
-                  {t} <span style={{ fontSize:5, opacity:0.5 }}>◆</span>
-                </span>
-              ))}
-            </div>
-          ))}
+        {/* Бегущая строка — внутри hero, прилипает к низу блока */}
+        <div style={{ position:'absolute', bottom:0, left:0, right:0, borderTop:`1px solid ${GOLD20}`, background:'hsl(222 30% 6% / 0.85)', backdropFilter:'blur(8px)', padding:'12px 0', overflow:'hidden' }}>
+          <div className="animate-marquee" style={{ display:'flex', whiteSpace:'nowrap', width:'max-content' }}>
+            {[...Array(2)].map((_, k) => (
+              <div key={k} style={{ display:'flex' }}>
+                {['Жилая недвижимость','Коммерция','Бесплатный подбор','Юридическое сопровождение','Москва и МО','Инвестиции в недвижимость'].map(t => (
+                  <span key={t+k} style={{ display:'inline-flex', alignItems:'center', gap:22, padding:'0 22px', fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>
+                    {t} <span style={{ fontSize:5, opacity:0.5 }}>◆</span>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* ══════════════════════════════════
           SERVICES — карточки по центру
