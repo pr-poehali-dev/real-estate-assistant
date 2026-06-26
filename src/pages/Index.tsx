@@ -149,31 +149,15 @@ const Index = () => {
           </div>
 
           {/* Бейджи */}
-          <div className="animate-fade-up" style={{ animationDelay:'620ms', display:'flex', justifyContent:'center', flexWrap:'wrap', gap:24 }}>
+          <div className="animate-fade-up" style={{ animationDelay:'620ms', display:'flex', justifyContent:'center', flexWrap:'wrap', gap:16 }}>
             {[
-              { icon:'Check',  label:'Без условий' },
-              { icon:'Check',  label:'Вы ничего не платите' },
-              { icon:'MapPin', label:'Москва и МО' },
+              { icon:'Shield',  label:'Спокойствие сделки' },
+              { icon:'Home',    label:'Подбор недвижимости — бесплатно' },
+              { icon:'Star',    label:'Вы принимаете ключевое решение' },
             ].map(b => (
-              <span key={b.label} style={{ display:'flex', alignItems:'center', gap:7, fontFamily:'Inter,sans-serif', fontSize:11, letterSpacing:'0.18em', textTransform:'uppercase', color:MUTED }}>
+              <span key={b.label} style={{ display:'flex', alignItems:'center', gap:8, fontFamily:'Inter,sans-serif', fontSize:11, letterSpacing:'0.15em', textTransform:'uppercase', color:MUTED, padding:'8px 16px', border:`1px solid ${GOLD20}`, borderRadius:100 }}>
                 <Icon name={b.icon} size={12} style={{ color:GOLD }} /> {b.label}
               </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Статистика снизу */}
-        <div style={{ position:'relative', zIndex:2, width:'100%', borderTop:`1px solid ${GOLD20}`, marginTop:'clamp(40px,6vh,80px)' }}>
-          <div style={{ maxWidth:900, margin:'0 auto', padding:'0 clamp(24px,5vw,60px)', display:'grid', gridTemplateColumns:'repeat(3,1fr)' }}>
-            {[
-              { n:'С 2025', l:'На рынке' },
-              { n:'100%',   l:'Бесплатный подбор' },
-              { n:'24/7',   l:'На связи для вас' },
-            ].map((s, i) => (
-              <div key={s.l} style={{ padding:'clamp(16px,2.5vw,30px) 0', textAlign:'center', borderLeft: i > 0 ? `1px solid ${GOLD20}` : 'none' }}>
-                <div className="font-display" style={{ fontSize:'clamp(20px,3vw,38px)', fontWeight:300, color:GOLD, letterSpacing:'-0.02em', lineHeight:1 }}>{s.n}</div>
-                <div style={{ fontFamily:'Inter,sans-serif', fontSize:9, letterSpacing:'0.26em', textTransform:'uppercase', color:MUTED, marginTop:8 }}>{s.l}</div>
-              </div>
             ))}
           </div>
         </div>
