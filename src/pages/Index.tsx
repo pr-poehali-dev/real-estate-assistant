@@ -211,16 +211,15 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Зачем мы нужны"
-            title={<>Рынок должен служить <em style={{ color:GOLD, fontStyle:'italic' }}>вам</em></>}
-            sub="Мы берём на себя всё — от поиска до безопасной передачи ключей. Бесплатно."
+            title={<>Рынок недвижимости должен служить <em style={{ color:GOLD, fontStyle:'italic' }}>покупателю</em>, а не тем, кто продаёт</>}
           />
 
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
             {/* Минусы */}
             <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid ${GOLD20}` }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Без нас вам придётся:</p>
+              <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Вам больше не нужно:</p>
               {[
-                'Тратить время на самостоятельный поиск и сталкиваться с фейковыми объявлениями',
+                'Тратить время на самостоятельный поиск квартиры и сталкиваться с фейковыми объявлениями',
                 'Часами искать надёжного агента среди сотен предложений',
                 'Разбираться в бесконечном потоке рекламы и платных услуг на сторонних сайтах',
               ].map((text, i) => (
@@ -236,11 +235,17 @@ const Index = () => {
             {/* Плюсы */}
             <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
               <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(20px,2.5vw,32px)', border:`1px solid ${GOLD20}`, flex:1 }}>
-                <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:14 }}>С нами вы получаете:</p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:14 }}>Вы можете:</p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.3vw,15px)', lineHeight:1.8, color:FG, marginBottom:20, borderLeft:`2px solid ${GOLD}`, paddingLeft:14 }}>
+                  Доверить всю эту работу нам — и использовать сэкономленное время для себя.
+                </p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, marginBottom:20 }}>
+                  Мы выполним всё именно так, как вы задумали. С полной уверенностью в качестве каждого этапа — от первого звонка до получения ключей.
+                </p>
                 {[
-                  { icon:'ShieldCheck', label:'Надёжно',        text:'Прозрачные условия и тщательная проработка каждого этапа' },
-                  { icon:'Zap',         label:'Быстро',          text:'Заявки рассматриваются в приоритетном порядке' },
-                  { icon:'Star',        label:'Профессионально', text:'Договор и полный пакет документов — за вас' },
+                  { icon:'ShieldCheck', label:'Надёжно',        text:'Прозрачные условия, тщательная проработка сделки и выявление всех возможных рисков' },
+                  { icon:'Zap',         label:'Оперативно',      text:'Заявки клиентов рассматриваются в приоритетном порядке' },
+                  { icon:'Award',       label:'Профессионально', text:'Составим договор и соберём полный пакет необходимых документов' },
                 ].map((item, i) => (
                   <div key={item.label} style={{ display:'flex', gap:14, padding:'14px 0', borderBottom: i < 2 ? `1px solid ${GOLD20}` : 'none' }}>
                     <div style={{ width:36, height:36, border:`1px solid ${GOLD40}`, borderRadius:10, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
@@ -252,11 +257,6 @@ const Index = () => {
                     </div>
                   </div>
                 ))}
-              </div>
-              <div style={{ background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.08))`, borderRadius:20, padding:'clamp(18px,2.5vw,28px)', border:`1px solid ${GOLD40}`, textAlign:'center' }}>
-                <p className="font-display" style={{ fontSize:'clamp(15px,1.5vw,19px)', fontStyle:'italic', fontWeight:300, lineHeight:1.55, color:FG }}>
-                  «Доверьте нам всю работу — и используйте сэкономленное время для себя.»
-                </p>
               </div>
             </div>
           </div>
@@ -270,7 +270,7 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="О компании"
-            title={<>История <em style={{ color:GOLD, fontStyle:'italic' }}>«Дом Мечты»</em></>}
+            title={<>О компании <em style={{ color:GOLD, fontStyle:'italic' }}>«Дом Мечты»</em></>}
           />
 
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16, alignItems:'start' }} className="about-grid">
@@ -279,13 +279,13 @@ const Index = () => {
               {[
                 'Мы — динамично развивающаяся организация, работающая на рынке услуг по подбору недвижимости с 2025 года. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.',
                 'Образование компании стало логическим продолжением успешного завершения финансовых сделок группой специалистов, составивших основу нашей профессиональной деятельности.',
-                '«Дом Мечты» — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать наилучшие условия именно для вас.',
+                'Компания «Дом Мечты» — это команда, поставившая своей целью решать все возникающие вопросы, связанные с приобретением недвижимости. Мы готовы вам помочь принять верное решение и подобрать наилучшие условия именно для вас.',
               ].map((t, i) => (
                 <p key={i} style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>{t}</p>
               ))}
               <div style={{ marginTop:8, background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.06))`, borderRadius:20, padding:'24px 28px', border:`1px solid ${GOLD40}` }}>
                 <p className="font-display" style={{ fontSize:'clamp(16px,1.7vw,22px)', fontStyle:'italic', fontWeight:300, lineHeight:1.6, color:FG }}>
-                  «Результат гарантирован. Наша команда работает на него, а не на видимость работы.»
+                  «Результат гарантирован. Мы работаем на него, а не на видимость работы.»
                 </p>
               </div>
             </div>
@@ -339,10 +339,13 @@ const Index = () => {
               <div>
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD }}>Наши возможности</span>
                 <p className="font-display" style={{ fontSize:'clamp(17px,1.9vw,25px)', fontStyle:'italic', fontWeight:300, lineHeight:1.55, color:FG, margin:'14px 0 12px' }}>
-                  Некоторые клиенты зарабатывают на объектах, которые мы находим — за счёт покупки и дальнейшей перепродажи по выгодной цене.
+                  Некоторые из наших постоянных клиентов зарабатывают на объектах, которые мы находим для них — за счёт покупки и дальнейшей перепродажи по выгодной цене.
                 </p>
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED }}>
-                  После покупки мы готовы помочь с ремонтом: подберём проверенного подрядчика, который воплотит лучший дизайн вашей квартиры — под ваш вкус и бюджет.
+                  Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты, мы находим их по преимущественно низким ценам.
+                </p>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, marginTop:10 }}>
+                  После покупки мы готовы помочь с ремонтом: подберём проверенного партнёра-подрядчика, который воплотит лучший дизайн вашей квартиры — персонально для вас.
                 </p>
               </div>
               <div>
@@ -376,11 +379,11 @@ const Index = () => {
               Поиск недвижимости<br />начинается <em className="gold-shimmer">здесь</em>
             </h2>
             <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, marginBottom:40 }}>
-              Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок.
+              Выберите комфортный способ связи: напишите нам в социальных сетях или закажите бесплатный обратный звонок от нашего агента.
             </p>
             <div style={{ display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap', marginBottom:40 }}>
               <button className="btn-apex btn-apex-gold" onClick={() => openRequest('social')} style={{ minWidth:190 }}>
-                <Icon name="MessageCircle" size={14} /> Написать
+                <Icon name="MessageCircle" size={14} /> Написать в соцсетях
               </button>
               <button className="btn-apex btn-apex-outline" onClick={() => openRequest('meeting')} style={{ minWidth:190 }}>
                 <Icon name="Phone" size={14} /> Обратный звонок
