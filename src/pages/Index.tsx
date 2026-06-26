@@ -10,9 +10,6 @@ import {
   DialogDescription,
 } from '@/components/ui/dialog';
 
-/* ─── HERO фото ─── */
-const HERO_IMG = 'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/files/0531d703-0186-48bc-b44b-e0b7573ffa6e.jpg';
-
 /* ─── ДАННЫЕ ─── */
 const SERVICES = [
   { icon: 'MessageSquare', title: 'Бесплатная консультация', text: 'Отвечаем на все вопросы по покупке, продаже и юридическим нюансам — без скрытых условий.' },
@@ -101,11 +98,7 @@ const Index = () => {
       {/* ══════════════════════════════════
           HERO — центрированный, как в первой версии
       ══════════════════════════════════ */}
-      <section style={{ position:'relative', minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', textAlign:'center', overflow:'hidden' }}>
-        {/* Фото */}
-        <img src={HERO_IMG} alt="" style={{ position:'absolute', inset:0, width:'100%', height:'100%', objectFit:'cover', zIndex:0 }} />
-        {/* Вуаль */}
-        <div style={{ position:'absolute', inset:0, zIndex:1, background:'linear-gradient(to bottom, hsl(222 35% 5% / 0.88) 0%, hsl(222 30% 8% / 0.72) 60%, hsl(222 35% 5% / 0.95) 100%)' }} />
+      <section style={{ position:'relative', minHeight:'100vh', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'center', textAlign:'center', overflow:'hidden', background:'hsl(222 28% 8%)' }}>
 
         {/* Вертикальная подпись слева */}
         <div className="hidden md:flex" style={{ position:'absolute', top:0, bottom:0, left:'clamp(16px,3vw,44px)', zIndex:2, alignItems:'center' }}>
