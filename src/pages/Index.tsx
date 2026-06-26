@@ -218,11 +218,11 @@ const Index = () => {
           <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
             {/* Минусы */}
             <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid ${GOLD20}` }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Вам больше не нужно:</p>
+              <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Больше не нужно:</p>
               {[
-                'Тратить время на самостоятельный поиск квартиры и сталкиваться с фейковыми объявлениями',
-                'Часами искать надёжного агента среди сотен предложений',
-                'Разбираться в бесконечном потоке рекламы и платных услуг на сторонних сайтах',
+                'Самостоятельно исследовать рынок недвижимости, сопряженный с присущими ему рисками и противоречиями',
+                'Испытывать трудности в поиске действительно квалифицированного специалиста, чья надёжность требует тщательной проверки',
+                'Продираться сквозь навязчивую рекламу, поток скрытых комиссий и неоднозначные платные опции на сторонних платформах',
               ].map((text, i) => (
                 <div key={i} style={{ display:'flex', gap:14, padding:'16px 0', borderBottom: i < 2 ? `1px solid ${GOLD20}` : 'none' }}>
                   <div style={{ width:26, height:26, border:`1px solid ${GOLD20}`, borderRadius:8, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0, marginTop:1 }}>
