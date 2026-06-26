@@ -46,10 +46,11 @@ const Header = () => {
           to="/"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', flexShrink: 0 }}
+          translate="no"
         >
-          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-            <span style={{ fontFamily: 'Playfair Display, serif', fontSize: 21, fontWeight: 700, letterSpacing: '0.16em', color: FG, textTransform: 'uppercase' }}>APEX</span>
-            <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 7, fontWeight: 500, letterSpacing: '0.44em', textTransform: 'uppercase', color: GOLD, marginTop: 1 }}>SOLUTIONS</span>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }} translate="no">
+            <span translate="no" style={{ fontFamily: 'Playfair Display, serif', fontSize: 21, fontWeight: 700, letterSpacing: '0.16em', color: FG, textTransform: 'uppercase' }}>APEX</span>
+            <span translate="no" style={{ fontFamily: 'Inter, sans-serif', fontSize: 7, fontWeight: 500, letterSpacing: '0.44em', textTransform: 'uppercase', color: GOLD, marginTop: 1 }}>SOLUTIONS</span>
           </div>
           <div style={{ width: 1, height: 30, background: `linear-gradient(to bottom, transparent, ${GOLD40}, transparent)`, margin: '0 4px' }} />
           <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 8, letterSpacing: '0.18em', color: `${MUTED}88`, textTransform: 'uppercase', lineHeight: 1.5 }}>
