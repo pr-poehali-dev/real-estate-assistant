@@ -369,11 +369,6 @@ const Index = () => {
             <span style={{ position:'absolute', top:-1, left:-1, width:94, height:94, borderTop:`0.5px solid ${GOLD}`, borderLeft:`0.5px solid ${GOLD}`, display:'block' }} />
             {/* Уголок — правый нижний */}
             <span style={{ position:'absolute', bottom:-1, right:-1, width:94, height:94, borderBottom:`0.5px solid ${GOLD}`, borderRight:`0.5px solid ${GOLD}`, display:'block' }} />
-            {/* Надзаголовок */}
-            <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD, display:'block', marginBottom:20 }}>
-              Начать сейчас
-            </span>
-
             {/* Заголовок */}
             <h2 className="font-display" style={{ fontSize:'clamp(32px,5vw,68px)', fontWeight:700, lineHeight:1.08, letterSpacing:'-0.02em', marginBottom:20, color:FG }}>
               Поиск недвижимости<br />начинается <em className="gold-shimmer" style={{ fontStyle:'italic' }}>здесь</em>
