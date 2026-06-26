@@ -57,9 +57,9 @@ const Header = () => {
           </span>
         </Link>
 
-        {/* Навигация — всегда видна */}
+        {/* Навигация */}
         <nav style={{ display: 'flex', alignItems: 'center', height: 68 }}>
-          {isHome ? (
+          {isHome && (
             <>
               {[
                 { href: '#services', label: 'Услуги' },
@@ -81,51 +81,35 @@ const Header = () => {
                 onMouseLeave={e => (e.currentTarget.style.opacity = '1')}
               >Коммерция</Link>
             </>
-          ) : (
-            <>
-              <button
-                onClick={() => navigate('/')}
-                style={{ ...navLink, background: 'none', border: 'none', cursor: 'pointer', gap: 7, color: MUTED }}
-              >
-                <Icon name="ArrowLeft" size={13} /> Назад
-              </button>
-              {location.pathname !== '/commercial' && (
-                <Link to="/commercial" style={{ ...navLink, color: GOLD }}>Коммерция</Link>
-              )}
-            </>
           )}
         </nav>
 
-        {/* Кнопка «Клиентам» */}
-        {isHome ? (
-          <Link
-            to="/for-client"
-            style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 500,
-              letterSpacing: '0.28em', textTransform: 'uppercase',
-              color: GOLD, textDecoration: 'none',
-              padding: '8px 18px',
-              border: `1px solid ${GOLD40}`, borderRadius: 100,
-              transition: 'all 0.3s', flexShrink: 0,
-            }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.color = 'hsl(222 25% 8%)'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = GOLD; }}
-          >Клиентам</Link>
-        ) : location.pathname !== '/for-client' ? (
-          <Link
-            to="/for-client"
-            style={{
-              fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 500,
-              letterSpacing: '0.28em', textTransform: 'uppercase',
-              color: GOLD, textDecoration: 'none',
-              padding: '8px 18px',
-              border: `1px solid ${GOLD40}`, borderRadius: 100,
-              transition: 'all 0.3s', flexShrink: 0,
-            }}
-            onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.color = 'hsl(222 25% 8%)'; }}
-            onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = GOLD; }}
-          >Клиентам</Link>
-        ) : null}
+        {/* Правый блок: на главной — «Клиентам», на внутренних — «Назад» + «Клиентам» рядом */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+          {!isHome && (
+            <button
+              onClick={() => navigate('/')}
+              style={{ ...navLink, background: 'none', border: `1px solid ${GOLD20}`, borderRadius: 100, cursor: 'pointer', gap: 7, color: MUTED, padding: '8px 18px' }}
+            >
+              <Icon name="ArrowLeft" size={13} /> Назад
+            </button>
+          )}
+          {location.pathname !== '/for-client' && (
+            <Link
+              to="/for-client"
+              style={{
+                fontFamily: 'Inter, sans-serif', fontSize: 10, fontWeight: 500,
+                letterSpacing: '0.28em', textTransform: 'uppercase',
+                color: GOLD, textDecoration: 'none',
+                padding: '8px 18px',
+                border: `1px solid ${GOLD40}`, borderRadius: 100,
+                transition: 'all 0.3s',
+              }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.color = 'hsl(222 25% 8%)'; }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = GOLD; }}
+            >Клиентам</Link>
+          )}
+        </div>
       </div>
     </header>
   );
