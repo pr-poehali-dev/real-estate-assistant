@@ -132,12 +132,11 @@ const Index = () => {
 
             {/* Правая колонка — заголовок, подпись, кнопки */}
             <div>
-              <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.06, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
-                Пространство для{' '}
-                <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вашего комфорта</em>
-                <span style={{ WebkitTextFillColor:FG }}>{' '}– найдём то,{' '}</span><br />
-                <span style={{ WebkitTextFillColor:FG }}>что нужно{' '}</span>
-                <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вам</em>
+              <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.06, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG, whiteSpace:'pre-line', wordBreak:'keep-all' }}>
+                <span style={{ WebkitTextFillColor:FG }}>Пространство для </span>
+                <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite', display:'inline' }}>Вашего комфорта</em>
+                <span style={{ WebkitTextFillColor:FG }}>{'\n'}– найдём то, что нужно </span>
+                <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite', display:'inline' }}>Вам</em>
               </h1>
 
               <p className="animate-fade-up text-[0.81rem] font-light text-right mx-0 my-[35px] px-[5px] py-0.5" style={{ animationDelay:'440ms', fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.2vw,15px)', lineHeight:1.85, color:MUTED, maxWidth:480, marginBottom:36 }}>Профессионально подберем недвижимость. 
