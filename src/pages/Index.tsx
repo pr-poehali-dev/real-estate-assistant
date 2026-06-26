@@ -366,13 +366,9 @@ const Index = () => {
             background:'hsl(222 22% 6%)',
           }}>
             {/* Уголок — левый верхний */}
-            <span style={{ position:'absolute', top:-2, left:-2, width:32, height:32, borderTop:`2px solid ${GOLD}`, borderLeft:`2px solid ${GOLD}`, borderRadius:'4px 0 0 0', display:'block' }} />
-            {/* Уголок — правый верхний */}
-            <span style={{ position:'absolute', top:-2, right:-2, width:32, height:32, borderTop:`2px solid ${GOLD}`, borderRight:`2px solid ${GOLD}`, borderRadius:'0 4px 0 0', display:'block' }} />
-            {/* Уголок — левый нижний */}
-            <span style={{ position:'absolute', bottom:-2, left:-2, width:32, height:32, borderBottom:`2px solid ${GOLD}`, borderLeft:`2px solid ${GOLD}`, borderRadius:'0 0 0 4px', display:'block' }} />
+            <span style={{ position:'absolute', top:-1, left:-1, width:64, height:64, borderTop:`1px solid ${GOLD}`, borderLeft:`1px solid ${GOLD}`, borderRadius:'4px 0 0 0', display:'block' }} />
             {/* Уголок — правый нижний */}
-            <span style={{ position:'absolute', bottom:-2, right:-2, width:32, height:32, borderBottom:`2px solid ${GOLD}`, borderRight:`2px solid ${GOLD}`, borderRadius:'0 0 4px 0', display:'block' }} />
+            <span style={{ position:'absolute', bottom:-1, right:-1, width:64, height:64, borderBottom:`1px solid ${GOLD}`, borderRight:`1px solid ${GOLD}`, borderRadius:'0 0 4px 0', display:'block' }} />
             {/* Надзаголовок */}
             <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD, display:'block', marginBottom:20 }}>
               Начать сейчас
