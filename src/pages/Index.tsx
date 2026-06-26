@@ -363,7 +363,7 @@ const Index = () => {
             padding:'clamp(48px,6vw,80px) clamp(28px,5vw,72px)',
             textAlign:'center',
             position:'relative',
-            background:'hsl(222 30% 4%)',
+            background:NAVYD,
           }}>
             {/* Уголок — левый верхний */}
             <span style={{ position:'absolute', top:-1, left:-1, width:94, height:94, borderTop:`0.5px solid ${GOLD}`, borderLeft:`0.5px solid ${GOLD}`, display:'block' }} />
