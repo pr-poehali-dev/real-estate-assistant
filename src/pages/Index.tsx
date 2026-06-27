@@ -271,7 +271,7 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="О нас"
-            title={<>О нас{' '}
+            title={<>О компании{' '}
               <span style={{ display:'inline-flex', flexDirection:'column', lineHeight:1, verticalAlign:'middle', margin:'0 6px' }}>
                 <span style={{ fontFamily:'Playfair Display, serif', fontSize:'0.85em', fontWeight:700, letterSpacing:'0.16em', color:FG, textTransform:'uppercase', fontStyle:'normal' }}>APEX</span>
                 <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.28em', fontWeight:500, letterSpacing:'0.44em', textTransform:'uppercase', color:GOLD, marginTop:2, fontStyle:'normal' }}>SOLUTIONS</span>
