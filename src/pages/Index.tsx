@@ -309,7 +309,7 @@ const Index = () => {
                   <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Наша команда</span>
                 </div>
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                  Опытные профессионалы, глубоко погружённые в дело. Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту.
+                  Опытные профессионалы, увлечённые своим делом. Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту.
                 </p>
                 <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
                   {['Индивидуальный подход', 'Актуальная аналитика', 'Прозрачность'].map(b => (
