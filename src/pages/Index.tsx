@@ -291,7 +291,7 @@ const Index = () => {
                 Образование компании стало логическим продолжением успешного завершения <strong style={{ color:FG, fontWeight:500 }}>финансовых сделок группой специалистов</strong>, составивших основу нашей профессиональной деятельности.
               </p>
               {/* Ключевое заявление */}
-              <div style={{ marginTop:'auto', background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.05))`, borderRadius:16, padding:'22px 26px', borderLeft:`3px solid ${GOLD}` }}>
+              <div style={{ marginTop:8, background:`linear-gradient(135deg, ${GOLD20}, hsl(43 58% 55% / 0.05))`, borderRadius:16, padding:'22px 26px', borderLeft:`3px solid ${GOLD}` }}>
                 <p className="font-display" style={{ fontSize:'clamp(14px,1.4vw,18px)', fontStyle:'italic', fontWeight:300, lineHeight:1.75, color:FG, margin:0 }}>
                   «Apex Solutions — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать для Вас наилучшие условия.»
                 </p>
