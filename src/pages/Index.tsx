@@ -265,6 +265,31 @@ const Index = () => {
       </section>
 
       {/* ══════════════════════════════════
+          DIRECTIONS
+      ══════════════════════════════════ */}
+      <section style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px)', background:NAVYC }}>
+        <div style={{ maxWidth:1100, margin:'0 auto' }}>
+          <SectionTitle
+            eyebrow="Направления"
+            title={<>Основные <em style={{ color:GOLD, fontStyle:'italic' }}>направления</em></>}
+            sub="Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта."
+          />
+
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:16 }}>
+            {DIRECTIONS.map((d, i) => (
+              <div key={d.title} className="apex-card animate-fade-up" style={{ padding:'clamp(22px,3vw,36px)', animationDelay:`${i*80}ms` }}>
+                <div style={{ width:48, height:48, border:`1px solid ${GOLD40}`, borderRadius:14, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16 }}>
+                  <Icon name={d.icon} size={20} style={{ color:GOLD }} />
+                </div>
+                <h3 className="font-display" style={{ fontSize:'clamp(16px,1.6vw,20px)', fontWeight:600, marginBottom:10, color:FG }}>{d.title}</h3>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED }}>{d.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════
           ABOUT + STEPS
       ══════════════════════════════════ */}
       <section id="about" style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px)', background:NAVY }}>
@@ -356,57 +381,6 @@ const Index = () => {
 
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════
-          DIRECTIONS
-      ══════════════════════════════════ */}
-      <section style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px)', background:NAVYC }}>
-        <div style={{ maxWidth:1100, margin:'0 auto' }}>
-          <SectionTitle
-            eyebrow="Направления"
-            title={<>Основные <em style={{ color:GOLD, fontStyle:'italic' }}>направления</em></>}
-            sub="Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта."
-          />
-
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:16 }}>
-            {DIRECTIONS.map((d, i) => (
-              <div key={d.title} className="apex-card animate-fade-up" style={{ padding:'clamp(22px,3vw,36px)', animationDelay:`${i*80}ms` }}>
-                <div style={{ width:48, height:48, border:`1px solid ${GOLD40}`, borderRadius:14, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16 }}>
-                  <Icon name={d.icon} size={20} style={{ color:GOLD }} />
-                </div>
-                <h3 className="font-display" style={{ fontSize:'clamp(16px,1.6vw,20px)', fontWeight:600, marginBottom:10, color:FG }}>{d.title}</h3>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED }}>{d.text}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Возможности */}
-          <div style={{ marginTop:24, background:NAVYD, borderRadius:24, padding:'clamp(28px,4vw,52px)', border:`1px solid ${GOLD20}` }}>
-            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'clamp(24px,4vw,56px)', alignItems:'start' }} className="cap-grid">
-              <div>
-                <span style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.38em', textTransform:'uppercase', color:GOLD }}>Наши возможности</span>
-                <p className="font-display" style={{ fontSize:'clamp(17px,1.9vw,25px)', fontStyle:'italic', fontWeight:300, lineHeight:1.55, color:FG, margin:'14px 0 12px' }}>
-                  Некоторые из наших постоянных клиентов зарабатывают на объектах, которые мы находим для них — за счёт покупки и дальнейшей перепродажи по выгодной цене.
-                </p>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED }}>
-                  Наша цель — поиск наилучших условий при покупке недвижимости. Мы не просто подбираем варианты, мы находим их по преимущественно низким ценам.
-                </p>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, marginTop:10 }}>
-                  После покупки мы готовы помочь с ремонтом: подберём проверенного партнёра-подрядчика, который воплотит лучший дизайн вашей квартиры — персонально для вас.
-                </p>
-              </div>
-              <div>
-                {CAPABILITIES.map((c, i) => (
-                  <div key={i} style={{ display:'flex', gap:14, alignItems:'flex-start', padding:'13px 0', borderBottom: i < CAPABILITIES.length-1 ? `1px solid ${GOLD20}` : 'none' }}>
-                    <Icon name={c.icon} size={14} style={{ color:GOLD, flexShrink:0, marginTop:2 }} />
-                    <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.7, color:MUTED }}>{c.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
