@@ -271,8 +271,8 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Направления"
-            title={<>Основные <em style={{ color:GOLD, fontStyle:'italic' }}>направления</em></>}
-            sub="Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта."
+            title={<>Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта.</>}
+            sub=""
           />
 
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:16 }}>
