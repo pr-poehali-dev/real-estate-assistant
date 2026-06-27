@@ -208,7 +208,7 @@ const Index = () => {
       {/* ══════════════════════════════════
           WHY US
       ══════════════════════════════════ */}
-      <section id="why" style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px)', background:NAVYC }}>
+      <section id="why" style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px) 0', background:NAVYC }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Зачем мы нужны"
