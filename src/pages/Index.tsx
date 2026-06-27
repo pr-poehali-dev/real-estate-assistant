@@ -271,7 +271,7 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Направления"
-            title={<>Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта.</>}
+            title={<><em style={{ fontStyle:'italic', background:'linear-gradient(90deg, hsl(43 58% 45%), hsl(43 80% 70%), hsl(36 60% 50%))', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Четыре ключевых</em> вектора работы — от <em style={{ fontStyle:'normal', background:'linear-gradient(90deg, hsl(43 58% 45%), hsl(43 80% 70%), hsl(36 60% 50%))', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>жилья</em> до <em style={{ fontStyle:'normal', background:'linear-gradient(90deg, hsl(43 58% 45%), hsl(43 80% 70%), hsl(36 60% 50%))', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>инвестиционной коммерции</em> и <em style={{ fontStyle:'normal', background:'linear-gradient(90deg, hsl(43 58% 45%), hsl(43 80% 70%), hsl(36 60% 50%))', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>ремонта</em>.</>}
             sub=""
           />
 
