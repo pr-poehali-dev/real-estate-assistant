@@ -270,8 +270,8 @@ const Index = () => {
       <section id="about" style={{ padding:'clamp(56px,8vw,112px) clamp(20px,5vw,60px)', background:NAVY }}>
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
-            eyebrow="О компании"
-            title={<>О компании{' '}
+            eyebrow="О нас"
+            title={<>О нас{' '}
               <span style={{ display:'inline-flex', flexDirection:'column', lineHeight:1, verticalAlign:'middle', margin:'0 6px' }}>
                 <span style={{ fontFamily:'Playfair Display, serif', fontSize:'0.85em', fontWeight:700, letterSpacing:'0.16em', color:FG, textTransform:'uppercase', fontStyle:'normal' }}>APEX</span>
                 <span style={{ fontFamily:'Inter, sans-serif', fontSize:'0.28em', fontWeight:500, letterSpacing:'0.44em', textTransform:'uppercase', color:GOLD, marginTop:2, fontStyle:'normal' }}>SOLUTIONS</span>
@@ -299,7 +299,7 @@ const Index = () => {
             </div>
 
             {/* Правая колонка — в рамке */}
-            <div style={{ border:`1px solid ${GOLD20}`, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
+            <div style={{ border:`1px solid ${GOLD20}`, borderRadius:0, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
 
               {/* Блок: Команда */}
               <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -344,8 +344,13 @@ const Index = () => {
                   <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Комплексный сервис</span>
                 </div>
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
-                  Всё необходимое в одном месте. Экономим ваше время и обеспечиваем <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с рынком недвижимости.
+                  Всё необходимое в одном месте. Экономим ваше время и обеспечиваем <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с миром недвижимости.
                 </p>
+                <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
+                  {['Всё в одном месте', 'Экономия времени', 'Лучший опыт'].map(b => (
+                    <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
+                  ))}
+                </div>
               </div>
 
             </div>
