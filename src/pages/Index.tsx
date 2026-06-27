@@ -279,15 +279,15 @@ const Index = () => {
             </>}
           />
 
-          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:0, alignItems:'stretch', borderRadius:24, overflow:'hidden' }} className="about-grid">
+          <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:0, alignItems:'stretch' }} className="about-grid">
 
             {/* Левая колонка — на фоне */}
-            <div style={{ background:NAVYC, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, textAlign:'justify' }}>
+            <div style={{ background:NAVYC, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24, borderRadius:'24px 0 0 24px' }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED }}>
                 Мы — <strong style={{ color:FG, fontWeight:500 }}>динамично развивающаяся организация</strong>, работающая на рынке услуг по подбору недвижимости с <strong style={{ color:GOLD, fontWeight:500 }}>2015 года</strong>. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
               </p>
               <div style={{ width:40, height:1, background:`linear-gradient(to right, ${GOLD}, transparent)` }} />
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED, textAlign:'justify' }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED }}>
                 Образование компании стало логическим продолжением успешного завершения <strong style={{ color:FG, fontWeight:500 }}>финансовых сделок группой специалистов</strong>, составивших основу нашей профессиональной деятельности.
               </p>
               {/* Ключевое заявление */}
@@ -299,7 +299,7 @@ const Index = () => {
             </div>
 
             {/* Правая колонка — в рамке */}
-            <div style={{ border:`1px solid ${GOLD20}`, borderRadius:0, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
+            <div style={{ border:`1px solid ${GOLD20}`, borderRadius:'0 24px 24px 0', padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
 
               {/* Блок: Команда */}
               <div style={{ display:'flex', flexDirection:'column', gap:10 }}>
@@ -307,7 +307,7 @@ const Index = () => {
                   <Icon name="Users" size={14} style={{ color:GOLD }} />
                   <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Наша команда</span>
                 </div>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
                   Опытные профессионалы, глубоко погружённые в рынок. Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту.
                 </p>
                 <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
@@ -325,7 +325,7 @@ const Index = () => {
                   <Icon name="Landmark" size={14} style={{ color:GOLD }} />
                   <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Финансовые решения</span>
                 </div>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
                   Ипотека, рефинансирование, потребительский кредит и поддержка бизнеса. Сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> для выгодных ставок и удобных условий.
                 </p>
                 <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
@@ -343,7 +343,7 @@ const Index = () => {
                   <Icon name="LayoutDashboard" size={14} style={{ color:GOLD }} />
                   <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Комплексный сервис</span>
                 </div>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, textAlign:'justify' }}>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
                   Всё необходимое в одном месте. Экономим ваше время и обеспечиваем <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с миром недвижимости.
                 </p>
                 <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
