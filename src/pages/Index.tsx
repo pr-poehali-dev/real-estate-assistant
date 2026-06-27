@@ -27,10 +27,10 @@ const CAPABILITIES = [
 ];
 
 const DIRECTIONS = [
-  { icon: 'Home',      title: 'Жилая',        text: 'Квартиры в новостройках и на вторичном рынке — для себя или под инвестицию.' },
-  { icon: 'Building2', title: 'Коммерческая',  text: 'Офисные, торговые, индустриальные и социальные объекты для аренды или ведения бизнеса.' },
-  { icon: 'Trees',     title: 'Загородная',    text: 'Дома, коттеджи, особняки, усадьбы, резиденции, таунхаусы, дуплексы — подберём лучший вариант за городом.' },
-  { icon: 'Hammer',    title: 'Ремонт под ключ', text: 'Подберём проверенного подрядчика из числа наших партнёров, который реализует лучший дизайн вашей новой квартиры — персонально для вас.' },
+  { icon: 'Home',          title: 'Жилая недвижимость',       text: 'Квартиры в новостройках и на вторичном рынке — для себя или под инвестицию.' },
+  { icon: 'Building2',     title: 'Коммерческая недвижимость', text: 'Офисные, торговые, индустриальные и социальные объекты для аренды или ведения бизнеса.' },
+  { icon: 'Trees',         title: 'Загородная недвижимость',   text: 'Дома, коттеджи, особняки, усадьбы, резиденции, таунхаусы, дуплексы — подберём лучший вариант за городом.' },
+  { icon: 'Hammer',        title: 'Ремонт под ключ',           text: 'Подберём проверенного подрядчика из числа наших партнёров, который реализует лучший дизайн вашей новой квартиры — персонально для вас.' },
 ];
 
 const STEPS = [
@@ -271,27 +271,18 @@ const Index = () => {
         <div style={{ maxWidth:1100, margin:'0 auto' }}>
           <SectionTitle
             eyebrow="Направления"
-            title={<>Недвижимость</>}
-            sub="Три ключевых направления — жилая, коммерческая и загородная."
+            title={<>Основные <em style={{ color:GOLD, fontStyle:'italic' }}>направления</em></>}
+            sub="Четыре ключевых вектора работы — от жилья до инвестиционной коммерции и ремонта."
           />
 
-          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))', gap:16 }}>
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:16 }}>
             {DIRECTIONS.map((d, i) => (
-              <div key={d.title} className="apex-card animate-fade-up" style={{ padding:'clamp(22px,3vw,36px)', animationDelay:`${i*80}ms`, display:'flex', flexDirection:'column', gap:16 }}>
-                <div style={{ display:'flex', alignItems:'center', gap:14 }}>
-                  <div style={{ width:48, height:48, border:`1px solid ${GOLD40}`, borderRadius:14, display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-                    <Icon name={d.icon} size={20} style={{ color:GOLD }} />
-                  </div>
-                  <h3 className="font-display" style={{ fontSize:'clamp(16px,1.6vw,20px)', fontWeight:600, color:FG, margin:0 }}>{d.title}</h3>
+              <div key={d.title} className="apex-card animate-fade-up" style={{ padding:'clamp(22px,3vw,36px)', animationDelay:`${i*80}ms` }}>
+                <div style={{ width:48, height:48, border:`1px solid ${GOLD40}`, borderRadius:14, display:'flex', alignItems:'center', justifyContent:'center', marginBottom:16 }}>
+                  <Icon name={d.icon} size={20} style={{ color:GOLD }} />
                 </div>
-                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, margin:0 }}>{d.text}</p>
-                {d.tags && (
-                  <div style={{ display:'flex', flexWrap:'wrap', gap:8 }}>
-                    {d.tags.map(tag => (
-                      <span key={tag} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{tag}</span>
-                    ))}
-                  </div>
-                )}
+                <h3 className="font-display" style={{ fontSize:'clamp(16px,1.6vw,20px)', fontWeight:600, marginBottom:10, color:FG }}>{d.title}</h3>
+                <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED }}>{d.text}</p>
               </div>
             ))}
           </div>
