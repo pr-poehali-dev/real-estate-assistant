@@ -326,9 +326,7 @@ html {
     grid-template-columns: 1fr !important;
     gap: 0 !important;
   }
-  .hero-badges-col {
-    display: none !important;
-  }
+
   .hero-text-col h1 {
     font-size: 28px !important;
   }
