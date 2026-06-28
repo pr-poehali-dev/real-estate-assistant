@@ -321,14 +321,24 @@ html {
     display: flex !important;
   }
 
-  /* Hero: скрыть бейджи, заголовок на всю ширину */
+  /* Hero */
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 0 !important;
+    gap: 24px !important;
   }
-
   .hero-text-col h1 {
     font-size: 28px !important;
+    margin-top: 16px !important;
+  }
+  .hero-text-col p {
+    font-size: 13px !important;
+    margin-top: 16px !important;
+    margin-bottom: 20px !important;
+  }
+  .hero-text-col .btn-apex {
+    padding: 0 16px !important;
+    font-size: 9px !important;
+    height: 42px !important;
   }
 
   /* Карточки услуг — 1 колонка */
