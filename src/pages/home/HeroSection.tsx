@@ -21,7 +21,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
 
       <div style={{ display:'grid', gridTemplateColumns:'auto 1fr', gap:'clamp(32px,5vw,72px)', alignItems:'start' }} className="hero-grid">
 
-        <div className="animate-fade-up" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
+        <div className="animate-fade-up hero-badges-col" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
           {[
             { icon:'Shield', label:'Спокойствие сделки' },
             { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
