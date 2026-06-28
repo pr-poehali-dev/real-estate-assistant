@@ -55,10 +55,6 @@ const ContentSections = () => (
             ))}
 
             <div style={{ background:'hsl(220 40% 12%)', borderRadius:16, padding:'18px 22px', borderLeft:`3px solid hsl(210 60% 55%)`, marginTop:12 }}>
-              <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:10 }}>
-                <Icon name="Rocket" size={14} style={{ color:'hsl(210 60% 65%)' }} />
-                <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:'hsl(210 60% 65%)' }}>Ваша выгода</span>
-              </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:0 }}>
                 <strong style={{ color:FG, fontWeight:500 }}>Оптимизируйте процесс</strong> поиска и продажи ваших объектов недвижимости.
               </p>
