@@ -185,19 +185,54 @@ const Header = () => {
           )}
 
           {!isHome && (
-            <button
-              onClick={() => { navigate('/'); closeMenu(); }}
-              style={{
-                fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
-                letterSpacing: '0.28em', textTransform: 'uppercase',
-                color: MUTED, background: 'none', border: 'none',
-                padding: '14px 0', cursor: 'pointer', textAlign: 'center',
-                borderBottom: `1px solid ${GOLD20}`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, width: '100%',
-              }}
-            >
-              <Icon name="ArrowLeft" size={13} /> Назад
-            </button>
+            <>
+              <button
+                onClick={() => { navigate('/'); closeMenu(); }}
+                style={{
+                  fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                  letterSpacing: '0.28em', textTransform: 'uppercase',
+                  color: MUTED, background: 'none', border: 'none',
+                  padding: '14px 0', cursor: 'pointer', textAlign: 'center',
+                  borderBottom: `1px solid ${GOLD20}`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, width: '100%',
+                }}
+              >
+                <Icon name="ArrowLeft" size={13} /> На главную
+              </button>
+              {[
+                { href: '/#services', label: 'Услуги' },
+                { href: '/#about',    label: 'О нас' },
+                { href: '/#contacts', label: 'Контакты' },
+              ].map(l => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={closeMenu}
+                  style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                    letterSpacing: '0.28em', textTransform: 'uppercase',
+                    color: MUTED, textDecoration: 'none',
+                    padding: '14px 0',
+                    borderBottom: `1px solid ${GOLD20}`,
+                    display: 'block', width: '100%', textAlign: 'center',
+                  }}
+                >{l.label}</a>
+              ))}
+              {location.pathname !== '/commercial' && (
+                <Link
+                  to="/commercial"
+                  onClick={closeMenu}
+                  style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                    letterSpacing: '0.28em', textTransform: 'uppercase',
+                    color: GOLD, textDecoration: 'none',
+                    padding: '14px 0',
+                    borderBottom: `1px solid ${GOLD20}`,
+                    display: 'block', width: '100%', textAlign: 'center',
+                  }}
+                >Коммерция</Link>
+              )}
+            </>
           )}
 
           {location.pathname !== '/for-client' && (
