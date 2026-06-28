@@ -122,7 +122,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
               )}
               <div>
                 <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Ваш запрос</label>
-                <textarea placeholder="Что вы ищете? Квартира, коммерция, загородная недвижимость. Расскажите подробнее..." rows={3} value={f.request} onChange={e=>setF({request:e.target.value})} className="apex-input" style={{ resize:'none' }} />
+                <textarea placeholder="Что Вы ищете? Квартира, коммерция, загородная недвижимость. Расскажите подробнее..." rows={3} value={f.request} onChange={e=>setF({request:e.target.value})} className="apex-input" style={{ resize:'none' }} />
               </div>
               {mode==='social' && (
                 <label style={{ display:'flex', alignItems:'center', gap:12, cursor:'pointer' }}>
