@@ -329,6 +329,9 @@ html {
   .hero-badges-col {
     display: none !important;
   }
+  .hero-text-col h1 {
+    font-size: 28px !important;
+  }
 
   /* Карточки услуг — 1 колонка */
   .services-grid,
