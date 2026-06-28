@@ -39,7 +39,7 @@ const ContentSections = () => (
         />
 
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
-          <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid ${GOLD20}` }}>
+          <div style={{ background:'hsl(220 40% 12%)', borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid hsl(210 60% 55%)`, borderLeft:`3px solid hsl(210 60% 55%)` }}>
             <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Больше не нужно:</p>
             {[
               'Самостоятельно исследовать рынок недвижимости, сопряженный с присущими ему рисками и противоречиями',
