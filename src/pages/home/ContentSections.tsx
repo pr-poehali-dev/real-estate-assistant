@@ -41,7 +41,7 @@ const ContentSections = () => (
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
           <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid ${GOLD20}` }}>
             <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.3vw,15px)', lineHeight:1.8, color:FG, marginBottom:20, borderLeft:`2px solid hsl(210 60% 55%)`, paddingLeft:14 }}>
-              Оптимизируйте процесс поиска и продажи ваших объектов недвижимости.
+              Оптимизируйте процесс поиска и продажи Ваших объектов недвижимости.
             </p>
             <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Больше не нужно:</p>
             {[
@@ -62,10 +62,10 @@ const ContentSections = () => (
             <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(20px,2.5vw,32px)', border:`1px solid ${GOLD20}`, flex:1 }}>
               <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:14 }}>Вы можете:</p>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:'clamp(13px,1.3vw,15px)', lineHeight:1.8, color:FG, marginBottom:20, borderLeft:`2px solid ${GOLD}`, paddingLeft:14 }}>
-                Передать нам полный контроль над процессом и довериться нашим экспертам, пока вы располагаете свободным от этих обязательств временем, проводя его с пользой для себя.
+                Передать нам полный контроль над процессом и довериться нашим экспертам, пока Вы располагаете свободным от этих обязательств временем, проводя его с пользой для себя.
               </p>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.8, color:MUTED, marginBottom:20 }}>
-                Мы сделаем всё строго так, как вы изначально задумали. Ваш опыт на рынке недвижимости — без стресса и компромиссов.
+                Мы сделаем всё строго так, как Вы изначально задумали. Ваш опыт на рынке недвижимости — без стресса и компромиссов.
               </p>
               {[
                 { icon:'ShieldCheck', label:'Надёжно',        text:'Прозрачные условия, тщательная проработка сделки и выявление всех потенциальных рисков.' },

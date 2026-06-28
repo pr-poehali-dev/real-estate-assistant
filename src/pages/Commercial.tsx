@@ -148,7 +148,7 @@ const Commercial = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Возможности</span>
-              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-8">Что мы делаем для вас</h2>
+              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-8">Что мы делаем для Вас</h2>
               <div className="space-y-3">
                 {CAPABILITIES.map((c, i) => (
                   <div key={i} className="flex gap-4 items-start bg-card rounded-2xl p-4 border border-border">
@@ -167,7 +167,7 @@ const Commercial = () => {
                 Часть наших постоянных клиентов приобретают коммерческие объекты для последующей перепродажи или сдачи в аренду. Мы находим объекты по ценам ниже рынка — это открывает возможность получить доход уже на старте.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Наша цель — найти для вас наилучшие условия покупки. Мы не просто подбираем объекты — мы ищем там, где другие не смотрят.
+                Наша цель — найти для Вас наилучшие условия покупки. Мы не просто подбираем объекты — мы ищем там, где другие не смотрят.
               </p>
               <div className="bg-terracotta/10 border border-terracotta/20 rounded-2xl p-6">
                 <p className="font-semibold text-terracotta mb-1">Результат гарантирован</p>
