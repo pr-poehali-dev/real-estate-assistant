@@ -143,7 +143,7 @@ const ContentSections = () => (
 
             <div style={{ background:'hsl(220 40% 12%)', borderRadius:16, padding:'22px 26px', borderLeft:`3px solid hsl(210 60% 55%)`, marginTop:4 }}>
               <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:12 }}>
-                <Icon name="ShieldCheck" size={14} style={{ color:'hsl(210 60% 65%)' }} />
+                <Icon name="Lightbulb" size={14} style={{ color:'hsl(210 60% 65%)' }} />
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:'hsl(210 60% 65%)' }}>Наш принцип</span>
               </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:0 }}>
