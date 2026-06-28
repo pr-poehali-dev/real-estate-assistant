@@ -108,7 +108,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
               onKeyDown={e => { if (e.key==='Enter' && (e.target as HTMLElement).tagName!=='TEXTAREA') { e.preventDefault(); const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea')); const idx = fields.indexOf(e.target as HTMLElement); if (idx>=0 && idx<fields.length-1) fields[idx+1].focus(); } }}>
               <div>
                 <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Ваше имя</label>
-                <input type="text" placeholder="Представьтесь, пожалуйста" value={f.name} onChange={e=>setF({name:e.target.value})} required className="apex-input" />
+                <input type="text" placeholder="Как Вас представить?" value={f.name} onChange={e=>setF({name:e.target.value})} required className="apex-input" />
               </div>
               <div>
                 <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Телефон</label>
