@@ -128,7 +128,7 @@ const ContentSections = () => (
 
           <div style={{ background:NAVYC, padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24, borderRadius:'24px 0 0 24px' }}>
             <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED }}>
-              Мы — <strong style={{ color:FG, fontWeight:500 }}>динамично развивающаяся организация</strong>, работающая на рынке услуг по подбору недвижимости с <strong style={{ color:GOLD, fontWeight:500 }}>2015 года</strong>. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
+              Мы — <strong style={{ color:FG, fontWeight:500 }}>динамично развивающаяся организация</strong>, работающая на рынке услуг по подбору недвижимости <strong style={{ color:GOLD, fontWeight:500 }}>с 2015 года</strong>. За это время мы успешно реализовали множество проектов разного масштаба и уровня сложности.
             </p>
             <div style={{ width:40, height:1, background:`linear-gradient(to right, ${GOLD}, transparent)` }} />
             <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.9, color:MUTED }}>
