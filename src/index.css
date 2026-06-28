@@ -330,9 +330,8 @@ html {
     font-size: clamp(28px, 8vw, 48px) !important;
   }
   .hero-gold-line {
-    margin-top: 8px !important;
-    margin-bottom: 8px !important;
-    align-self: center !important;
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
   }
 
   /* Карточки услуг — 1 колонка */
