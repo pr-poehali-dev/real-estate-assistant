@@ -15,10 +15,10 @@ const NAVY  = 'hsl(222 25% 8%)';
 const NAVYC = 'hsl(222 22% 11%)';
 
 const TYPES = [
-  { icon: 'Store',     title: 'Торговые', sub: 'Магазины, ТЦ, павильоны, площади для розничной торговли' },
-  { icon: 'Building',  title: 'Офисные',  sub: 'Офисы и бизнес-центры любого класса — аренда или покупка' },
-  { icon: 'Warehouse', title: 'Склады',   sub: 'Производственные помещения, склады, логистические комплексы' },
-  { icon: 'Landmark',  title: 'Социальные', sub: 'Медицинские, образовательные и иные объекты инфраструктуры' },
+  { icon: 'Store',     title: 'Торговые',      sub: 'Магазины, ТЦ, павильоны, площади для розничной торговли.' },
+  { icon: 'Building',  title: 'Офисные',        sub: 'Офисы и бизнес-центры любого класса — аренда или покупка.' },
+  { icon: 'Warehouse', title: 'Индустриальные', sub: 'Производственные помещения, склады, логистические комплексы.' },
+  { icon: 'Landmark',  title: 'Социальные',     sub: 'Медицинские, образовательные и иные объекты инфраструктуры.' },
 ];
 
 const INVEST = [
@@ -58,16 +58,12 @@ const Commercial = () => {
 
       {/* ── Hero ──────────────────────────────────── */}
       <section style={{ padding: 'clamp(80px,12vw,140px) clamp(20px,5vw,60px) clamp(48px,6vw,80px)', maxWidth: 960, margin: '0 auto' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: `1px solid ${GOLD20}`, borderRadius: 40, padding: '6px 16px', marginBottom: 28 }}>
-          <Icon name="Building2" size={13} style={{ color: GOLD }} />
-          <span style={{ fontFamily: 'Inter,sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD }}>Коммерческая недвижимость</span>
-        </div>
         <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(38px,6vw,72px)', fontWeight: 600, lineHeight: 1.08, marginBottom: 20, color: FG }}>
-          Офисы, склады, торговля —<br />
-          <span style={{ color: GOLD, fontStyle: 'italic' }}>под ключ</span>
+          Коммерческая недвижимость —{' '}
+          <span style={{ color: GOLD, fontStyle: 'italic' }}>готовые решения под ключ</span>
         </h1>
         <p style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 'clamp(14px,1.5vw,17px)', color: MUTED, maxWidth: 580, lineHeight: 1.7, marginBottom: 36 }}>
-          Подбираем коммерческие объекты по ценам ниже рынка — для бизнеса, аренды или выгодной перепродажи. Полное сопровождение сделки включено.
+          Находим объекты по ценам ниже рынка — для развития Вашего бизнеса, сдачи в аренду или как выгодное инвестиционное вложение. Полное сопровождение сделки включено.
         </p>
         <button
           onClick={() => setOpen(true)}
@@ -84,8 +80,8 @@ const Commercial = () => {
           <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px,4vw,44px)', fontWeight: 600, color: FG, marginBottom: 40 }}>Типы объектов</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 20 }}>
             {TYPES.map(t => (
-              <div key={t.title} style={{ border: `1px solid ${GOLD20}`, borderRadius: 20, padding: '28px 24px', background: NAVY }}>
-                <div style={{ width: 44, height: 44, borderRadius: 12, border: `1px solid ${GOLD40}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+              <div key={t.title} style={{ border: `1px solid ${GOLD20}`, borderRadius: 20, padding: '28px 24px', background: NAVY, textAlign: 'center' }}>
+                <div style={{ width: 44, height: 44, borderRadius: 12, border: `1px solid ${GOLD40}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18, margin: '0 auto 18px' }}>
                   <Icon name={t.icon} size={20} style={{ color: GOLD }} />
                 </div>
                 <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 22, fontWeight: 600, color: FG, marginBottom: 8 }}>{t.title}</div>
