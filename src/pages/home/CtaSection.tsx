@@ -51,7 +51,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
           }}>
             <span style={{ position:'absolute', top:-1, left:-1, width:94, height:94, borderTop:`0.5px solid ${GOLD}`, borderLeft:`0.5px solid ${GOLD}`, borderRadius:'24px 0 0 0', display:'block' }} />
             <span style={{ position:'absolute', bottom:-1, right:-1, width:94, height:94, borderBottom:`0.5px solid ${GOLD}`, borderRight:`0.5px solid ${GOLD}`, borderRadius:'0 0 24px 0', display:'block' }} />
-            <h2 className="font-display" style={{ fontSize:'clamp(32px,5vw,68px)', fontWeight:700, lineHeight:1.08, letterSpacing:'-0.02em', marginBottom:20, color:FG }}>
+            <h2 className="font-display" style={{ fontSize:'clamp(22px,5vw,68px)', fontWeight:700, lineHeight:1.08, letterSpacing:'-0.02em', marginBottom:20, color:FG, wordBreak:'keep-all', overflowWrap:'normal' }}>
               Поиск недвижимости<br />начинается <em className="gold-shimmer" style={{ fontStyle:'italic' }}>здесь</em>
             </h2>
             <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:14, lineHeight:1.85, color:MUTED, maxWidth:480, margin:'0 auto 36px' }}>
