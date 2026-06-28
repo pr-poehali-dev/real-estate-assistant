@@ -2,7 +2,6 @@ import { useState } from 'react';
 import ScrollToTop from '@/components/ScrollToTop';
 import PhoneInput from '@/components/PhoneInput';
 import Icon from '@/components/ui/icon';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -10,265 +9,193 @@ import {
   DialogTitle,
   DialogDescription,
 } from '@/components/ui/dialog';
+import { GOLD, GOLD20, GOLD40, NAVYD, MUTED, FG, SEND_LEAD_URL } from './home/constants';
 
-const LOGO =
-  'https://cdn.poehali.dev/projects/ab7a83ba-e182-427f-8219-a315e20c4c4a/bucket/86de0f04-c250-4a9c-8dc9-af7909de41a2.png';
+const NAVY  = 'hsl(222 25% 8%)';
+const NAVYC = 'hsl(222 22% 11%)';
 
 const TYPES = [
-  { icon: 'Store', title: 'Торговые помещения', text: 'Магазины, торговые центры, павильоны и площади для розничной торговли.' },
-  { icon: 'Building', title: 'Офисные объекты', text: 'Офисы и бизнес-центры различного класса под аренду или покупку.' },
-  { icon: 'Warehouse', title: 'Индустриальные', text: 'Склады, производственные помещения, логистические комплексы.' },
-  { icon: 'Landmark', title: 'Социальные', text: 'Медицинские, образовательные и иные объекты социальной инфраструктуры.' },
+  { icon: 'Store',     title: 'Торговые', sub: 'Магазины, ТЦ, павильоны, площади для розничной торговли' },
+  { icon: 'Building',  title: 'Офисные',  sub: 'Офисы и бизнес-центры любого класса — аренда или покупка' },
+  { icon: 'Warehouse', title: 'Склады',   sub: 'Производственные помещения, склады, логистические комплексы' },
+  { icon: 'Landmark',  title: 'Социальные', sub: 'Медицинские, образовательные и иные объекты инфраструктуры' },
 ];
 
-const ADVANTAGES = [
-  { icon: 'TrendingDown', title: 'Низкие цены', text: 'Находим объекты по преимущественно низким ценам — ниже рынка.' },
-  { icon: 'BarChart2', title: 'Инвестиционный потенциал', text: 'Помогаем выбрать объекты, пригодные для последующей перепродажи с прибылью.' },
-  { icon: 'ShieldCheck', title: 'Юридическая чистота', text: 'Проверяем каждый объект и готовим полный пакет документов для сделки.' },
-  { icon: 'Banknote', title: 'Безопасный расчёт', text: 'Сопровождаем передачу средств между сторонами — без рисков для обеих сторон.' },
+const INVEST = [
+  { icon: 'TrendingDown', label: 'Ниже рынка',     text: 'Находим объекты, которые другие агентства не предлагают' },
+  { icon: 'BarChart2',    label: 'Доход на старте', text: 'Перепродажа или аренда — потенциал заложен уже в цене входа' },
+  { icon: 'RefreshCw',   label: 'Долгосрочно',     text: 'Сопровождаем клиентов и при повторных сделках' },
 ];
 
-const CAPABILITIES = [
-  'Помощь в поиске объекта, подходящего под требования и бюджет покупателя',
-  'Посредничество в переговорах между покупателем и продавцом',
-  'Проверка юридической чистоты помещения',
-  'Сбор и подготовка документов для заключения договора купли-продажи',
-  'Экспертная оценка объекта перед принятием решения',
-  'Консультирование по правовым и финансовым вопросам сделки',
-];
-
-const SEND_LEAD_URL = 'https://functions.poehali.dev/0951d9ac-cb20-4a66-865c-901b256f6154';
+type FS = { name: string; phone: string; social: string; request: string; callback: boolean; sending: boolean; sent: boolean };
+const empty = (): FS => ({ name: '', phone: '', social: '', request: '', callback: false, sending: false, sent: false });
 
 const Commercial = () => {
   const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [social, setSocial] = useState('');
-  const [request, setRequest] = useState('');
-  const [callback, setCallback] = useState(false);
-  const [sending, setSending] = useState(false);
-  const [sent, setSent] = useState(false);
+  const [f, setFRaw] = useState<FS>(empty());
+  const setF = (p: Partial<FS>) => setFRaw(prev => ({ ...prev, ...p }));
+
+  const handleClose = () => { setOpen(false); setTimeout(() => setFRaw(empty()), 300); };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim()) return;
-    setSending(true);
+    if (!f.name.trim()) return;
+    setF({ sending: true });
     try {
       await fetch(SEND_LEAD_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, social, request, callback, source: 'Коммерческая недвижимость' })
+        body: JSON.stringify({ name: f.name, phone: f.phone, social: f.social, request: f.request, callback: f.callback, source: 'Коммерческая недвижимость' }),
       });
-      setSent(true);
-      setName(''); setPhone(''); setSocial(''); setRequest(''); setCallback(false);
+      setF({ sent: true, sending: false });
     } finally {
-      setSending(false);
+      setF({ sending: false });
     }
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      {/* Hero */}
-      <section id="hero" className="relative pt-28 md:pt-36 pb-16 md:pb-24 px-4">
-        <div className="absolute top-24 -right-24 w-96 h-96 bg-sage/25 blob-shape animate-float-slow -z-0" />
-        <div className="absolute top-48 -left-20 w-72 h-72 blob-shape-2 animate-float-slow -z-0 bg-[#c4855a22]" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-0 right-1/3 w-56 h-56 blob-shape animate-float-slow -z-0 bg-[#a8c4a220]" style={{ animationDelay: '3s' }} />
-        <div className="container max-w-6xl relative z-10">
-          <div className="max-w-3xl animate-fade-up">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-accent text-accent-foreground text-xs font-medium mb-4">
-              <Icon name="Building2" size={13} /> Дополнительная услуга
-            </span>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] mb-4 text-balance">
-              Коммерческая<br />
-              <span className="text-terracotta italic">недвижимость</span>
-            </h1>
-            <p className="text-sm md:text-base text-muted-foreground mb-6 max-w-2xl">
-              Находим офисные, торговые, индустриальные и социальные объекты по преимущественно низким ценам — для аренды, ведения бизнеса или выгодной перепродажи. Полное сопровождение сделки включено.
-            </p>
-            <Button onClick={() => setOpen(true)} className="rounded-full bg-terracotta hover:bg-terracotta/90 text-white px-6 md:px-8 h-11 md:h-14 text-sm md:text-base w-full sm:w-auto">
-              <Icon name="MessageCircle" size={16} /> Получить консультацию
-            </Button>
-          </div>
+    <div style={{ background: NAVY, color: FG, minHeight: '100vh', overflowX: 'hidden' }}>
+
+      {/* ── Hero ──────────────────────────────────── */}
+      <section style={{ padding: 'clamp(80px,12vw,140px) clamp(20px,5vw,60px) clamp(48px,6vw,80px)', maxWidth: 960, margin: '0 auto' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: `1px solid ${GOLD20}`, borderRadius: 40, padding: '6px 16px', marginBottom: 28 }}>
+          <Icon name="Building2" size={13} style={{ color: GOLD }} />
+          <span style={{ fontFamily: 'Inter,sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '0.28em', textTransform: 'uppercase', color: GOLD }}>Коммерческая недвижимость</span>
         </div>
+        <h1 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(38px,6vw,72px)', fontWeight: 600, lineHeight: 1.08, marginBottom: 20, color: FG }}>
+          Офисы, склады, торговля —<br />
+          <span style={{ color: GOLD, fontStyle: 'italic' }}>под ключ</span>
+        </h1>
+        <p style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 'clamp(14px,1.5vw,17px)', color: MUTED, maxWidth: 580, lineHeight: 1.7, marginBottom: 36 }}>
+          Подбираем коммерческие объекты по ценам ниже рынка — для бизнеса, аренды или выгодной перепродажи. Полное сопровождение сделки включено.
+        </p>
+        <button
+          onClick={() => setOpen(true)}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: GOLD, color: NAVYD, border: 'none', borderRadius: 40, padding: '0 32px', height: 52, fontFamily: 'Inter,sans-serif', fontSize: 12, fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', cursor: 'pointer' }}
+        >
+          <Icon name="MessageCircle" size={15} /> Оставить запрос
+        </button>
       </section>
 
-      {/* Types */}
-      <section id="types" className="py-10 md:py-16 px-4 bg-muted/40">
-        <div className="container max-w-6xl">
-          <div className="text-center mb-8 md:mb-14">
-            <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Что мы находим</span>
-            <h2 className="font-display text-2xl md:text-5xl font-semibold mt-3">Типы объектов</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {TYPES.map((t, i) => (
-              <div
-                key={t.title}
-                className="bg-card rounded-2xl md:rounded-[2rem] p-5 md:p-8 border border-border hover:shadow-lg hover:-translate-y-1 transition-all duration-300 animate-fade-up"
-                style={{ animationDelay: `${i * 80}ms` }}
-              >
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-terracotta/12 flex items-center justify-center mb-5">
-                  <Icon name={t.icon} size={20} className="text-terracotta md:hidden" />
-                  <Icon name={t.icon} size={26} className="text-terracotta hidden md:block" />
+      {/* ── Типы объектов ─────────────────────────── */}
+      <section style={{ background: NAVYC, padding: 'clamp(48px,6vw,80px) clamp(20px,5vw,60px)' }}>
+        <div style={{ maxWidth: 960, margin: '0 auto' }}>
+          <p style={{ fontFamily: 'Inter,sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Что мы находим</p>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px,4vw,44px)', fontWeight: 600, color: FG, marginBottom: 40 }}>Типы объектов</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 20 }}>
+            {TYPES.map(t => (
+              <div key={t.title} style={{ border: `1px solid ${GOLD20}`, borderRadius: 20, padding: '28px 24px', background: NAVY }}>
+                <div style={{ width: 44, height: 44, borderRadius: 12, border: `1px solid ${GOLD40}`, display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 18 }}>
+                  <Icon name={t.icon} size={20} style={{ color: GOLD }} />
                 </div>
-                <h3 className="font-display text-base md:text-xl font-semibold mb-2">{t.title}</h3>
-                <p className="text-muted-foreground text-[15px] leading-relaxed">{t.text}</p>
+                <div style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 22, fontWeight: 600, color: FG, marginBottom: 8 }}>{t.title}</div>
+                <div style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 13, color: MUTED, lineHeight: 1.6 }}>{t.sub}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Advantages */}
-      <section id="advantages" className="py-10 md:py-16 px-4">
-        <div className="container max-w-6xl">
-          <div className="text-center mb-8 md:mb-14">
-            <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Наши преимущества</span>
-            <h2 className="font-display text-2xl md:text-5xl font-semibold mt-3">Почему выбирают нас</h2>
-          </div>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {ADVANTAGES.map((a, i) => (
-              <div key={a.title} className="flex gap-5 bg-card rounded-2xl md:rounded-[2rem] p-5 md:p-8 border border-border animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
-                <div className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-terracotta/12 flex items-center justify-center shrink-0">
-                  <Icon name={a.icon} size={20} className="text-terracotta md:hidden" />
-                  <Icon name={a.icon} size={26} className="text-terracotta hidden md:block" />
-                </div>
-                <div>
-                  <h3 className="font-display text-base md:text-xl font-semibold mb-2">{a.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{a.text}</p>
-                </div>
+      {/* ── Инвестиционный потенциал ───────────────── */}
+      <section style={{ padding: 'clamp(48px,6vw,80px) clamp(20px,5vw,60px)', maxWidth: 960, margin: '0 auto' }}>
+        <p style={{ fontFamily: 'Inter,sans-serif', fontSize: 10, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD, marginBottom: 14 }}>Инвестиции</p>
+        <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(28px,4vw,44px)', fontWeight: 600, color: FG, marginBottom: 16 }}>Зарабатывайте на недвижимости</h2>
+        <p style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 'clamp(14px,1.4vw,16px)', color: MUTED, maxWidth: 600, lineHeight: 1.75, marginBottom: 40 }}>
+          Часть наших клиентов приобретают объекты для перепродажи или сдачи в аренду. Мы ищем там, где другие не смотрят — доход заложен уже в цене входа.
+        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: 20 }}>
+          {INVEST.map(item => (
+            <div key={item.label} style={{ borderTop: `2px solid ${GOLD40}`, paddingTop: 24 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                <Icon name={item.icon} size={18} style={{ color: GOLD }} />
+                <span style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 20, fontWeight: 600, color: FG }}>{item.label}</span>
               </div>
-            ))}
-          </div>
+              <p style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 13, color: MUTED, lineHeight: 1.65 }}>{item.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Capabilities + Investment */}
-      <section id="capabilities" className="py-10 md:py-16 px-4 bg-muted/40">
-        <div className="container max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
-              <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Возможности</span>
-              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-8">Что мы делаем для Вас</h2>
-              <div className="space-y-3">
-                {CAPABILITIES.map((c, i) => (
-                  <div key={i} className="flex gap-4 items-start bg-card rounded-2xl p-4 border border-border">
-                    <div className="w-8 h-8 rounded-xl bg-terracotta/12 flex items-center justify-center shrink-0">
-                      <Icon name="Check" size={16} className="text-terracotta" />
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed pt-0.5">{c}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <span className="text-terracotta font-medium tracking-widest uppercase text-sm">Инвестиции</span>
-              <h2 className="font-display text-xl md:text-4xl font-semibold mt-3 mb-6">Зарабатывайте на недвижимости</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Часть наших постоянных клиентов приобретают коммерческие объекты для последующей перепродажи или сдачи в аренду. Мы находим объекты по ценам ниже рынка — это открывает возможность получить доход уже на старте.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Наша цель — найти для Вас наилучшие условия покупки. Мы не просто подбираем объекты — мы ищем там, где другие не смотрят.
-              </p>
-              <div className="bg-terracotta/10 border border-terracotta/20 rounded-2xl p-6">
-                <p className="font-semibold text-terracotta mb-1">Результат гарантирован</p>
-                <p className="text-muted-foreground text-sm">Каждую сделку ведут опытные специалисты с полным контролем на всех этапах.</p>
-              </div>
-            </div>
-          </div>
+      {/* ── CTA полоса ────────────────────────────── */}
+      <section style={{ background: NAVYC, padding: 'clamp(48px,6vw,72px) clamp(20px,5vw,60px)' }}>
+        <div style={{ maxWidth: 960, margin: '0 auto', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 20 }}>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(26px,4vw,48px)', fontWeight: 600, color: FG, maxWidth: 600 }}>
+            Нужен коммерческий объект?
+          </h2>
+          <p style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 14, color: MUTED, maxWidth: 460, lineHeight: 1.7 }}>
+            Оставьте запрос — подберём варианты по выгодной цене и проведём сделку от начала до конца.
+          </p>
+          <button
+            onClick={() => setOpen(true)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: 'transparent', color: GOLD, border: `1px solid ${GOLD40}`, borderRadius: 40, padding: '0 32px', height: 50, fontFamily: 'Inter,sans-serif', fontSize: 11, fontWeight: 500, letterSpacing: '0.24em', textTransform: 'uppercase', cursor: 'pointer', transition: 'border-color 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.borderColor = GOLD)}
+            onMouseLeave={e => (e.currentTarget.style.borderColor = GOLD40)}
+          >
+            <Icon name="MessageCircle" size={14} /> Написать нам
+          </button>
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="cta" className="py-16 md:py-20 px-4">
-        <div className="container max-w-5xl">
-          <div className="relative bg-terracotta rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-center overflow-hidden">
-            <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 blob-shape" />
-            <div className="absolute -bottom-20 -left-10 w-72 h-72 bg-white/5 blob-shape-2" />
-            <div className="relative z-10">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 text-balance">
-                Нужен коммерческий объект?
-              </h2>
-              <p className="text-white/90 text-sm md:text-base max-w-xl mx-auto mb-6">
-                Оставьте запрос — подберём подходящие варианты по выгодной цене и проведём сделку под ключ.
-              </p>
-              <Button onClick={() => setOpen(true)} className="rounded-full bg-white text-terracotta hover:bg-white/90 px-6 md:px-8 h-11 md:h-14 text-sm md:text-base w-full sm:w-auto">
-                <Icon name="MessageCircle" size={16} /> Оставить запрос
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-10 px-4 border-t border-border">
-        <div className="container max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-muted-foreground text-sm">
-
-
-        </div>
-      </footer>
-
-      {/* Dialog */}
-      <Dialog open={open} onOpenChange={(v) => { if (!v) { setName(''); setPhone(''); setSocial(''); setRequest(''); setCallback(false); setSent(false); } setOpen(v); }}>
-        <DialogContent className="rounded-[2rem] max-w-md w-[calc(100%-2rem)] max-h-[90dvh] overflow-y-auto">
-          {!sent && (
+      {/* ── Dialog ────────────────────────────────── */}
+      <Dialog open={open} onOpenChange={v => { if (!v) handleClose(); }}>
+        <DialogContent className="max-w-md w-[calc(100%-2rem)] max-h-[90dvh] overflow-y-auto" style={{ background: 'hsl(222 25% 7%)', border: `1px solid ${GOLD20}`, borderRadius: 20 }}>
+          {!f.sent && (
             <DialogHeader>
-              <DialogTitle className="font-display text-3xl font-semibold">Запрос на коммерцию</DialogTitle>
-              <DialogDescription>
-                Опишите объект — мы подберём варианты и свяжемся с вами бесплатно.
+              <DialogTitle className="font-display" style={{ fontSize: 28, fontWeight: 600, color: FG }}>Запрос на коммерцию</DialogTitle>
+              <DialogDescription style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 13, color: MUTED, marginTop: 6 }}>
+                Опишите объект — подберём варианты и свяжемся с Вами бесплатно.
               </DialogDescription>
             </DialogHeader>
           )}
-          {sent ? (
-            <div className="py-8 text-center space-y-2">
-              <div className="text-4xl">✓</div>
-              <div className="font-display text-xl font-semibold">Заявка отправлена!</div>
-              <div className="text-muted-foreground text-sm">Мы свяжемся с Вами в ближайшее время.</div>
+          {f.sent ? (
+            <div style={{ padding: '48px 0', textAlign: 'center' }}>
+              <div style={{ width: 52, height: 52, border: `1px solid ${GOLD40}`, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
+                <Icon name="Check" size={22} style={{ color: GOLD }} />
+              </div>
+              <div className="font-display" style={{ fontSize: 22, fontWeight: 600, color: FG, marginBottom: 8 }}>Заявка отправлена!</div>
+              <div style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 13, color: MUTED }}>Мы свяжемся с Вами в ближайшее время.</div>
             </div>
           ) : (
-            <form className="space-y-3 mt-2" onSubmit={handleSubmit} onKeyDown={e => { if (e.key === 'Enter' && (e.target as HTMLElement).tagName !== 'TEXTAREA') { e.preventDefault(); const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea')); const idx = fields.indexOf(e.target as HTMLElement); if (idx >= 0 && idx < fields.length - 1) fields[idx + 1].focus(); } }}>
-              <input
-                type="text"
-                placeholder="Ваше имя"
-                value={name}
-                onChange={e => setName(e.target.value)}
-                required
-                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
-              />
-              <PhoneInput
-                value={phone}
-                onChange={setPhone}
-                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
-              />
-              <input
-                type="text"
-                placeholder="Соцсеть для связи"
-                value={social}
-                onChange={e => setSocial(e.target.value)}
-                className="w-full px-5 py-3 rounded-full bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta"
-              />
-              <textarea
-                placeholder="Тип объекта, площадь, бюджет, цель покупки…"
-                rows={3}
-                value={request}
-                onChange={e => setRequest(e.target.value)}
-                className="w-full px-5 py-3 rounded-3xl bg-muted border border-border focus:outline-none focus:ring-2 focus:ring-terracotta resize-none"
-              />
-              <label className="flex items-center gap-3 px-2 cursor-pointer select-none">
-                <input
-                  type="checkbox"
-                  checked={callback}
-                  onChange={e => setCallback(e.target.checked)}
-                  className="w-5 h-5 rounded accent-terracotta cursor-pointer"
-                />
-                <span className="text-sm text-muted-foreground">Хочу обратный звонок</span>
+            <form
+              style={{ display: 'flex', flexDirection: 'column', gap: 24, marginTop: 22 }}
+              onSubmit={handleSubmit}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && (e.target as HTMLElement).tagName !== 'TEXTAREA') {
+                  e.preventDefault();
+                  const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea'));
+                  const idx = fields.indexOf(e.target as HTMLElement);
+                  if (idx >= 0 && idx < fields.length - 1) fields[idx + 1].focus();
+                }
+              }}
+            >
+              <div>
+                <label style={{ fontFamily: 'Inter,sans-serif', fontSize: 9, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD }}>Ваше имя</label>
+                <input type="text" placeholder="Как Вас представить?" value={f.name} onChange={e => setF({ name: e.target.value })} required className="apex-input" />
+              </div>
+              <div>
+                <label style={{ fontFamily: 'Inter,sans-serif', fontSize: 9, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD }}>Телефон</label>
+                <PhoneInput value={f.phone} onChange={v => setF({ phone: v })} className="apex-input" />
+              </div>
+              <div>
+                <label style={{ fontFamily: 'Inter,sans-serif', fontSize: 9, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD }}>Соцсеть для связи</label>
+                <input type="text" placeholder="Наименование онлайн-платформы" value={f.social} onChange={e => setF({ social: e.target.value })} className="apex-input" />
+              </div>
+              <div>
+                <label style={{ fontFamily: 'Inter,sans-serif', fontSize: 9, fontWeight: 500, letterSpacing: '0.3em', textTransform: 'uppercase', color: GOLD }}>Ваш запрос</label>
+                <textarea placeholder="Что Вы ищете? Тип объекта, площадь, бюджет, цель покупки..." rows={3} value={f.request} onChange={e => setF({ request: e.target.value })} className="apex-input" style={{ resize: 'none' }} />
+              </div>
+              <label style={{ display: 'flex', alignItems: 'center', gap: 12, cursor: 'pointer' }}>
+                <input type="checkbox" checked={f.callback} onChange={e => setF({ callback: e.target.checked })} style={{ width: 16, height: 16, accentColor: GOLD, cursor: 'pointer' }} />
+                <span style={{ fontFamily: 'Inter,sans-serif', fontWeight: 300, fontSize: 13, color: MUTED }}>Хочу обратный звонок</span>
               </label>
-              <Button type="submit" disabled={sending} className="w-full rounded-full bg-terracotta hover:bg-terracotta/90 text-white h-14 text-base">
-                {sending ? 'Отправляем…' : 'Отправить запрос'}
-              </Button>
+              <button type="submit" disabled={f.sending} style={{ height: 52, background: GOLD, color: NAVYD, border: 'none', borderRadius: 40, fontFamily: 'Inter,sans-serif', fontSize: 11, fontWeight: 600, letterSpacing: '0.24em', textTransform: 'uppercase', cursor: f.sending ? 'not-allowed' : 'pointer', opacity: f.sending ? 0.7 : 1 }}>
+                {f.sending ? 'Отправляем…' : 'Отправить запрос'}
+              </button>
             </form>
           )}
         </DialogContent>
       </Dialog>
+
       <ScrollToTop />
     </div>
   );
