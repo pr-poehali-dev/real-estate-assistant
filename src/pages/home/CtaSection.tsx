@@ -107,21 +107,21 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
             <form style={{ display:'flex', flexDirection:'column', gap:24, marginTop:22 }} onSubmit={handleSubmit}
               onKeyDown={e => { if (e.key==='Enter' && (e.target as HTMLElement).tagName!=='TEXTAREA') { e.preventDefault(); const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea')); const idx = fields.indexOf(e.target as HTMLElement); if (idx>=0 && idx<fields.length-1) fields[idx+1].focus(); } }}>
               <div>
-                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Ваше имя</label>
+                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>Ваше имя</label>
                 <input type="text" placeholder="Как Вас представить?" value={f.name} onChange={e=>setF({name:e.target.value})} required className="apex-input" />
               </div>
               <div>
-                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Телефон</label>
+                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>Телефон</label>
                 <PhoneInput value={f.phone} onChange={v=>setF({phone:v})} className="apex-input" />
               </div>
               {mode==='social' && (
                 <div>
-                  <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Соцсеть для связи</label>
+                  <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>Соцсеть для связи</label>
                   <input type="text" placeholder="Наименование онлайн-платформы" value={f.social} onChange={e=>setF({social:e.target.value})} className="apex-input" />
                 </div>
               )}
               <div>
-                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Ваш запрос</label>
+                <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>Ваш запрос</label>
                 <textarea placeholder="Что Вы ищете? Квартира, коммерция, загородная недвижимость. Расскажите подробнее..." rows={3} value={f.request} onChange={e=>setF({request:e.target.value})} className="apex-input" style={{ resize:'none' }} />
               </div>
               {mode==='social' && (
