@@ -71,7 +71,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
       <div className="animate-marquee" style={{ display:'flex', whiteSpace:'nowrap', width:'max-content' }}>
         {[...Array(2)].map((_, k) => (
           <div key={k} style={{ display:'flex' }}>
-            {['Бесплатный подбор','Индивидуальный подход','Юридическое сопровождение','Прозрачные условия','Первичное жильё','Вторичный рынок','Ипотека и рассрочка','Москва и МО'].map(t => (
+            {['Комплексный сервис','Недвижимость, где Ваши интересы – приоритет','Все виды финансовых услуг для Вас и Вашего бизнеса'].map(t => (
               <span key={t+k} style={{ display:'inline-flex', alignItems:'center', gap:22, padding:'0 22px', fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD }}>
                 {t} <span style={{ fontSize:5, opacity:0.5 }}>◆</span>
               </span>
