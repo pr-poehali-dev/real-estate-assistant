@@ -145,6 +145,8 @@ const Header = () => {
           display: 'flex',
           flexDirection: 'column',
           gap: 4,
+          alignItems: 'center',
+          textAlign: 'center',
         }}>
           {isHome && (
             <>
@@ -163,7 +165,7 @@ const Header = () => {
                     color: MUTED, textDecoration: 'none',
                     padding: '14px 0',
                     borderBottom: `1px solid ${GOLD20}`,
-                    display: 'block',
+                    display: 'block', width: '100%', textAlign: 'center',
                   }}
                 >{l.label}</a>
               ))}
@@ -176,7 +178,7 @@ const Header = () => {
                   color: GOLD, textDecoration: 'none',
                   padding: '14px 0',
                   borderBottom: `1px solid ${GOLD20}`,
-                  display: 'block',
+                  display: 'block', width: '100%', textAlign: 'center',
                 }}
               >Коммерция</Link>
             </>
@@ -189,9 +191,9 @@ const Header = () => {
                 fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
                 letterSpacing: '0.28em', textTransform: 'uppercase',
                 color: MUTED, background: 'none', border: 'none',
-                padding: '14px 0', cursor: 'pointer', textAlign: 'left',
+                padding: '14px 0', cursor: 'pointer', textAlign: 'center',
                 borderBottom: `1px solid ${GOLD20}`,
-                display: 'flex', alignItems: 'center', gap: 8,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, width: '100%',
               }}
             >
               <Icon name="ArrowLeft" size={13} /> Назад
@@ -207,7 +209,7 @@ const Header = () => {
                 letterSpacing: '0.28em', textTransform: 'uppercase',
                 color: GOLD, textDecoration: 'none',
                 padding: '14px 0',
-                display: 'block',
+                display: 'block', width: '100%', textAlign: 'center',
               }}
             >Клиентам</Link>
           )}

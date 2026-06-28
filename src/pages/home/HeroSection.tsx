@@ -27,7 +27,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
             { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
             { icon:'Star',   label:'Вы принимаете ключевое решение' },
           ].map(b => (
-            <span key={b.label} style={{ display:'flex', alignItems:'center', gap:10, fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, letterSpacing:'0.12em', textTransform:'uppercase', color:MUTED, padding:'10px 18px', border:`1px solid ${GOLD20}`, borderRadius:100, background:'hsl(222 30% 10%)' }}>
+            <span key={b.label} className="hero-badge" style={{ display:'flex', alignItems:'center', gap:10, fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, letterSpacing:'0.12em', textTransform:'uppercase', color:MUTED, padding:'10px 18px', border:`1px solid ${GOLD20}`, borderRadius:100, background:'hsl(222 30% 10%)' }}>
               <Icon name={b.icon} size={13} style={{ color:GOLD, flexShrink:0 }} /> {b.label}
             </span>
           ))}
