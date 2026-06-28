@@ -15,7 +15,7 @@ const Footer = () => (
         <span style={{ fontFamily:'Inter, sans-serif', fontSize:9, letterSpacing:'0.18em', textTransform:'uppercase', color:MUTED }}>Недвижимость · Москва и МО</span>
       </div>
       <span style={{ fontFamily:'Inter, sans-serif', fontSize:11, letterSpacing:'0.1em', color:MUTED }}>
-        © 2026 Apex Solutions. Бесплатный подбор недвижимости.
+        © 2015 Apex Solutions. Бесплатный подбор недвижимости.
       </span>
     </div>
   </footer>
