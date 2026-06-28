@@ -57,12 +57,12 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
 
           <div className="animate-fade-up" style={{ animationDelay:'540ms', display:'flex', gap:12, flexWrap:'wrap' }}>
             <button className="btn-apex btn-apex-gold" onClick={() => onOpenRequest('social')}
-              style={{ height:32, fontSize:8, letterSpacing:'0.15em', padding:'0 12px' }}>
-              <Icon name="MessageCircle" size={10} /> Написать
+              style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
+              <Icon name="MessageCircle" size={15} /> Написать
             </button>
             <button className="btn-apex btn-apex-outline" onClick={() => onOpenRequest('meeting')}
-              style={{ height:32, fontSize:8, letterSpacing:'0.15em', padding:'0 12px' }}>
-              <Icon name="Phone" size={10} /> Обратный звонок
+              style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
+              <Icon name="Phone" size={15} /> Обратный звонок
             </button>
           </div>
         </div>
