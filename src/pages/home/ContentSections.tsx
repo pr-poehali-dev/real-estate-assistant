@@ -140,6 +140,19 @@ const ContentSections = () => (
                 «Apex Solutions — команда, поставившая своей целью решать все ваши вопросы, связанные с приобретением недвижимости. Мы готовы помочь принять верное решение и подобрать для Вас наилучшие условия.»
               </p>
             </div>
+
+            <div style={{ background:'hsl(220 40% 12%)', borderRadius:16, padding:'22px 26px', borderLeft:`3px solid hsl(210 60% 55%)`, marginTop:4 }}>
+              <div style={{ display:'flex', alignItems:'center', gap:8, marginBottom:12 }}>
+                <Icon name="ShieldCheck" size={14} style={{ color:'hsl(210 60% 65%)' }} />
+                <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:'hsl(210 60% 65%)' }}>Наш принцип</span>
+              </div>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:0 }}>
+                <strong style={{ color:FG, fontWeight:500 }}>Сделки с недвижимостью — это серьёзный и значимый шаг.</strong> Именно поэтому мы прилагаем все усилия, чтобы сделать данную процедуру максимально <strong style={{ color:'hsl(210 60% 70%)', fontWeight:500 }}>ясной и доступной</strong> для понимания.
+              </p>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:'10px 0 0' }}>
+                Мы верим, что <strong style={{ color:FG, fontWeight:500 }}>информированность — ключ к успеху</strong>, и всегда готовы поделиться своими знаниями, чтобы вы чувствовали себя уверенно на каждом шагу.
+              </p>
+            </div>
           </div>
 
           <div style={{ border:`1px solid ${GOLD20}`, borderRadius:'0 24px 24px 0', padding:'clamp(28px,4vw,52px)', display:'flex', flexDirection:'column', gap:24 }}>
