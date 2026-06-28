@@ -321,25 +321,16 @@ html {
     display: flex !important;
   }
 
-  /* Hero: одна колонка, заголовок первым */
+  /* Hero: одна колонка */
   .hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-  .hero-text-col {
-    order: -1;
-    text-align: center;
+    gap: 24px !important;
   }
   .hero-text-col h1 {
-    font-size: clamp(32px, 9vw, 52px) !important;
-    text-align: left;
+    font-size: clamp(28px, 8vw, 48px) !important;
   }
-  .hero-text-col h1 span[style] {
-    justify-content: flex-start !important;
-  }
-  .hero-badges-col {
-    order: 1;
-    align-items: flex-start;
+  .hero-gold-line {
+    display: none !important;
   }
 
   /* Карточки услуг — 1 колонка */

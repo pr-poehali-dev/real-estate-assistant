@@ -21,7 +21,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
 
       <div style={{ display:'grid', gridTemplateColumns:'auto 1fr', gap:'clamp(32px,5vw,72px)', alignItems:'start' }} className="hero-grid">
 
-        <div className="animate-fade-up hero-badges-col" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
+        <div className="animate-fade-up" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
           {[
             { icon:'Shield', label:'Спокойствие сделки' },
             { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
@@ -33,14 +33,14 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
           ))}
         </div>
 
-        <div className="hero-text-col">
+        <div className="hero-text-col" style={{ minWidth:0 }}>
           <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.15, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>Пространство для</span>
             <span style={{ display:'flex', alignItems:'center', gap:16, flexWrap:'wrap', WebkitTextFillColor:FG }}>
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вашего</em>
               {' '}
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>комфорта</em>
-              <div style={{ width:36, height:1, background:GOLD, flexShrink:0 }} />
+              <div className="hero-gold-line" style={{ width:36, height:1, background:GOLD, flexShrink:0 }} />
             </span>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>найдём то,</span>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>
