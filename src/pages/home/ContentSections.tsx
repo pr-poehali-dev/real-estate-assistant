@@ -150,9 +150,12 @@ const ContentSections = () => (
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Наша команда</span>
               </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Опытные профессионалы, увлечённые своим делом. Мы глубоко разбираемся в рынке недвижимости и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию. Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту, учитывая все ваши пожелания и возможности.
+                Опытные профессионалы, увлечённые своим делом. Мы глубоко разбираемся в рынке недвижимости и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию.
               </p>
-              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
+                Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с индивидуальным подходом к каждому клиенту, учитывая все ваши пожелания и возможности.
+              </p>
+              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
                 {['Индивидуальный подход', 'Свежая аналитика', 'Осознанный выбор'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
@@ -167,9 +170,12 @@ const ContentSections = () => (
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Финансовые решения</span>
               </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Ипотека на первичное или вторичное жильё, рассрочка, рефинансирование, или финансовая поддержка для вашего бизнеса — наши эксперты помогут подобрать оптимальные условия. Мы сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> и финансовыми учреждениями, чтобы предложить вам самые выгодные ставки и удобные схемы оплаты.
+                Ипотека на первичное или вторичное жильё, рассрочка, рефинансирование, или финансовая поддержка для вашего бизнеса — наши эксперты помогут подобрать оптимальные условия.
               </p>
-              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
+                Мы сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> и финансовыми учреждениями, чтобы предложить вам самые выгодные ставки и удобные схемы оплаты.
+              </p>
+              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
                 {['Ипотека', 'Рассрочка', 'Рефинансирование', 'Бизнес-кредит'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
@@ -184,10 +190,13 @@ const ContentSections = () => (
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Комплексный сервис</span>
               </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                Ипотека на первичное или вторичное жильё, рассрочка, рефинансирование, или финансовая поддержка для вашего бизнеса — наши эксперты помогут подобрать оптимальные условия. Мы сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> и финансовыми учреждениями, чтобы предложить вам самые выгодные ставки и удобные схемы оплаты.
+                Инструмент, созданный для вашего удобства. Мы стремимся к тому, чтобы вы могли найти всё необходимое в одном месте, экономя своё время и силы.
               </p>
-              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
-                {['Один контакт', 'Экономия времени', 'Выгодные условия'].map(b => (
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
+                Чтобы предоставить вам <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с миром недвижимости.
+              </p>
+              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
+                {['Всё в одном месте', 'Экономия времени', 'Лучший опыт'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
               </div>
