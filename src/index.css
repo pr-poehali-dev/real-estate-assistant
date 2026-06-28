@@ -329,6 +329,15 @@ html {
   .hero-text-col h1 {
     font-size: 28px !important;
     margin-top: 16px !important;
+    letter-spacing: 0 !important;
+    word-spacing: 0 !important;
+  }
+  .hero-text-col h1 span {
+    display: block !important;
+    white-space: normal !important;
+  }
+  .hero-gold-line {
+    display: none !important;
   }
   .hero-text-col p {
     font-size: 13px !important;
