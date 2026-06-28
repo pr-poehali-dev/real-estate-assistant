@@ -41,6 +41,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вашего</em>
               {' '}
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>комфорта</em>
+              <span className="hero-mobile-dash" style={{ display:'none', fontSize:'0.6em', color:GOLD, WebkitTextFillColor:GOLD, fontStyle:'normal', fontWeight:300, lineHeight:1 }}>—</span>
               <div className="hero-gold-line" style={{ width:36, height:1, background:GOLD, flexShrink:0 }} />
             </span>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>найдём то,</span>

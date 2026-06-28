@@ -336,6 +336,9 @@ html {
     display: block !important;
     white-space: normal !important;
   }
+  .hero-mobile-dash {
+    display: inline !important;
+  }
   .hero-gold-line {
     display: none !important;
   }
