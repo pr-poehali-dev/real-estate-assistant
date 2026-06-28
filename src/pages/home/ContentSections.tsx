@@ -150,7 +150,7 @@ const ContentSections = () => (
                 <span style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:600, letterSpacing:'0.28em', textTransform:'uppercase', color:GOLD }}>Наша команда</span>
               </div>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
-                <strong style={{ color:FG, fontWeight:500 }}>Опытные профессионалы</strong>, увлечённые своим делом. Мы глубоко разбираемся в <strong style={{ color:FG, fontWeight:500 }}>рынке недвижимости</strong> и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию.
+                <strong style={{ color:FG, fontWeight:500 }}>Опытные профессионалы</strong>, увлечённые своим делом. Мы глубоко разбираемся <strong style={{ color:FG, fontWeight:500 }}>в рынке недвижимости</strong> и постоянно отслеживаем его тенденции, чтобы вы всегда получали самую свежую и достоверную информацию.
               </p>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
                 Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с <strong style={{ color:FG, fontWeight:500 }}>индивидуальным подходом</strong> к каждому клиенту, учитывая все ваши пожелания и возможности.
