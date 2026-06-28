@@ -56,11 +56,13 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
           </p>
 
           <div className="animate-fade-up" style={{ animationDelay:'540ms', display:'flex', gap:12, flexWrap:'wrap' }}>
-            <button className="btn-apex btn-apex-gold" onClick={() => onOpenRequest('social')}>
-              <Icon name="MessageCircle" size={14} /> Написать запрос
+            <button className="btn-apex btn-apex-gold" onClick={() => onOpenRequest('social')}
+              style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
+              <Icon name="MessageCircle" size={15} /> Написать запрос
             </button>
-            <button className="btn-apex btn-apex-outline" onClick={() => onOpenRequest('meeting')}>
-              <Icon name="Phone" size={14} /> Обратный звонок
+            <button className="btn-apex btn-apex-outline" onClick={() => onOpenRequest('meeting')}
+              style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
+              <Icon name="Phone" size={15} /> Обратный звонок
             </button>
           </div>
         </div>
