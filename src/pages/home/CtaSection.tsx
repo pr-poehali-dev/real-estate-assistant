@@ -39,11 +39,11 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
 
   return (
     <>
-      <section id="contacts" style={{ padding:'clamp(48px,7vw,96px) clamp(20px,5vw,60px)', background:'hsl(222 25% 8%)' }}>
-        <div style={{ maxWidth:960, margin:'0 auto' }}>
+      <section id="contacts" style={{ padding:'clamp(48px,7vw,96px) 0', background:'hsl(222 25% 8%)' }}>
+        <div style={{ maxWidth:960, margin:'0 auto', padding:'0 clamp(20px,5vw,60px)' }}>
           <div style={{
             border:`1px solid ${GOLD20}`,
-            borderRadius:4,
+            borderRadius:24,
             padding:'clamp(48px,6vw,80px) clamp(28px,5vw,72px)',
             textAlign:'center',
             position:'relative',
