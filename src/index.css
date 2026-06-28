@@ -329,9 +329,6 @@ html {
   .hero-text-col h1 {
     font-size: clamp(28px, 8vw, 48px) !important;
   }
-  .hero-gold-line {
-    display: none !important;
-  }
 
   /* Карточки услуг — 1 колонка */
   .services-grid,
