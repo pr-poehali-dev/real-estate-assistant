@@ -222,7 +222,7 @@ const Commercial = () => {
             <div className="py-8 text-center space-y-2">
               <div className="text-4xl">✓</div>
               <div className="font-display text-xl font-semibold">Заявка отправлена!</div>
-              <div className="text-muted-foreground text-sm">Мы свяжемся с вами в ближайшее время.</div>
+              <div className="text-muted-foreground text-sm">Мы свяжемся с Вами в ближайшее время.</div>
             </div>
           ) : (
             <form className="space-y-3 mt-2" onSubmit={handleSubmit} onKeyDown={e => { if (e.key === 'Enter' && (e.target as HTMLElement).tagName !== 'TEXTAREA') { e.preventDefault(); const fields = Array.from((e.currentTarget as HTMLFormElement).querySelectorAll<HTMLElement>('input:not([type=checkbox]),textarea')); const idx = fields.indexOf(e.target as HTMLElement); if (idx >= 0 && idx < fields.length - 1) fields[idx + 1].focus(); } }}>

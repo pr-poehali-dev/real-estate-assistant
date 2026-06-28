@@ -153,7 +153,7 @@ const ContentSections = () => (
                 <strong style={{ color:FG, fontWeight:500 }}>Сделки с недвижимостью — это серьёзный и значимый шаг.</strong> Именно поэтому мы прилагаем все усилия, чтобы сделать данную процедуру максимально <strong style={{ color:'hsl(210 60% 70%)', fontWeight:500 }}>ясной и доступной</strong> для понимания.
               </p>
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:'10px 0 0' }}>
-                Мы верим, что <strong style={{ color:FG, fontWeight:500 }}>информированность — ключ к успеху</strong>, и всегда готовы поделиться своими знаниями, чтобы вы чувствовали себя уверенно на каждом шагу.
+                Мы верим, что <strong style={{ color:FG, fontWeight:500 }}>информированность — ключ к успеху</strong>, и всегда готовы поделиться своими знаниями, чтобы Вы чувствовали себя уверенно на каждом шагу.
               </p>
             </div>
           </div>

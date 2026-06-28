@@ -91,7 +91,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
                 {mode==='social' ? 'Запрос на подбор' : 'Обратный звонок'}
               </DialogTitle>
               <DialogDescription style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, color:MUTED, marginTop:6 }}>
-                {mode==='social' ? 'Опишите, что вы ищете — мы подберём объекты бесплатно.' : 'Оставьте номер — агент перезвонит и проконсультирует бесплатно.'}
+                {mode==='social' ? 'Опишите, что Вы ищете — мы подберём объекты бесплатно.' : 'Оставьте номер — агент перезвонит и проконсультирует бесплатно.'}
               </DialogDescription>
             </DialogHeader>
           )}
@@ -101,7 +101,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
                 <Icon name="Check" size={22} style={{ color:GOLD }} />
               </div>
               <div className="font-display" style={{ fontSize:22, fontWeight:600, color:FG, marginBottom:8 }}>Заявка отправлена!</div>
-              <div style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, color:MUTED }}>Мы свяжемся с вами в ближайшее время.</div>
+              <div style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, color:MUTED }}>Мы свяжемся с Вами в ближайшее время.</div>
             </div>
           ) : (
             <form style={{ display:'flex', flexDirection:'column', gap:24, marginTop:22 }} onSubmit={handleSubmit}
@@ -122,7 +122,7 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
               )}
               <div>
                 <label style={{ fontFamily:'Inter,sans-serif', fontSize:9, fontWeight:500, letterSpacing:'0.3em', textTransform:'uppercase', color:GOLD40 }}>Ваш запрос</label>
-                <textarea placeholder="Что вы ищете? Бюджет, район, количество комнат…" rows={3} value={f.request} onChange={e=>setF({request:e.target.value})} className="apex-input" style={{ resize:'none' }} />
+                <textarea placeholder="Что Вы ищете? Бюджет, район, количество комнат…" rows={3} value={f.request} onChange={e=>setF({request:e.target.value})} className="apex-input" style={{ resize:'none' }} />
               </div>
               {mode==='social' && (
                 <label style={{ display:'flex', alignItems:'center', gap:12, cursor:'pointer' }}>
