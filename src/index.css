@@ -310,3 +310,68 @@ html {
     display: none !important;
   }
 }
+
+/* ─── МОБИЛЬНЫЙ АДАПТИВ ─── */
+@media (max-width: 768px) {
+  /* Бургер / навигация */
+  .header-nav-desktop {
+    display: none !important;
+  }
+  .header-burger {
+    display: flex !important;
+  }
+
+  /* Hero: бейджи в колонку */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  /* Карточки услуг — 1 колонка */
+  .services-grid,
+  .dir-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* About-grid */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .about-grid > *:first-child {
+    border-radius: 24px 24px 0 0 !important;
+  }
+  .about-grid > *:last-child {
+    border-radius: 0 0 24px 24px !important;
+  }
+
+  /* Кнопки — растянуть на всю ширину */
+  .btn-apex {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Шрифты заголовков */
+  h1,
+  h2 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Карточки с мин. шириной 220px — сброс */
+  [style*="minmax(220px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Уменьшить паддинги секций */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Шапка логотип — убрать подпись */
+  .header-location-text {
+    display: none;
+  }
+}

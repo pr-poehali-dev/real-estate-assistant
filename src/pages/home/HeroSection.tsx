@@ -27,7 +27,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
             { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
             { icon:'Star',   label:'Вы принимаете ключевое решение' },
           ].map(b => (
-            <span key={b.label} style={{ display:'flex', alignItems:'center', gap:10, fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, letterSpacing:'0.12em', textTransform:'uppercase', color:MUTED, padding:'10px 18px', border:`1px solid ${GOLD20}`, borderRadius:100, whiteSpace:'nowrap', background:'hsl(222 30% 10%)' }}>
+            <span key={b.label} style={{ display:'flex', alignItems:'center', gap:10, fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, letterSpacing:'0.12em', textTransform:'uppercase', color:MUTED, padding:'10px 18px', border:`1px solid ${GOLD20}`, borderRadius:100, background:'hsl(222 30% 10%)' }}>
               <Icon name={b.icon} size={13} style={{ color:GOLD, flexShrink:0 }} /> {b.label}
             </span>
           ))}
@@ -35,15 +35,14 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
 
         <div>
           <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.15, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
-            <span style={{ display:'block', whiteSpace:'nowrap', WebkitTextFillColor:FG }}>Пространство для</span>
-            <span style={{ display:'flex', alignItems:'center', gap:16, whiteSpace:'nowrap', WebkitTextFillColor:FG }}>
+            <span style={{ display:'block', WebkitTextFillColor:FG }}>Пространство для</span>
+            <span style={{ display:'flex', alignItems:'center', gap:16, flexWrap:'wrap', WebkitTextFillColor:FG }}>
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вашего</em>
               {' '}
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>комфорта</em>
-              <div style={{ width:36, height:1, background:GOLD, flexShrink:0 }} />
             </span>
-            <span style={{ display:'block', whiteSpace:'nowrap', WebkitTextFillColor:FG }}>найдём то,</span>
-            <span style={{ display:'block', whiteSpace:'nowrap', WebkitTextFillColor:FG }}>
+            <span style={{ display:'block', WebkitTextFillColor:FG }}>найдём то,</span>
+            <span style={{ display:'block', WebkitTextFillColor:FG }}>
               что нужно{' '}
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вам</em>
             </span>

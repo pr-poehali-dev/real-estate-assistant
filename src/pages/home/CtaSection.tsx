@@ -59,11 +59,11 @@ const CtaSection = ({ open, mode, forms, onOpenRequest, onClose, setForms }: Cta
             </p>
             <div style={{ display:'flex', justifyContent:'center', gap:14, flexWrap:'wrap', marginBottom:32 }}>
               <button className="btn-apex btn-apex-gold" onClick={() => onOpenRequest('social')}
-                style={{ minWidth:200, height:56, fontSize:11, letterSpacing:'0.28em' }}>
+                style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
                 <Icon name="MessageCircle" size={15} /> Написать
               </button>
               <button className="btn-apex btn-apex-outline" onClick={() => onOpenRequest('meeting')}
-                style={{ minWidth:200, height:56, fontSize:11, letterSpacing:'0.28em' }}>
+                style={{ height:56, fontSize:11, letterSpacing:'0.28em' }}>
                 <Icon name="Phone" size={15} /> Обратный звонок
               </button>
             </div>

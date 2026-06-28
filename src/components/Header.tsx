@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Icon from '@/components/ui/icon';
 
@@ -26,6 +27,9 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header style={{
@@ -44,7 +48,7 @@ const Header = () => {
         {/* Логотип */}
         <Link
           to="/"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); closeMenu(); }}
           style={{ display: 'flex', alignItems: 'center', gap: 12, textDecoration: 'none', flexShrink: 0 }}
           translate="no"
         >
@@ -53,13 +57,13 @@ const Header = () => {
             <span translate="no" style={{ fontFamily: 'Inter, sans-serif', fontSize: 7, fontWeight: 500, letterSpacing: '0.44em', textTransform: 'uppercase', color: GOLD, marginTop: 1 }}>SOLUTIONS</span>
           </div>
           <div style={{ width: 1, height: 30, background: `linear-gradient(to bottom, transparent, ${GOLD40}, transparent)`, margin: '0 4px' }} />
-          <span style={{ fontFamily: 'Inter, sans-serif', fontSize: 8, letterSpacing: '0.18em', color: `${MUTED}88`, textTransform: 'uppercase', lineHeight: 1.5 }}>
+          <span className="header-location-text" style={{ fontFamily: 'Inter, sans-serif', fontSize: 8, letterSpacing: '0.18em', color: `${MUTED}88`, textTransform: 'uppercase', lineHeight: 1.5 }}>
             Недвижимость<br />Москва и МО
           </span>
         </Link>
 
-        {/* Навигация */}
-        <nav style={{ display: 'flex', alignItems: 'center', height: 68 }}>
+        {/* Десктоп навигация */}
+        <nav className="header-nav-desktop" style={{ display: 'flex', alignItems: 'center', height: 68 }}>
           {isHome && (
             <>
               {[
@@ -85,8 +89,8 @@ const Header = () => {
           )}
         </nav>
 
-        {/* Правый блок: на главной — «Клиентам», на внутренних — «Назад» + «Клиентам» рядом */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
+        {/* Десктоп правый блок */}
+        <div className="header-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
           {!isHome && (
             <button
               onClick={() => navigate('/')}
@@ -111,7 +115,104 @@ const Header = () => {
             >Клиентам</Link>
           )}
         </div>
+
+        {/* Мобильная кнопка бургера */}
+        <button
+          className="header-burger"
+          onClick={() => setMenuOpen(v => !v)}
+          style={{
+            display: 'none',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 8,
+            color: GOLD,
+            flexShrink: 0,
+          }}
+          aria-label="Меню"
+        >
+          <Icon name={menuOpen ? 'X' : 'Menu'} size={24} />
+        </button>
       </div>
+
+      {/* Мобильное выпадающее меню */}
+      {menuOpen && (
+        <div className="header-mobile-menu" style={{
+          background: 'hsl(222 28% 7% / 0.98)',
+          backdropFilter: 'blur(18px)',
+          borderTop: `1px solid ${GOLD20}`,
+          padding: '20px 24px 28px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 4,
+        }}>
+          {isHome && (
+            <>
+              {[
+                { href: '#services', label: 'Услуги' },
+                { href: '#about',    label: 'О нас' },
+                { href: '#contacts', label: 'Контакты' },
+              ].map(l => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={closeMenu}
+                  style={{
+                    fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                    letterSpacing: '0.28em', textTransform: 'uppercase',
+                    color: MUTED, textDecoration: 'none',
+                    padding: '14px 0',
+                    borderBottom: `1px solid ${GOLD20}`,
+                    display: 'block',
+                  }}
+                >{l.label}</a>
+              ))}
+              <Link
+                to="/commercial"
+                onClick={closeMenu}
+                style={{
+                  fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                  letterSpacing: '0.28em', textTransform: 'uppercase',
+                  color: GOLD, textDecoration: 'none',
+                  padding: '14px 0',
+                  borderBottom: `1px solid ${GOLD20}`,
+                  display: 'block',
+                }}
+              >Коммерция</Link>
+            </>
+          )}
+
+          {!isHome && (
+            <button
+              onClick={() => { navigate('/'); closeMenu(); }}
+              style={{
+                fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                letterSpacing: '0.28em', textTransform: 'uppercase',
+                color: MUTED, background: 'none', border: 'none',
+                padding: '14px 0', cursor: 'pointer', textAlign: 'left',
+                borderBottom: `1px solid ${GOLD20}`,
+                display: 'flex', alignItems: 'center', gap: 8,
+              }}
+            >
+              <Icon name="ArrowLeft" size={13} /> Назад
+            </button>
+          )}
+
+          {location.pathname !== '/for-client' && (
+            <Link
+              to="/for-client"
+              onClick={closeMenu}
+              style={{
+                fontFamily: 'Inter, sans-serif', fontSize: 11, fontWeight: 500,
+                letterSpacing: '0.28em', textTransform: 'uppercase',
+                color: GOLD, textDecoration: 'none',
+                padding: '14px 0',
+                display: 'block',
+              }}
+            >Клиентам</Link>
+          )}
+        </div>
+      )}
     </header>
   );
 };

@@ -171,7 +171,7 @@ const ContentSections = () => (
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
                 Наша цель — не просто подобрать объект, а помочь сделать <strong style={{ color:FG, fontWeight:500 }}>осознанный выбор</strong> с <strong style={{ color:FG, fontWeight:500 }}>индивидуальным подходом</strong> к каждому клиенту, учитывая все Ваши пожелания и возможности.
               </p>
-              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
+              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
                 {['Индивидуальный подход', 'Свежая аналитика', 'Осознанный выбор'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
@@ -191,7 +191,7 @@ const ContentSections = () => (
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED, marginTop:0 }}>
                 Мы сотрудничаем с <strong style={{ color:FG, fontWeight:500 }}>ведущими банками</strong> и финансовыми учреждениями, чтобы предложить Вам самые <strong style={{ color:FG, fontWeight:500 }}>выгодные ставки</strong> и удобные схемы оплаты.
               </p>
-              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
+              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
                 {['Ипотека', 'Рассрочка', 'Рефинансирование', 'Бизнес-кредит'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
@@ -208,7 +208,7 @@ const ContentSections = () => (
               <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13.5, lineHeight:1.85, color:MUTED }}>
                 <strong style={{ color:FG, fontWeight:500 }}>Инструмент, созданный для Вашего удобства.</strong> Мы стремимся к тому, чтобы Вы могли найти <strong style={{ color:FG, fontWeight:500 }}>всё необходимое в одном месте</strong>, экономя своё время и силы, чтобы предоставить Вам <strong style={{ color:FG, fontWeight:500 }}>лучший опыт</strong> взаимодействия с миром недвижимости.
               </p>
-              <div style={{ display:'flex', flexWrap:'nowrap', gap:8, marginTop:4, overflowX:'auto' }}>
+              <div style={{ display:'flex', flexWrap:'wrap', gap:8, marginTop:4 }}>
                 {['Всё в одном месте', 'Экономия времени', 'Лучший опыт'].map(b => (
                   <span key={b} style={{ fontFamily:'Inter,sans-serif', fontSize:11, fontWeight:400, padding:'4px 12px', borderRadius:20, border:`1px solid ${GOLD40}`, color:GOLD, whiteSpace:'nowrap' }}>{b}</span>
                 ))}
