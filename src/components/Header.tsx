@@ -90,7 +90,7 @@ const Header = () => {
           {!isHome && (
             <button
               onClick={() => navigate('/')}
-              style={{ ...navLink, background: 'none', border: `1px solid ${GOLD20}`, borderRadius: 100, cursor: 'pointer', gap: 7, color: MUTED, padding: '8px 18px' }}
+              style={{ ...navLink, background: 'none', border: 'none', borderRadius: 100, cursor: 'pointer', gap: 7, color: MUTED, padding: '8px 18px' }}
             >
               <Icon name="ArrowLeft" size={13} /> Назад
             </button>
@@ -106,8 +106,8 @@ const Header = () => {
                 border: `1px solid ${GOLD40}`, borderRadius: 100,
                 transition: 'all 0.3s',
               }}
-              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = GOLD; el.style.color = 'hsl(222 25% 8%)'; }}
-              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = GOLD; }}
+              onMouseEnter={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'hsl(43 58% 55% / 0.15)'; el.style.color = 'hsl(43 75% 70%)'; el.style.borderColor = 'hsl(43 58% 55% / 0.6)'; }}
+              onMouseLeave={e => { const el = e.currentTarget as HTMLElement; el.style.background = 'transparent'; el.style.color = GOLD; el.style.borderColor = GOLD40; }}
             >Клиентам</Link>
           )}
         </div>

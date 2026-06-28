@@ -184,9 +184,9 @@ html {
   border: 1px solid hsl(43 58% 55% / 0.45);
 }
 .btn-apex-outline:hover {
-  background: hsl(43 58% 55%);
-  color: hsl(222 25% 8%);
-  border-color: hsl(43 58% 55%);
+  background: hsl(43 58% 55% / 0.15);
+  color: hsl(43 75% 70%);
+  border-color: hsl(43 58% 55% / 0.6);
 }
 
 /* ─── КАРТОЧКИ ─── */
