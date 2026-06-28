@@ -36,7 +36,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
         <div className="hero-text-col" style={{ minWidth:0 }}>
           <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.15, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>Пространство для</span>
-            <span style={{ display:'flex', alignItems:'center', gap:16, flexWrap:'wrap', WebkitTextFillColor:FG }}>
+            <span style={{ display:'flex', alignItems:'center', gap:16, WebkitTextFillColor:FG }}>
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>Вашего</em>
               {' '}
               <em style={{ fontStyle:'italic', fontWeight:600, background:'linear-gradient(90deg, hsl(43 50% 44%) 0%, hsl(43 75% 70%) 30%, hsl(36 60% 55%) 50%, hsl(43 75% 70%) 70%, hsl(43 50% 44%) 100%)', backgroundSize:'250% auto', WebkitBackgroundClip:'text', backgroundClip:'text', WebkitTextFillColor:'transparent', animation:'goldShimmer 5s ease-in-out infinite' }}>комфорта</em>
