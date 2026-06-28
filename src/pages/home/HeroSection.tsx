@@ -21,7 +21,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
 
       <div style={{ display:'grid', gridTemplateColumns:'auto 1fr', gap:'clamp(32px,5vw,72px)', alignItems:'start' }} className="hero-grid">
 
-        <div className="animate-fade-up" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
+        <div className="animate-fade-up hero-badges-col" style={{ display:'flex', flexDirection:'column', gap:12, paddingTop:8, animationDelay:'200ms' }}>
           {[
             { icon:'Shield', label:'Спокойствие сделки' },
             { icon:'Home',   label:'Подбор недвижимости — бесплатно' },
@@ -33,7 +33,7 @@ const HeroSection = ({ onOpenRequest }: HeroSectionProps) => (
           ))}
         </div>
 
-        <div>
+        <div className="hero-text-col">
           <h1 className="animate-fade-up font-display" style={{ animationDelay:'320ms', fontSize:'clamp(34px,5vw,72px)', fontWeight:300, lineHeight:1.15, letterSpacing:'-0.02em', margin:'0 0 24px', color:FG }}>
             <span style={{ display:'block', WebkitTextFillColor:FG }}>Пространство для</span>
             <span style={{ display:'flex', alignItems:'center', gap:16, flexWrap:'wrap', WebkitTextFillColor:FG }}>
