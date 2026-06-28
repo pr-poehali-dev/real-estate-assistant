@@ -40,6 +40,11 @@ const ContentSections = () => (
 
         <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 }} className="why-grid">
           <div style={{ background:NAVYD, borderRadius:20, padding:'clamp(24px,3vw,40px)', border:`1px solid ${GOLD20}` }}>
+            <div style={{ background:'hsl(220 40% 12%)', borderRadius:16, padding:'18px 22px', borderLeft:`3px solid hsl(210 60% 55%)`, marginBottom:20 }}>
+              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:0 }}>
+                <strong style={{ color:FG, fontWeight:500 }}>Оптимизируйте процесс</strong> поиска и продажи ваших объектов недвижимости.
+              </p>
+            </div>
             <p style={{ fontFamily:'Inter,sans-serif', fontSize:10, fontWeight:500, letterSpacing:'0.28em', textTransform:'uppercase', color:MUTED, marginBottom:20 }}>Больше не нужно:</p>
             {[
               'Самостоятельно исследовать рынок недвижимости, сопряженный с присущими ему рисками и противоречиями',
@@ -53,12 +58,6 @@ const ContentSections = () => (
                 <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.75, color:MUTED }}>{text}</p>
               </div>
             ))}
-
-            <div style={{ background:'hsl(220 40% 12%)', borderRadius:16, padding:'18px 22px', borderLeft:`3px solid hsl(210 60% 55%)`, marginTop:12 }}>
-              <p style={{ fontFamily:'Inter,sans-serif', fontWeight:300, fontSize:13, lineHeight:1.85, color:MUTED, margin:0 }}>
-                <strong style={{ color:FG, fontWeight:500 }}>Оптимизируйте процесс</strong> поиска и продажи ваших объектов недвижимости.
-              </p>
-            </div>
           </div>
 
           <div style={{ display:'flex', flexDirection:'column', gap:12 }}>
